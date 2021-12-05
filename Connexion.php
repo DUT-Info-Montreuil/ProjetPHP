@@ -8,6 +8,7 @@ class Connexion {
 
     public static function initConnexion() {
 
+        //test de la connexion
         try {
             $dns="mysql:host=localhost;dbname=basicfoot";
             $user="root";
