@@ -1,0 +1,80 @@
+/*Header, footer*/
+body{
+    background: #130255;
+    font-family: Arial;
+}
+
+a {
+
+}
+
+#titre {
+    color: #FF7B7B;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 200%;
+}
+span {
+    color: red;
+}
+
+
+footer p {
+    color: white;
+}
+
+
+/* Login */
+
+#container{
+    width:400px;
+    margin:0 auto;
+    margin-top:10%;
+    color: white;
+    font-weight: bold;
+}
+
+form {
+    width:100%;
+    padding: 30px;
+    border-radius: 3%;
+    background: #0b0132;
+}
+
+
+form h1 {
+    color: white;
+    text-align: center;
+    margin-bottom: 15%;
+}
+
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-bottom: 15%;
+}
+
+
+input[type=submit] {
+    background-color: #FF6F6F;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 100%;
+    border: 1px solid #FF6F6F;
+    font-size: 100%;
+    font-weight: bold;
+}
+input[type=submit]:hover {
+    background-color: white;
+    color: #FF6F6F;
+    border: 1px solid #FF6F6F;
+}
+
