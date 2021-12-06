@@ -13,12 +13,7 @@ else {
 Connexion::initConnexion();
 
 switch ($module) {
-    case "ModJoueurs":
-    case "ModEquipe":
     case "ModConnexion":
-    case "ModProfil":
-    case "ModAccueil":
-    case "ModInscription":
         require_once "./modules/$module/$module.php";
         require_once "./modules/Affichage/header.php";
         new $module();
