@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./modules/Affichage/css/style.css">
+    <link rel="stylesheet" href="./modules/Affichage/Css/Style.css">
     <title>BasicFoot</title>
 
 <body>
@@ -24,7 +24,7 @@
             <img src="./modules/Affichage/Images/Messi.png" alt="" />
         </div>
         <div id="buttonInscription">
-            <button type="button" ><a href="google.com" >Inscrivez vous gratuitement</a></button>
+            <button type="button" ><a href="" >Inscrivez vous gratuitement</a></button>
         </div>
         <hr id ="line">
     </div>
