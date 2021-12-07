@@ -41,6 +41,23 @@
     <div id="line2">
         <hr>
     </div>
+    <div class="NosOffres">
+            <div id="agenda">
+                <img src="./modules/Affichage/Images/agenda.png" alt="imageAgenda" />
+                <p>Consulter les matches disponibles</p>
+            </div>
+            <div id="amis">
+                <img src="./modules/Affichage/Images/amis.png" alt="imageAmis" />
+                <p>Ajoutez vos amis, discutez avec eux !</p>
+            </div>
+        <div id="invitez">
+            <img src="./modules/Affichage/Images/invitez.png" alt="imageinvitez" />
+            <p>Invitez vos amis à vous rejoindre votre équipe !</p>
+        </div>
+    </div>
+    <div id="line2">
+        <hr>
+    </div>
 </main>
 </body>
 
