@@ -1,10 +1,16 @@
 <?php
-session_start();
-//require_once "./modules/Affichage/header.php";
+if (!isset($_GET['module'])) {
+    $_GET['module']="ModAccueil";
+}
+$module = $_GET['module'];
 
-require_once "./modules/Affichage/accueil.php";
-
-//require_once "./modules/Affichage/footer.php";
-
+switch ($module) {
+    case "ModAccueil":
+        require_once "./modules/$module/$module.php";
+        new $module();
+        break;
+    default :
+        die("Interdiction d'accès");
+}
 
 ?>
