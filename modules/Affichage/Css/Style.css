@@ -1,45 +1,29 @@
 body {
-    width: auto;
+    font-family:'Open Sans',Arial,sans-serif;
+    font-weight:300;
+    margin:0;
+    padding:5%;
+    background-color:#130255;
+    width: 1200px;
     margin: auto;
-    padding-top: 100px;
-    background-color: #130255;
-    font-family: Arial;
 
 }
-header {
-    margin-left: 100px;
-}
-header h1{
-    padding-top: 20px;
-    color:#FF7B7B;
-    font-family: Arial;
-    display: inline-block;
-}
 
-.PresentationSite hr{
-    border-width: 4px;
-    margin: 11em 0;
-    border-color: #de2bff;
 
-}
 #textePresentation {
     position: absolute;
-    font-family: Arial;
-    font-style: normal;
-    font-weight: normal;
+    font-family:'Open Sans',Arial,sans-serif;
+    font-weight: 300;
     margin-left:50px;
     font-size: 25px;
     line-height: 25px;
+    color: white;
+}
+#textePresentation  #p1{
     color: #FF6F6F;
 }
-#textePresentation #p2 {
-    color: beige;
 
-}
-#textePresentation #p3 {
-    color: beige;
 
-}
 #buttonInscription button{
     width:200px;
     height: 30px;
@@ -58,17 +42,17 @@ header h1{
     position: absolute;
     width: 400px;
     height: 450px;
-    margin-left: 60em;
-    margin-top: -3em;
+    margin-left: 59em;
+    margin-top: -4em;
 
 }
 .PresentationSite2{
-    color: antiquewhite;
+    color: white;
     margin-left: 50px;
     margin-top:-130px;
 }
 .PresentationSite2 p{
-    color: antiquewhite;
+    color: white;
     padding-bottom: -6px;
     margin-top: 47px;
     font-size: 25px;
@@ -82,9 +66,12 @@ header h1{
     display: inline-block;
     clear: left;
 }
-#line2 hr{
+#line hr{
     border-width: 4px;
-    margin: 5em 0;
+    margin: 10em 0;
+    margin-left: 45px;
+    border-left-width : 70px;
+    border-right-width : 75em;
     border-color: #de2bff;
 }
 .NosOffres #agenda p{
@@ -93,6 +80,7 @@ header h1{
     width: 20%;
     background-color: #2B00A6;
     text-align:center;
+    margin-bottom: 6px;
     border-width:35px 35px 35px 35px;
     margin-left: 50px;
     border-radius: 10px;
@@ -115,8 +103,9 @@ header h1{
     border-width:35px 35px 35px 35px;
     border-radius: 10px;
     border-style:solid;
+    margin-bottom: 6px;
     border-color:white;
-    margin-top: 50px;
+    margin-top: 60px;
     margin-left:490px ;
 
 
@@ -134,16 +123,16 @@ header h1{
     width: 20%;
     background-color:#FE0000;
     text-align:center;
-    border-width:35px 35px 35px 35px;
+    border-width:20px 20px 20px 35px;
     border-radius: 10px;
     border-style:solid;
     border-color:#FE0000;
-    margin-top: 57px;
+    margin-top: 5.04%;
     margin-left:950px ;
 
 }
 .NosOffres #invitez img{
     display: block;
-    margin-top: -535px;
+    margin-top: -530px;
     margin-left:950px ;
 }
