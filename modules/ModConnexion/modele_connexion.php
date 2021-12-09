@@ -8,7 +8,6 @@ class ModeleConnexion extends Connexion {
         $requete= self::$bdd->prepare("SELECT * from login where login = :login");
         $requete->bindParam('login',$login);
         $requete->execute();
-
         return $requete->fetch();
     }
 

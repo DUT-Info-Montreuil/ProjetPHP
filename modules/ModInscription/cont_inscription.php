@@ -23,6 +23,7 @@ class ContInscription {
         try {
             $this->modele->inscription($login,$password);
             echo "Votre compte est maintenant cree";
+            require_once "./modules/Affichage/login.php";
         }
         catch (Exception $e) {
             echo "Impossible, le login $login existe deja";
