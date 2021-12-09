@@ -10,7 +10,7 @@ class Connexion {
 
         //test de la connexion
         try {
-            $dns="mysql:host=localhost;dbname=basicfoot";
+            $dns="mysql:host=localhost;dbname=basicfoot";//
             $user="root";
             self::$bdd = new PDO($dns,$user);
             self::$bdd->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);

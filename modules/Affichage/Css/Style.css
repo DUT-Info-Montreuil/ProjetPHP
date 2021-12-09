@@ -1,3 +1,4 @@
+
 /*Header, footer*/
 body{
     background: #130255;
@@ -76,5 +77,96 @@ input[type=submit]:hover {
     background-color: white;
     color: #FF6F6F;
     border: 1px solid #FF6F6F;
+}
+
+
+body {
+    width: auto;
+    margin: auto;
+    padding-top: 100px;
+    background-color: #130255;
+    font-family: Arial;
+
+}
+header {
+    margin-left: 100px;
+}
+header h1{
+    padding-top: 20px;
+    color:#FF7B7B;
+    font-family: Arial;
+    display: inline-block;
+}
+
+.PresentationSite hr{
+    border-width: 4px;
+    margin: 11em 0;
+    border-color: #de2bff;
+
+}
+#textePresentation {
+    position: absolute;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    margin-left:50px;
+    font-size: 25px;
+    line-height: 25px;
+    color: #FF6F6F;
+}
+#textePresentation #p2 {
+    color: beige;
+
+}
+#textePresentation #p3 {
+    color: beige;
+
+}
+#buttonInscription button{
+    width:200px;
+    height: 30px;
+    margin-left:150px;
+    margin-top:200px;
+    cursor: pointer;
+    color: white;
+    text-decoration:none;
+
+}
+#buttonInscription a{
+    text-decoration:none;
+}
+
+#imagesPresentation img {
+    position: absolute;
+    width: 400px;
+    height: 450px;
+    margin-left: 55em;
+    margin-top: -3em;
+
+}
+.PresentationSite2{
+    color: antiquewhite;
+    margin-left: 50px;
+    margin-top:-130px;
+}
+.PresentationSite2 p{
+    color: antiquewhite;
+    padding-bottom: -6px;
+    margin-top: 47px;
+    font-size: 25px;
+    line-height: 39px;
+
+}
+
+.PresentationSite2 img{
+    float:left;
+    margin-bottom: 40px;
+    display: inline-block;
+    clear: left;
+}
+#line2 hr{
+    border-width: 4px;
+    margin: 5em 0;
+    border-color: #de2bff;
 }
 
