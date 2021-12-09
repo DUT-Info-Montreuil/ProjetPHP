@@ -14,7 +14,7 @@ class ContConnexion {
 
     function test_connexion () {
         if(isset($_SESSION['login'])) {
-            echo "Vous êtes connéctés en tant que <span>".$_SESSION['login']."</span></br>";
+            require_once "./modules/Affichage/profil.php";
             $this->vue->form_deconnexion();
         }
         else {
@@ -34,13 +34,14 @@ class ContConnexion {
 
             if($count) {
                 $_SESSION['login']=$login;
-                $this->vue->form_connexion();
+                $this->test_connexion();
             }
             else {
                 echo "mdp pas bon";
                 $this->vue->form_connexion();
             }
         }
+
         else {
             echo "Login incorrecte";
             $this->test_connexion();

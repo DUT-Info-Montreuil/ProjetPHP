@@ -9,7 +9,7 @@
 <div class="topnav">
 
     <a href="index.php?module=ModAccueil" id="titre">BasicFoot</a>
-    <a href="index.php?module=ModProfil" ">Mon compte</a>
+    <a href="index.php?module=ModConnexion" id="monCompte">Mon compte</a>
 
 </div>
 </body>

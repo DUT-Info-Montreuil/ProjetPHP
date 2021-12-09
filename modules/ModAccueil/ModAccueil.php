@@ -1,6 +1,7 @@
 <?php
 
-require_once './modules/ModAccueil/ControleurAccueil.php';
+require_once './modules/ModAccueil/cont_accueil.php';
+$title = "Accueil";
 
 class ModAccueil {
     private $controleur;

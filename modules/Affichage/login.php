@@ -19,7 +19,7 @@ require_once "./modules/Affichage/header.php";
         <input type="password" placeholder="Entrer le mot de passe" name="password" required>
 
         <input type="submit" id='submit' value='Connexion' >
-        <a href="index.php?module=ModInscription">Inscription</a>
+        <a href="index.php?module=ModInscription" id="msgInscription">Vous n'avez pas de compte ? Inscription</a>
     </form>
 </div>
 </body>

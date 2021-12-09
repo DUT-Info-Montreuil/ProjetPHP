@@ -14,6 +14,7 @@ Connexion::initConnexion();
 
 switch ($module) {
     case "ModConnexion":
+    case "ModInscription":
     case "ModAccueil":
         require_once "./modules/$module/$module.php";
         require_once "./modules/Affichage/header.php";
