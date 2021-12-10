@@ -1,8 +1,55 @@
 
-
-.profil p {
-    margin-left: 20%;
-    border: 10px;
-    border-color: chocolate;
-
+body {
+    background-color: lightblue;
 }
+.profil{
+    margin-left: 20%;
+}
+.profil #p1 {
+    margin-left: 20%;
+    margin-top: 5%;
+    border-width: 20px;
+    border-style: solid;
+    margin-right: 60%;
+    text-align: center;
+    border-color: chocolate;
+}
+.profil #info{
+    margin-left: 20%;
+    margin-top: 5%;
+    margin-right: 60%;
+    color: white;
+    background-color: #130255;
+    padding: 5px;
+    border: 3px dotted white;
+}
+#buttonStyle{
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    margin-top: 5%;
+    margin-left: 23%;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgba(220, 0, 0, 1);
+    background-image: linear-gradient(to top left,
+    rgba(0, 0, 0, .2),
+    rgba(0, 0, 0, .2) 30%,
+    rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+    inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+#buttonStyle:hover {
+    background-color: rgba(255, 0, 0, 1);
+}
+
+#buttonStyle:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+    inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+
