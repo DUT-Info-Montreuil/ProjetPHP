@@ -1,4 +1,5 @@
 <?php
+/*
 session_start();
 require_once './Connexion.php';
 if (!isset($_GET['module'])) {
@@ -15,5 +16,7 @@ switch ($module) {
         die("Interdiction d'accès");
 }
 Connexion::initConnexion();
+*/
+require_once "./modules/Affichage/Profil.html";
 
 ?>
