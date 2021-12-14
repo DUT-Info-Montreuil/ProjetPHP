@@ -17,5 +17,16 @@ class ModeleProfil extends Connexion
         $infoProfil = $req->fetch();
         return $infoProfil;
     }
+   /*
+    public function getProfil2()
+    {
+        $req =self::$bdd->prepare('SELECT * FROM profil where login="osalek"') ;
+        $req->execute();
+        $res = $req->fetch();
+        return $res;
+
+    }
+   */
+
 }
 ?>

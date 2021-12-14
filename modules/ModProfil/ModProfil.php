@@ -8,7 +8,7 @@ class ModProfil
 
     public function __construct()
     {
-        $this->controleur = new ContAccueil();
+        $this->controleur = new ContProfil();
         if (isset($_GET['action'])) {
             $action = $_GET['action'];
         } else {
@@ -16,6 +16,7 @@ class ModProfil
         }
         switch ($action) {
             case 'Profil':
+                //$this -> controleur ->monProfil2();
                 if(isset($_SESSION['login'])){
                     $username = $_SESSION['login'];
                     $this -> controleur -> monProfil($username);
