@@ -17,7 +17,7 @@
             <img src="./modules/Affichage/Images/Messi.png" alt="" />
         </div>
         <div id="buttonInscription">
-            <button type="button" ><a href="" >Inscrivez vous gratuitement</a></button>
+            <button type="button" ><a href="index.php?module=ModInscription" >Inscrivez vous gratuitement</a></button>
         </div>
     </section>
     <div id="line">

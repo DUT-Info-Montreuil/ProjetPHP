@@ -33,7 +33,7 @@ span {
 #msgInscription {
     color: white;
 }
-#msgConnecte {
+#msgConnexion {
     color: white;
 }
 #container{
@@ -58,7 +58,7 @@ form h1 {
 }
 
 
-input[type=text], input[type=password] {
+input[type=email], input[type=password] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -101,6 +101,7 @@ input[type=submit]:hover {
     line-height: 25px;
     color: white;
 }
+
 #textePresentation  #p1{
     color: #FF6F6F;
 }

@@ -10,7 +10,7 @@
                 <h1>Se connecter</h1>
 
                 <label>Adresse mail</label>
-                <input type="text" placeholder="Entrer l'adresse mail" name="login" required>
+                <input type="email" placeholder="Entrer l'adresse mail" name="login" required>
 
                 <label>Mot de passe</label>
                 <input type="password" placeholder="Entrer le mot de passe" name="password" required>
