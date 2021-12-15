@@ -30,7 +30,7 @@ class VueProfil {
         <?php
     }
         function afficherFormulaireModifier(){
-        require_once './modules/Affichage/formulaireModification.html';
+        require_once './modules/Affichage/formulaireModifProfil.html';
         ?>
     <?php
         }
