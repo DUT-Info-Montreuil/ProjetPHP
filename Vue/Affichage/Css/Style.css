@@ -58,7 +58,7 @@ form h1 {
 }
 
 
-input[type=email], input[type=password] {
+input[type=email], input[type=password], input[type=number], input[type=text] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -68,6 +68,14 @@ input[type=email], input[type=password] {
     margin-bottom: 15%;
 }
 
+#prenom {
+    margin-top: 50px;
+    display: block;
+}
+
+#LabelPoste{
+    margin-left: 100px;
+}
 
 input[type=submit] {
     background-color: #FF6F6F;
