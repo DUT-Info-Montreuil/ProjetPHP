@@ -1,5 +1,5 @@
 <?php
-/*
+
 session_start();
 require_once './Connexion.php';
 if (!isset($_GET['module'])) {
@@ -15,7 +15,6 @@ switch ($module) {
 }
 Connexion::initConnexion();
 new $module();
-*/
-require_once "./modules/Affichage/profil.html";
+
 
 ?>
