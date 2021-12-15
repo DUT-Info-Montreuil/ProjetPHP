@@ -1,6 +1,6 @@
 <?php
 
-require_once "./modules/ModInscription/vue_inscription.php";
+require_once "./Vue/vue_inscription.php";
 require_once "./modules/ModInscription/modele_inscription.php";
 
 class ContInscription {

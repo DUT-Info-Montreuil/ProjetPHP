@@ -1,6 +1,6 @@
 <?php
 
-require_once "./modules/ModConnexion/vue_connexion.php";
+require_once "./Vue/vue_connexion.php";
 require_once "./modules/ModConnexion/modele_connexion.php";
 
 class ContConnexion {

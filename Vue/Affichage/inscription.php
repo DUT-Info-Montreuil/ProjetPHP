@@ -1,7 +1,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="./modules/Affichage/Css/Style.css" type="text/css" />
+    <link rel="stylesheet" href="./Vue/Affichage/Css/Style.css" type="text/css" />
     <title>Inscription</title>
 </head>
 <body>

@@ -1,6 +1,6 @@
 <?php
 
-require_once "./modules/ModAccueil/vue_accueil.php";
+require_once "Vue/vue_accueil.php";
 
 class ContAccueil
 {

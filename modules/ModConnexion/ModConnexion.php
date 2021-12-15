@@ -1,7 +1,6 @@
 <?php
 
 require_once "./modules/ModConnexion/cont_connexion.php";
-$title = "Connexion";
 
 class ModConnexion
 {

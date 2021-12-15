@@ -1,7 +1,6 @@
 <?php
 
 require_once "./modules/ModInscription/cont_inscription.php";
-$title="Inscription";
 
 class ModInscription {
     private $controleur;
