@@ -19,11 +19,17 @@ class ContInscription {
     function inscription() {
         $login=$_POST['login'];
         $password=$_POST['password'];
+        $password=password_hash($password,PASSWORD_DEFAULT);
+        $prenom=$_POST['prenom'];
+        $nom=$_POST['nom'];
+        $age=$_POST['age'];
+        $ville=$_POST['ville'];
+        $sexe=$_POST['civilite'];
+        $poste=$_POST['poste'];
 
         try {
-            $this->modele->inscription($login,$password);
+            $this->modele->inscription($prenom,$nom,$age,$sexe,$ville,$poste,$login,$password);
             echo "Votre compte est maintenant cree";
-            require_once "./modules/Affichage/login.php";
         }
         catch (Exception $e) {
             echo "Impossible, le login $login existe deja";

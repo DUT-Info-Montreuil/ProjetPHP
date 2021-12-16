@@ -3,10 +3,10 @@
     <form action="index.php?module=ModInscription&action=inscription" method="POST">
         <h1>Inscription</h1>
 
-        <input type="radio" id="choix1" class="civilite" name="civilité" value="monsieur">
+        <input type="radio" id="choix1" class="civilite" name="civilite" value="monsieur">
         <label for="choix1">Mr</label>
 
-        <input type="radio" id="choix2" class="civilite" name="civilité" value="madame">
+        <input type="radio" id="choix2" class="civilite" name="civilite" value="madame">
         <label for="choix2">Mme</label>
 
         <label id="LabelPoste">Poste</label>
@@ -30,7 +30,6 @@
         <label>Ville</label>
         <input type="text" placeholder="Entrer une ville" name="ville" required>
 
-        
         <label>Adresse mail</label>
         <input type="email" placeholder="Entrer l'adresse mail" name="login" required>
 
