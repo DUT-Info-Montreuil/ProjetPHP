@@ -1,11 +1,45 @@
 
 body {
+    font-family:'Open Sans',Arial,sans-serif;
+    font-weight:600;
+    margin:0;
+    padding:0;
+    background:#f1f1f1;
+    width: 1200px;
+    margin: auto;
     background-color: lightblue;
+
+}
+section{
+    width: 1200px;
+    margin-top:20px;
+    display:inline-block;
+    margin-bottom:20px;
+    padding-bottom:20px;
+    background-color:#130255;
+    border-radius: 30px;
+    color:white;
+}
+#formLeft2{
+
+    margin-top:30px;
+    width:600px;
+    height:300px;
+    margin-left:30px;
+    display:inline-block;
+}
+#formRight2{
+    margin-top:30px;
+    display:inline-block;
+    width:500px;
+    margin-right:30px;
+    font-size: 15px;
+    float:right;
 }
 .profil{
     margin-left: 20%;
 }
-.profil #p1 {
+section #p1 {
     margin-left: 20%;
     margin-top: 5%;
     border-width: 20px;
@@ -14,14 +48,10 @@ body {
     text-align: center;
     border-color: chocolate;
 }
-.profil #info{
-    margin-left: 20%;
-    margin-top: 5%;
-    margin-right: 60%;
-    color: white;
-    background-color: #130255;
-    padding: 5px;
-    border: 3px dotted white;
+
+#txt{
+    color:white;
+    text-decoration:none;
 }
 #buttonStyle{
     border: 0;
