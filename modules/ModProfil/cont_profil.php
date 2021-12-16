@@ -19,14 +19,14 @@ class ContProfil{
     public function formulaireModif() {
         $this -> vue -> afficherFormulaireModifier();
     }
-    /*
+
 
     public function monProfil2()
     {
         $Profil = $this->modele->getProfil2();
         $this->vue->afficherProfil($Profil);
     }
-    */
+
 
 
 }

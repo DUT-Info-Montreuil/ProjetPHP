@@ -36,12 +36,16 @@
 							<input id="prenom" type="text" name="prenom" size="49" pattern="[A-Z][a-z]*"/>
 							<label id="posteMatchLabel" for="posteMatch">Poste Préféré</label> 
 							<div>
-  							<input type="checkbox" id="defendeur" name="defendeur"checked>
-  							<label for="defendeur">Defendeur</label>
-  							<input type="checkbox" id="attaquant" name="attaquant">
-  							<label for="attaquant">attaquant</label>
-							<input type="checkbox" id="gardien" name="gardien">
-  							<label for="gardien">Gardien</label>
+								<input type="radio" id="attaquant" name="poste" value="attaquant" checked>
+								<label for="attaquant">attaquant</label>
+							</div>
+							<div>
+								<input type="radio" id="defendeur" name="poste" value="defendeur">
+								<label for="defendeur">defendeur</label>
+							</div>
+							<div>
+								<input type="radio" id="gardien" name="poste" value="gardien">
+								<label for="gardien">gardien</label>
 							</div>
 						</div>
 						<!--Form à droite avec email, nom utilisateur, mot de passe-->
@@ -52,8 +56,11 @@
 							<input id="email" type="email" name="email" class="" size="47"/>
 							<label for="passwd">Mot de passe</label> 	
 							<input id="passwd" type="password" name="passwd" size="47"/>
-							<button id="buttonValidAcc" name="connect" type="button">Je valide mes modifications</button>	
+							<button id="buttonValidAcc" name="connect" type="button">Je valide mes modifications</button>
+							<button id="buttonStyle" type="button"><a id="txt" href="index.php?module=ModProfil&action=Profil" >
+								Annuler Modification</a></button>
 						</div>
+
 					</div>		
 				</form>
 			</main>	

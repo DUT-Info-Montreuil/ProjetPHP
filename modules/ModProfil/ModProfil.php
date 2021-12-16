@@ -16,7 +16,7 @@ class ModProfil
         }
         switch ($action) {
             case 'Profil':
-               //$this -> controleur ->monProfil2();
+               $this -> controleur ->monProfil2();
                 if(isset($_SESSION['login'])){
                     $username = $_SESSION['login'];
                     $this -> controleur -> monProfil($username);

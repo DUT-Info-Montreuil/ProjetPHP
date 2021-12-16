@@ -7,16 +7,16 @@ body {
     background:#f1f1f1;
     width: 1200px;
     margin: auto;
-    background-color: lightblue;
+    background-color: #130255;
 
 }
 section{
     width: 1200px;
-    margin-top:20px;
+    margin-top:150px;
     display:inline-block;
     margin-bottom:20px;
     padding-bottom:20px;
-    background-color:#130255;
+    background-color: #5759d9;
     border-radius: 30px;
     color:white;
 }
@@ -46,7 +46,8 @@ section #p1 {
     border-style: solid;
     margin-right: 60%;
     text-align: center;
-    border-color: chocolate;
+    border-color: #130255;
+    border-radius: 25px;
 }
 
 #txt{
