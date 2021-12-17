@@ -14,7 +14,7 @@ class ContConnexion {
 
     function test_connexion () {
         if(isset($_SESSION['login'])) {
-            require_once "./modules/Affichage/profil.php";
+            require_once "./Vue/Affichage/profil.php";
             $this->vue->form_deconnexion();
         }
         else {
@@ -48,10 +48,10 @@ class ContConnexion {
         }
 
     }
-    function deconnexion () {
+
+    function deconnexion() {
         unset($_SESSION['login']);
         $this->vue->form_connexion();
     }
-
 }
 ?>

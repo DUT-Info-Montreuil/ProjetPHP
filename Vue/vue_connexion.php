@@ -6,6 +6,10 @@ class VueConnexion {
     function form_connexion() {
         Vue::render("Affichage/connexion.php",["titre"=>"Connexion"]);
     }
+
+    function form_deconnexion() {
+        Vue::render("Affichage/deconnexion.php");
+    }
 }
 
 ?>
