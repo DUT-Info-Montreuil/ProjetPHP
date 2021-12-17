@@ -1,0 +1,23 @@
+body {
+    font-family:'Open Sans',Arial,sans-serif;
+    font-weight:300;
+    margin:auto;
+    padding-top:2%;
+    background-color:#130255;
+    width: 80%;
+}
+
+#titre {
+    color: #FF7B7B;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+#monCompte {
+    color: #FF7B7B;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 32px;
+    margin-left: 30%;
+}
