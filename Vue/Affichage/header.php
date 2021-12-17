@@ -6,9 +6,28 @@
     <title><?= $data['titre']?></title>
 </head>
 <body>
-<div class="topnav">
-
+<nav>
     <a href="index.php?module=ModAccueil" id="titre">BasicFoot</a>
-    <a href="index.php?module=ModConnexion" id="monCompte">Mon compte</a>
+    <?php
+    if(empty($_SESSION['login'])) {
+        echo '<ul>
+            <li class="deroulant"><img src="Images/agenda.png"><a href="#"></a>
+                <ul class="sous">
+                    <li><a href="index.php?module=ModConnexion">Connexion</a></li>
+                    <li><a href="index.php?module=ModInscription">Inscription</a></li>
+                </ul>
+            </li>
+        </ul>';
+    }
+    else {
+        echo '<ul>
+            <li class="deroulant"><img src="Images/agenda.png"><a href="#"></a>
+                <ul class="sous">
+                    <li><a href="index.php?module=ModProfil">Mon compte</a></li>
+                    <li><a href="index.php?module=ModConnexion&action=deconnexion">Deconnexion</a></li>
+                </ul>
+            </li>
+        </ul>';
+    }?>
 
-</div>
+</nav>
