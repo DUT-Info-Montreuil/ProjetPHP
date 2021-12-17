@@ -1,7 +1,7 @@
 <?php
 
 class Vue {
-    public static function render($path,$data=null){
+    public static function render($path,$data=[]){
         ob_start();
         include_once "./Vue/$path";
         $contenu = ob_get_clean();

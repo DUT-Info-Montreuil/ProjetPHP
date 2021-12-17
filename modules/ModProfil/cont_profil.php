@@ -1,6 +1,6 @@
 <?php
 require_once './modules/ModProfil/modele_profil.php';
-require_once './modules/ModProfil/vue_profil.php';
+require_once './Vue/vue_profil.php';
 class ContProfil{
 
     private $modele;
@@ -14,6 +14,8 @@ class ContProfil{
     public function monProfil($login)
     {
         $Profil = $this->modele->getProfil($login);
+        var_dump($Profil);
+        exit();
         $this->vue->afficherProfil($Profil);
     }
     public function formulaireModif() {

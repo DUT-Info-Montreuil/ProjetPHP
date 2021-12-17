@@ -17,9 +17,12 @@ class ModProfil
         switch ($action) {
             case 'Profil':
                //$this -> controleur ->monProfil2();
+                var_dump($_SESSION['login']);
+                exit();
                 if(isset($_SESSION['login'])){
                     $username = $_SESSION['login'];
-                    $this -> controleur -> monProfil($username);
+                    echo "connecte";
+                    $this->controleur->monProfil($username);
                 }
                 break;
             case 'FormModifProfil':
