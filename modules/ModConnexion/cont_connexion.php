@@ -14,8 +14,7 @@ class ContConnexion {
 
     function test_connexion () {
         if(isset($_SESSION['login'])) {
-            require_once "./Vue/Affichage/profil.php";
-            $this->vue->form_deconnexion();
+           $this->vue->form_profil();
         }
         else {
             $this->vue->form_connexion();

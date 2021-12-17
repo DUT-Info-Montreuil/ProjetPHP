@@ -1,5 +1,8 @@
 footer p {
     color: white;
-    margin-top: 5%;
+    margin-top: 100px;
     text-align: center;
+}
+footer {
+    margin-bottom: 100px;
 }

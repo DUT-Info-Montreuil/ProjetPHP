@@ -7,19 +7,15 @@ body {
     width: 80%;
 }
 
-#titre {
-    color: #FF7B7B;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 32px;
+#image {
+    position: relative;
+    width: 50px;
+    right: 100px;
 }
 
-.monCompte {
-    color: #FF7B7B;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 32px;
-    margin-left: 30%;
+.containerListe {
+    position: relative;
+    top: 0px;
 }
 
 
@@ -28,8 +24,8 @@ nav ul{
 }
 
 nav ul li{
-    float: left;
-    width: 25%;
+    float: right;
+    width: 130px;
     text-align: center;
     position: relative;
 }
@@ -50,7 +46,6 @@ nav a{
 
 nav a:hover{
     color: orange;
-    border-bottom: 2px solid gold;
 }
 
 .sous{
@@ -75,15 +70,17 @@ nav > ul li:hover .sous{
 }
 .sous a:hover{
     border-bottom: none;
-    background-color: RGBa(200,200,200,0.1);
 }
-.deroulant > a::after{
-    content:" ▼";
-    font-size: 12px;
-}
+
 
 .conteneur{
     margin: 50px 20px;
     height: 1500px;
 }
 
+#titre {
+    color: #FF7B7B;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 32px;
+}

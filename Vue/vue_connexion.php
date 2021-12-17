@@ -7,8 +7,8 @@ class VueConnexion {
         Vue::render("Affichage/connexion.php",["titre"=>"Connexion"]);
     }
 
-    function form_deconnexion() {
-        Vue::render("Affichage/deconnexion.php");
+    function form_profil() {
+        Vue::render("Affichage/profil.php",["titre"=>"Mon Profil"]);
     }
 }
 
