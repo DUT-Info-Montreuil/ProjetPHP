@@ -3,14 +3,14 @@
     <form action="index.php?module=ModInscription&action=inscription" method="POST">
         <h1>Inscription</h1>
 
-        <input type="radio" id="choix1" class="civilite" name="civilite" value="monsieur">
+        <input type="radio" id="choix1" class="civilite" name="civilite" value="monsieur" required>
         <label for="choix1">Mr</label>
 
-        <input type="radio" id="choix2" class="civilite" name="civilite" value="madame">
+        <input type="radio" id="choix2" class="civilite" name="civilite" value="madame" required>
         <label for="choix2">Mme</label>
 
         <label id="LabelPoste">Poste</label>
-        <select name="poste">
+        <select name="poste" required>
             <option value="Att">Attaquant</option>
             <option value="Mil">Milieux</option>
             <option value="Def">Défenseur</option>

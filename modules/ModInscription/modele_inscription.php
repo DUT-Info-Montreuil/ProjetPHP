@@ -12,6 +12,8 @@ class ModeleInscription extends Connexion {
         $requete->execute();
         $login=self::$bdd->lastInsertId();
 
+
+
         $requete2= self::$bdd->prepare("INSERT INTO Utilisateur (`prenom`, `nom`, `age`, `sexe`, `ville`, `posteMatch`, `login`) VALUES ( :prenom, :nom, :age, :sexe, :ville, :poste, :login);");
         $requete2->bindParam('prenom',$prenom);
         $requete2->bindParam('nom',$nom);
