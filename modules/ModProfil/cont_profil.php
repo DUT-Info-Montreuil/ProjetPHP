@@ -20,7 +20,7 @@ class ContProfil{
         $this -> vue -> afficherFormulaireModifier();
     }
 
-
+/*
     public function monProfil2()
     {
         $Profil = $this->modele->getProfil2();
@@ -28,6 +28,6 @@ class ContProfil{
     }
 
 
-
+*/
 }
 

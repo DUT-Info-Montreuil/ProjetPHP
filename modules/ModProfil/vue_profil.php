@@ -1,21 +1,19 @@
 <?php
+require_once "./Vue/Affichage/profil.php";
 
-class VueProfil {
+class VueProfil
+{
 
-    public function __construct(){
 
-    }
-    function afficherProfil($Profil)
+    function afficherProfil($profil)
     {
-?>
+        Vue::render('profil.php', $profil);
 
-<?php
     }
-        function afficherFormulaireModifier(){
-        require_once './modules/Affichage/formulaireModifProfil.html';
-?>
 
-<?php
-     }
+    function afficherFormulaireModifier()
+    {
+        require_once './modules/Affichage/formulaireModifProfil.html';
+
+    }
 }
-?>
