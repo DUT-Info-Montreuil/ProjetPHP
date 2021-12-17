@@ -8,6 +8,8 @@
 <body>
 <nav>
     <a href="index.php?module=ModAccueil" id="titre">BasicFoot</a>
+
+    <!-- https://www.pierre-giraud.com/html-css-apprendre-coder-cours/creation-menu-deroulant/-->
     <?php
     if(empty($_SESSION['login'])) {
         echo '<ul>
