@@ -25,6 +25,19 @@ class ModProfil
             case 'FormModifProfil':
                 $this -> controleur-> formulaireModif();
                 break;
+            case 'ModificationBD':
+                if(isset($_SESSION['login'])){
+                    $oldpseudo = $_SESSION['login'];
+                }
+                $pseudo = htmlspecialchars($_POST['civiliteNv']);
+                $nom = htmlspecialchars($_POST['nomModif']);
+                $prenom = htmlspecialchars($_POST['prenomModif']);
+                $mdp = hash('sha256', $_POST['mdpModif']);
+                $mailo = htmlspecialchars($_POST['mailModif']);
+                $adresse = htmlspecialchars($_POST['adresseModif']);
+                $tel = htmlspecialchars($_POST['telModif']);
+                $this -> controleur -> BdModificaton($pseudo,$mdp,$mailo,$nom,$prenom,$adresse,$tel,$oldpseudo);
+                break;
         }
 
     }
