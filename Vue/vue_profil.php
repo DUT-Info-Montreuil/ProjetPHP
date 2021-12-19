@@ -1,5 +1,5 @@
 <?php
-require_once "./Vue/Affichage/profil.php";
+require_once "./Vue/Vue.php";
 
 class VueProfil
 {
@@ -7,15 +7,13 @@ class VueProfil
 
     function afficherProfil($data)
     {
-        var_dump($data);
-        die();
-        Vue::render('profil.php', $data);
-
+        Vue::render("Affichage/profil.php", $data);
     }
+
 
     function afficherFormulaireModifier()
     {
-        require_once './modules/Affichage/formulaireModifProfil.html';
+        require_once 'Affichage/formulaireModifProfil.php';
 
     }
 }

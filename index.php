@@ -19,7 +19,7 @@ switch ($module) {
     case "ModProfil":
         require_once "./modules/$module/$module.php";
         new $module();
-        break;
+    break;
     default :
         die("Interdiction d'accès");
 }

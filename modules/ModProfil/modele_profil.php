@@ -11,23 +11,13 @@ class ModeleProfil extends Connexion
 
     function getProfil($login)
     {
-        $sql = 'SELECT * from Utilisateur WHERE login = ?';
+        $sql = 'select * from utilisateur natural join identifiants where login = ?';
         $req = self::$bdd->prepare($sql);
         $req->execute(array($login));
         $infoProfil = $req->fetch();
         return $infoProfil;
     }
-/*
-    public function getProfil2()
-    {
-        $req =self::$bdd->prepare('SELECT * FROM Utilisateur where login="osalek"') ;
-        $req->execute();
-        $res = $req->fetch();
-        return $res;
 
-    }
-
-*/
 
 
 }

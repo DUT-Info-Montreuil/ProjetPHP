@@ -9,6 +9,7 @@ class VueConnexion {
 
     function form_deconnexion() {
         Vue::render("Affichage/deconnexion.php");
+
     }
 }
 

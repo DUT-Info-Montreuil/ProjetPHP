@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./Vue/Affichage/Css/profil.css" type="text/css" />
+    <title><?= $data['titre']?></title>
+</head>
+<body>
+
 <section>
     <div id="p1">
         <p>Mon Profil </p>

@@ -16,31 +16,29 @@ class ModProfil
         }
         switch ($action) {
             case 'Profil':
-               //$this -> controleur ->monProfil2();
-                var_dump($_SESSION['login']);
-                exit();
                 if(isset($_SESSION['login'])){
                     $username = $_SESSION['login'];
-                    echo "connecte";
                     $this->controleur->monProfil($username);
                 }
+
                 break;
             case 'FormModifProfil':
                 $this -> controleur-> formulaireModif();
                 break;
-            case 'ModificationBD':
+            case 'ModificationProfil':
+                /*
                 if(isset($_SESSION['login'])){
-                    $oldpseudo = $_SESSION['login'];
+                    $oldlogin = $_SESSION['login'];
                 }
-                $pseudo = htmlspecialchars($_POST['civiliteNv']);
+                $login = htmlspecialchars($_POST['civiliteNv']);
                 $nom = htmlspecialchars($_POST['nomModif']);
-                $prenom = htmlspecialchars($_POST['prenomModif']);
-                $mdp = hash('sha256', $_POST['mdpModif']);
-                $mailo = htmlspecialchars($_POST['mailModif']);
-                $adresse = htmlspecialchars($_POST['adresseModif']);
-                $tel = htmlspecialchars($_POST['telModif']);
-                $this -> controleur -> BdModificaton($pseudo,$mdp,$mailo,$nom,$prenom,$adresse,$tel,$oldpseudo);
+                $prenom = htmlspecialchars($_POST['prenomNv']);
+                $mdp = hash('sha256', $_POST['mdpNv']);
+                $mailo = htmlspecialchars($_POST['mailNv']);
+                $adresse = htmlspecialchars($_POST['adresseNv']);
+                $this -> controleur -> ModifierProfil($login,$mdp,$mailo,$nom,$prenom,$adresse,$oldlogin);
                 break;
+               */
         }
 
     }

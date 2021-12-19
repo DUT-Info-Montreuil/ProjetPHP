@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<title>Modification Profil</title>
 		<!-- Styles -->
-	<link rel="stylesheet" href="./modules/Affichage/Css/StyleModification.css" type="text/css" />
+    <link rel="stylesheet" href="./Vue/Affichage/Css/StyleModification.css" type="text/css" />
 
 </head>
 	<body>
