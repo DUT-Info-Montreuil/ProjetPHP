@@ -6,30 +6,38 @@
     <title><?= $data['titre']?></title>
 </head>
 <body>
-<nav>
+<header id="navbar" class="nav">
     <a href="index.php?module=ModAccueil" id="titre">BasicFoot</a>
+    <div class="deroulant">
+        <button id="buttonImage"><img src="Vue/Affichage/Images/compte.png" id="image"></button>
+        <button id="buttonSimple">Mon compte</button>
+        <div class="content">
+            <?php
+                if(empty($_SESSION['login'])) {
+                    echo '<a href="index.php?module=ModConnexion">Connexion</a>
+                    <a href="index.php?module=ModInscription">Inscription</a>';
+                }
+                else {
+                    echo '<a href="index.php?module=ModProfil">Mon compte</a>
+                        <a href="index.php?module=ModConnexion&action=deconnexion">Deconnexion</a>';
+                }?>
 
-    <!-- https://www.pierre-giraud.com/html-css-apprendre-coder-cours/creation-menu-deroulant/-->
-    <?php
-    if(empty($_SESSION['login'])) {
-        echo '<ul class="containerListe">
-            <li class="deroulant"><img src="./Vue/Affichage/Images/compte.png" id="image"><a href="#"></a>
-                <ul class="sous">
-                    <li><a href="index.php?module=ModConnexion">Connexion</a></li>
-                    <li><a href="index.php?module=ModInscription">Inscription</a></li>
-                </ul>
-            </li>
-        </ul>';
+        </div>
+    </div>
+
+    <a class="icon" onclick="myFunction()">&#9776</a>
+</header>
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("navbar");
+        if (x.className === "nav") {
+            x.className += " responsive";
+        } else {
+            x.className = "nav";
+        }
     }
-    else {
-        echo '<ul class="containerListe">
-            <li class="deroulant"><img src="Images/agenda.png"><a href="#"></a>
-                <ul class="sous">
-                    <li><a href="index.php?module=ModProfil">Mon compte</a></li>
-                    <li><a href="index.php?module=ModConnexion&action=deconnexion">Deconnexion</a></li>
-                </ul>
-            </li>
-        </ul>';
-    }?>
+</script>
 
-</nav>
+
+<!-- https://www.pierre-giraud.com/html-css-apprendre-coder-cours/creation-menu-deroulant/-->

@@ -29,10 +29,11 @@ class ContInscription {
 
         try {
             $this->modele->inscription($prenom,$nom,$age,$sexe,$ville,$poste,$login,$password);
-            echo "Votre compte est maintenant cree";
+            $this->vue->form_script_reussi();
+            $this->vue->form_connexion();
         }
         catch (Exception $e) {
-            echo "Impossible, le login $login existe deja";
+            $this->vue->form_script_loginExistant($login);
             $this->vue->form_inscription();
         }
     }

@@ -36,14 +36,14 @@ class ContConnexion {
                 $this->test_connexion();
             }
             else {
-                echo "mdp pas bon";
+                $this->vue->form_script_mdp_incorrect();
                 $this->vue->form_connexion();
             }
         }
 
         else {
-            echo "Login incorrecte";
-            $this->test_connexion();
+            $this->vue->form_script_login_incorrect($login);
+            $this->vue->form_connexion();
         }
 
     }

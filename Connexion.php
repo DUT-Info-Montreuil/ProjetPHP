@@ -10,10 +10,14 @@ class Connexion {
 
         //test de la connexion 
         try {
-            $dns="mysql:host=database-etudiants.iut.univ-paris8.fr;dbname=dutinfopw201644";
-            $user="dutinfopw201644";
-            $password="rusedyny";
-            self::$bdd = new PDO($dns,$user,$password);
+            //$dns="mysql:host=database-etudiants.iut.univ-paris8.fr;dbname=dutinfopw201644";
+            //$user="dutinfopw201644";
+            //$password="rusedyny";
+            //self::$bdd = new PDO($dns,$user,$password);
+            $dns="mysql:host=localhost;dbname=basicfoot";
+            $user="root";
+            self::$bdd = new PDO($dns,$user);
+
             self::$bdd->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
         }
         catch (PDOException $e) {
