@@ -11,6 +11,10 @@ class VueConnexion {
         Vue::render("Affichage/deconnexion.php");
 
     }
+    function page_connecte(){
+        Vue::render("./Affichage/pageConnecte.php");
+
+    }
 }
 
 ?>

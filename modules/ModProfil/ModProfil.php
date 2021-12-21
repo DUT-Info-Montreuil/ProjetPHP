@@ -20,25 +20,33 @@ class ModProfil
                     $username = $_SESSION['login'];
                     $this->controleur->monProfil($username);
                 }
-
                 break;
             case 'FormModifProfil':
                 $this -> controleur-> formulaireModif();
                 break;
             case 'ModificationProfil':
-                /*
                 if(isset($_SESSION['login'])){
-                    $oldlogin = $_SESSION['login'];
+                    $login = $_SESSION['login'];
                 }
-                $login = htmlspecialchars($_POST['civiliteNv']);
-                $nom = htmlspecialchars($_POST['nomModif']);
+                $nom = htmlspecialchars($_POST['nomNv']);
                 $prenom = htmlspecialchars($_POST['prenomNv']);
-                $mdp = hash('sha256', $_POST['mdpNv']);
-                $mailo = htmlspecialchars($_POST['mailNv']);
-                $adresse = htmlspecialchars($_POST['adresseNv']);
-                $this -> controleur -> ModifierProfil($login,$mdp,$mailo,$nom,$prenom,$adresse,$oldlogin);
+                $age = htmlspecialchars($_POST['ageNv']);
+                $sexe = htmlspecialchars($_POST['civiliteNv']);
+                $posteMatch =htmlspecialchars($_POST['posteNv']);
+                $email = htmlspecialchars($_POST['emailNv']);
+                $ville=htmlspecialchars($_POST['villeNv']);
+                /*
+                $password = hash('SHA256', $_POST['passwordNv']);
+                */
+                $this -> controleur -> ProfilModification($nom,$prenom,$age,$sexe,$posteMatch ,$email,$ville, $login);
                 break;
-               */
+            case 'FormSuppProfil' :
+                if(isset($_SESSION['login'])){
+                    $username = $_SESSION['login'];
+                    $this->controleur->supprimerProfil($username);
+                }
+                break;
+
         }
 
     }

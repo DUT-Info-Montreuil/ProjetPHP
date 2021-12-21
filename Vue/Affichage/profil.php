@@ -6,7 +6,6 @@
     <title><?= $data['titre']?></title>
 </head>
 <body>
-
 <section>
     <div id="p1">
         <p>Mon Profil </p>
@@ -20,9 +19,8 @@
         <h2>Sexe : <?= $data['sexe']?></h2>
         <h2>ville : <?=  $data['ville']?></h2>
         <h2>Poste Match : <?= $data['posteMatch']?></h2>
-        <button id="buttonStyle" type="button"><a id="txt" href="index.php?module=ModProfil&action=FormModifProfil" >
-                Modifier informations</a></button>
-        <button id="buttonStyle" type="button"><a id="txt" href="index.php?module=ModProfil&action=FormModifProfil" >
-                Supprimer  Compte</a></button>
+        <h2>Adresse Email : <?= $data['login']?></h2>
+        <button id="buttonStyle" type="button"><a id="txt" href="index.php?module=ModProfil&action=FormModifProfil" >Modifier informations</a></button>
+        <button id="buttonStyle" type="button"><a id="txt" href="index.php?module=ModProfil&action=FormSuppProfil" >Supprimer  Compte</a></button>
     </div>
 </section>

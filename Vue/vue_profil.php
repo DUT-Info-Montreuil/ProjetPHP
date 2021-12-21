@@ -8,12 +8,17 @@ class VueProfil
     function afficherProfil($data)
     {
         Vue::render("Affichage/profil.php", $data);
+        Vue::render("Affichage/profil.php",["titre"=>"profil"]);
+
     }
 
 
     function afficherFormulaireModifier()
     {
-        require_once 'Affichage/formulaireModifProfil.php';
+        require_once("Affichage/formulaireModifProfil.php");
 
+    }
+    function afficherMessageAlerte(){
+        Vue::render("Affichage/MessageAlerte.php");
     }
 }
