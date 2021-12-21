@@ -15,20 +15,20 @@
     </section>
     <div id="line">
         <hr>
-    <section class="PresentationSite2">
-        <img src="./Vue/Affichage/Images/croix.png" alt="" />
-        <p id="p1">Organisateur de foot ? Vous connaissez ces problèmes !</p>
-        <img src="./Vue/Affichage/Images/croix.png" alt="" />
-        <p>Un invité sur 3 ne réponds pas à vos invitations...</p>
-        <img src="./Vue/Affichage/Images/croix.png" alt="" />
-        <p>Tu dois envoyer des SMS, relancer tout le monde puis compter le nombre de joueurs.</p>
-        <img src="./Vue/Affichage/Images/croix.png" alt="" />
-        <p>Un joueur se désiste le jour J, et vous devez vous débrouiller pour trouver le 10ème</p>
-    </section>
-    <div id="line">
-        <hr>
-    </div>
-    <section class="NosOffres">
+        <section class="PresentationSite2">
+            <img src="./Vue/Affichage/Images/croix.png" alt="" />
+            <p id="p1">Organisateur de foot ? Vous connaissez ces problèmes !</p>
+            <img src="./Vue/Affichage/Images/croix.png" alt="" />
+            <p>Un invité sur 3 ne réponds pas à vos invitations...</p>
+            <img src="./Vue/Affichage/Images/croix.png" alt="" />
+            <p>Tu dois envoyer des SMS, relancer tout le monde puis compter le nombre de joueurs.</p>
+            <img src="./Vue/Affichage/Images/croix.png" alt="" />
+            <p>Un joueur se désiste le jour J, et vous devez vous débrouiller pour trouver le 10ème</p>
+        </section>
+        <div id="line">
+            <hr>
+        </div>
+        <section class="NosOffres">
             <div id="agenda">
                 <img src="./Vue/Affichage/Images/agenda.png" alt="imageAgenda" />
                 <p>Consulter les matches disponibles</p>
@@ -37,14 +37,14 @@
                 <img src="./Vue/Affichage/Images/amis.png" alt="imageAmis" />
                 <p>Ajoutez vos amis, discutez avec eux !</p>
             </div>
-        <div id="invitez">
-            <img src="./Vue/Affichage/Images/invitez.png" alt="imageinvitez" />
-            <p>Invitez vos amis à vous rejoindre votre équipe !</p>
+            <div id="invitez">
+                <img src="./Vue/Affichage/Images/invitez.png" alt="imageinvitez" />
+                <p>Invitez vos amis à vous rejoindre votre équipe !</p>
+            </div>
+        </section>
+        <div id="line">
+            <hr>
         </div>
-    </section>
-    <div id="line">
-        <hr>
-    </div>
 </main>
 
 
