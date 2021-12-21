@@ -83,6 +83,7 @@ header .icon {
 
 @media (max-width: 600px) {
 
+
     header >a,#buttonSimple,#buttonImage{
        display: none;
     }
