@@ -11,7 +11,6 @@ body {
     text-decoration: none;
     font-weight: bold;
     font-size: 2.5em;
-
 }
 
 header {
@@ -24,14 +23,14 @@ header {
     margin-bottom: 70px;
 }
 
+
 #buttonSimple {
     display: none;
 }
 
 #image {
     width: 70px;
-    position: absolute;
-    right: 0;
+
 }
 
 header >a ,header button{
@@ -41,15 +40,24 @@ header >a ,header button{
     text-decoration:none;
 }
 
- .deroulant {
-     position: relative;
-     height: 100%;
-     display: flex;
- }
+.deroulant {
+    position: absolute;
+    height: 100%;
+    display: flex;
+    right: 2%;
+    text-align: center;
+    font-weight: bold;
+}
 
- header .content {
-     display: none;
- }
+#buttonImage {
+    position: relative;
+    right: 0;
+}
+
+
+header .content {
+    display: none;
+}
 
 header button {
     background-color: transparent;
@@ -60,16 +68,16 @@ header button {
     right: 0;
 }
 
- header .deroulant:hover .content  {
-     display: flex;
-     flex-direction: column;
-     position: absolute;
-     background-color: rgb(245,245,245);
-     top: 60px;
-     width: 200%;
-     padding: 10px 15px;
-     z-index: 1000;
- }
+header .deroulant:hover .content  {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: rgb(245,245,245);
+    top: 60px;
+    width: 100%;
+    padding: 10px 15px;
+    z-index: 1000;
+}
 
 
 header .content a {
@@ -86,7 +94,7 @@ header .icon {
 
 
     header >a,#buttonSimple,#buttonImage{
-       display: none;
+        display: none;
     }
 
     header .icon {
