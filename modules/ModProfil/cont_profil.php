@@ -11,17 +11,21 @@ class ContProfil{
         $this->modele = new ModeleProfil();
         $this->vue = new VueProfil();
     }
+
     public function monProfil($login)
     {
-        $Profil = $this->modele->getProfil($login);
-        $this->vue->afficherProfil($Profil);
+        $profil = $this->modele->getProfil($login);
+        $this->vue->afficherProfil($profil);
     }
+
     public function formulaireModif() {
         $this -> vue -> afficherFormulaireModifier();
     }
+
     public function ProfilModification($nomNv,$prenomNv,$ageNv,$sexeNv,$posteNv,$emailNv,$villeNv,$login){
         $this->modele->modifierProfil($nomNv,$prenomNv,$ageNv,$sexeNv,$posteNv,$emailNv,$villeNv,$login);
     }
+
     public function supprimerProfil($login){
         $SupprimerProfil = $this->modele->supprimerLeProfil($login);
         $this->vue->afficherMessageAlerte();

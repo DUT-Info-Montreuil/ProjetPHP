@@ -13,12 +13,7 @@ class ContConnexion {
     }
 
     function test_connexion () {
-        if(isset($_SESSION['login'])) {
-           $this->vue->form_profil();
-        }
-        else {
-            $this->vue->form_connexion();
-        }
+        $this->vue->form_connexion();
     }
 
     function connexion () {
@@ -33,7 +28,7 @@ class ContConnexion {
 
             if($count) {
                 $_SESSION['login']=$login;
-                $this->test_connexion();
+                header('Location: index.php?module=ModProfil');
             }
             else {
                 $this->vue->form_script_mdp_incorrect();

@@ -1,15 +1,5 @@
-body {
-    font-family:'Open Sans',Arial,sans-serif;
-    font-weight:600;
-    margin:0;
-    padding:0;
-    background:#f1f1f1;
-    width: 1200px;
-    margin: auto;
-    background-color: #0f033d;
 
-}
-section{
+.profilSection{
     width: 1200px;
     margin-top:150px;
     display:inline-block;
@@ -18,9 +8,10 @@ section{
     background-color: #5759d9;
     border-radius: 30px;
     color:white;
+    position: relative;
+    left: 20%;
 }
 #formLeft2{
-
     margin-top:30px;
     width:600px;
     height:300px;
@@ -35,10 +26,8 @@ section{
     font-size: 15px;
     float:right;
 }
-.profil{
-    margin-left: 20%;
-}
-section #p1 {
+
+#MonProfil {
     margin-left: 20%;
     margin-top: 5%;
     border-width: 20px;
@@ -53,6 +42,7 @@ section #p1 {
     color:white;
     text-decoration:none;
 }
+
 #buttonStyle{
     border: 0;
     line-height: 2.5;

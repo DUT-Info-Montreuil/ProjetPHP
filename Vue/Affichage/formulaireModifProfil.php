@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-		<meta charset="utf-8">
-		<!-- Styles -->
-        <link rel="stylesheet" href="./Vue/Affichage/Css/StyleModification.css" type="text/css" />
-        <title>Modification Profil</title>
 
-</head>
-	<body>
 		<main>
 		<!-- /Section modification profil -->
-		<section>
+		<section class="profilSection">
 				<div id="topModification">
 				<h2>Modification Profil</h2>
 			</div>
@@ -18,32 +9,25 @@
 					<div>
 					<!--partie à gauche avec nom, civilite, prenom -->
 						<div id="formLeft2">
-							<div id="civiliteNom">
-								<label id="civilite" for="civil" name ="civilite" >Civilité</label>
-								<label for="nom">Nom</label>
-							</div>
-							<div>
-								<select name="civiliteNv" size="1" id="civil">
-                                    <option value="monsieur" label="M"></option>
-									<option value="madame" label="Mme"></option>
-								</select>
-								<input id="nom" type="text" name="nomNv" size="30"/>
-							</div>
-							<label id="prenomlabel" for="prenom">Prenom</label> 
+                            <input type="radio" id="choix1" class="civilite" name="civilite" value="monsieur" required>
+                            <label for="choix1">Mr</label>
+
+                            <input type="radio" id="choix2" class="civilite" name="civilite" value="madame" required>
+                            <label for="choix2">Mme</label>
+
+                            <input id="nom" type="text" name="nomNv" size="30"/>
+                            <label for="nom">Nom</label>
+
 							<input id="prenom" type="text" name="prenomNv" size="49"/>
-							<label id="posteMatchLabel" for="posteMatch">Poste Préféré</label>
-							<div>
-								<input type="radio" id="attaquant" name="posteNv" value="attaquant" checked>
-								<label for="attaquant">attaquant</label>
-							</div>
-							<div>
-								<input type="radio" id="defendeur" name="posteNv" value="defendeur">
-								<label for="defendeur">defendeur</label>
-							</div>
-							<div>
-								<input type="radio" id="gardien" name="posteNv" value="gardien">
-								<label for="gardien">gardien</label>
-							</div>
+							<label id="prenomlabel" for="prenom">Prenom</label>
+
+                            <label id="LabelPoste">Poste</label>
+                            <select name="poste" required>
+                                <option value="Att">Attaquant</option>
+                                <option value="Mil">Milieux</option>
+                                <option value="Def">Défenseur</option>
+                                <option value="G">Gardien</option>
+                            </select>
 						</div>
 						<!--Form à droite avec email, mot de passe ... -->
 						<div id="formRight2">
@@ -54,8 +38,7 @@
 							<label for="email">E-mail</label> 	
 							<input id="email" type="email" name="emailNv" class="" size="47"/>
                             <button id="buttonValidAcc" name="FormModifProfil" type="submit">Je valide mes modifications</button>
-							<button id="buttonStyle" type="button"><a id="txt" href="index.php?module=ModProfil&action=Profil" >
-								Annuler Modification</a></button>
+							<button id="buttonStyle" type="button"><a id="txt" href="index.php?module=ModProfil&action=Profil">Annuler Modification</a></button>
 						</div>
 
 					</div>		

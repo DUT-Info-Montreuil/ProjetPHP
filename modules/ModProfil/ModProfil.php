@@ -8,12 +8,15 @@ class ModProfil
 
     public function __construct()
     {
+
         $this->controleur = new ContProfil();
         if (isset($_GET['action'])) {
             $action = $_GET['action'];
         } else {
             $action = "Profil";
         }
+
+
         switch ($action) {
             case 'Profil':
                 if(isset($_SESSION['login'])){

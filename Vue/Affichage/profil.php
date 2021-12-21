@@ -1,5 +1,5 @@
-<section>
-    <div id="p1">
+<section class="profilSection">
+    <div id="MonProfil">
         <p>Mon Profil </p>
     </div>
     <div id="formLeft2">
