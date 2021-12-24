@@ -10,7 +10,9 @@ if (!empty($liste)): ?>
         <tr>
             <th scope="col">Nom</th>
             <th scope="col">Prenom</th>
-            <th scope="col">Supprimer</th>
+            <th scope="col">Supprimer Ami</th>
+            <th scope="col">Message</th>
+
         </tr>
         </thead>
         <tbody>
@@ -18,7 +20,9 @@ if (!empty($liste)): ?>
             <tr>
                 <td><?= $value['nom'] ?> </td>
                 <td><?= $value['prenom']?></td>
-                <td><button type="submit" class="btn btn-danger "><a id="supprimerAmi" href='?module=ModAmis&action=SupprimerDemande&id=<?= $value['idUtilisateur']?>'>Supprimer</a></button></td>
+                <td><button type="submit" class="btn btn-danger "><a id="supprimerAmi" href='?module=ModAmis&action=SupprimerDemande&id=<?= $value['idUtilisateur']?>'>Retirer</a></button></td>
+                <td><button type="submit" class="btn btn-info "><a id="envoyerMessage" href='?module=ModAmis&action=EnvoyerMessage&id=<?= $value['idUtilisateur']?>'>Envoyer Messsage</a></button></td>
+
             </tr>
         <?php endforeach; ?>
         </tbody>

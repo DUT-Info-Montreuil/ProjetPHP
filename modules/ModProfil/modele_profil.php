@@ -81,6 +81,14 @@ class ModeleProfil extends Connexion
 
         }
         function supprimerLeProfil($login){
+            $sql2 = 'DELETE FROM etreAmi WHERE idUtilisateur IN (select idUtilisateur from utilisateur INNER JOIN identifiants ON identifiants.idLogin = utilisateur.idLogin WHERE identifiants.login = ?)';
+            $req2 = self::$bdd->prepare($sql2);
+            $req2->execute(array($login));
+
+            $sql3 = 'DELETE FROM etreAmi WHERE idUtilisateur_1 IN (select idUtilisateur from utilisateur INNER JOIN identifiants ON identifiants.idLogin = utilisateur.idLogin WHERE identifiants.login = ?)';
+            $req3 = self::$bdd->prepare($sql3);
+            $req3->execute(array($login));
+
             $sql = 'DELETE utilisateur, identifiants FROM utilisateur INNER JOIN identifiants ON identifiants.idLogin = utilisateur.idLogin WHERE identifiants.login = ?';
             $req = self::$bdd->prepare($sql);
             $req->execute(array($login));

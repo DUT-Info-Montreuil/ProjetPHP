@@ -29,7 +29,7 @@ class ModeleAmis extends Connexion
     }
     public function getDemandesAmis($login)
     {
-    $req=self::$bdd->prepare("SELECT * from utilisateur where idUtilisateur IN (SELECT idUtilisateur FROM etreami WHERE idUtilisateur_1 = (SELECT idUtilisateur from utilisateur natural join identifiants where login=:login))");
+    $req=self::$bdd->prepare("SELECT * from utilisateur where idUtilisateur IN (SELECT idUtilisateur FROM etreami WHERE idUtilisateur_1 = (SELECT idUtilisateur from utilisateur natural join identifiants where login=:login) and testerValidation=0)");
     $req->bindParam('login',$login);
     $req->execute();
     $res = $req->fetchAll();
@@ -50,6 +50,7 @@ class ModeleAmis extends Connexion
         $res = $req->fetchAll();
         return $res;
     }
+
 }
 
 
