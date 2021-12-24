@@ -18,7 +18,7 @@ class ModeleProfil extends Connexion
             return $req->fetch();
     }
 
-    function modifierProfil($nomNv, $prenomNv, $ageNv, $sexeNv, $posteNv,$emailNv,$villeNv,$login)
+    function modifierProfil($nomNv, $prenomNv, $ageNv, $sexeNv, $posteNv,$emailNv,$villeNv,$passwordNv,$login)
     {
             $ChangementLogin=false;
             if (!empty($_POST['nomNv'])) {
@@ -62,6 +62,14 @@ class ModeleProfil extends Connexion
                     a.login=? WHERE a.login =? ';
             $req = self::$bdd->prepare($sql);
             $req->execute(array($emailNv, $login));
+            Vue::render("Affichage/MessageAlerte.php");
+            $ChangementLogin=true;
+            }
+            if (!empty($_POST['passwordNv'])) {
+            $sql = 'UPDATE  identifiants a SET
+                    a.password=? WHERE a.login =? ';
+            $req = self::$bdd->prepare($sql);
+            $req->execute(array($passwordNv, $login));
             Vue::render("Affichage/MessageAlerte.php");
             $ChangementLogin=true;
             }

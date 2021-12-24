@@ -1,41 +1,170 @@
+.coming-soon-cover img,
+.email-detail-attachment .email-attachment .document-file img,
+.email-sender-img img,
+.friend-list .friend-img img,
+.profile-header-img img {
+    max-width: 100%;
+}
+.table.table-profile .value {
+    font-weight: 500;
+}
+.profile-header  {
+    position: relative;
+    overflow: hidden;
+}
+.profile-header .profile-header-cover {
+    background: url(https://bootdey.com/img/Content/bg1.jpg) center no-repeat;
+    background-size: 100% auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.profile-header .profile-header-cover:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.25) 0, rgba(0, 0, 0, 0.85) 100%);
+}
+.profile-header .profile-header-content,
+.profile-header .profile-header-tab,
+.profile-header-img,
+body .fc-icon {
+    position: relative;
+}
+.profile-header .profile-header-tab {
+    background: #fff;
+    list-style-type: none;
+    margin: -1.25rem 0 0;
+    padding: 0 0 0 8.75rem;
+    border-bottom: 1px solid #c8c7cc;
+    white-space: nowrap;
+}
+.profile-header .profile-header-tab > li {
+    display: inline-block;
+    margin: 0;
+}
+.profile-header .profile-header-tab  > li > a {
+    cursor: pointer; color: #08026c;
+    transition: all .1s;
+    border-bottom: 3px solid #ff0000;
+
+}
+.profile-header .profile-header-tab > li.active > a,
+.profile-header .profile-header-tab > li > a.active {
+    color: #007aff;
+}
+.profile-header .profile-header-content:after,
+.profile-header .profile-header-content:before {
+    content: "";
+    display: table;
+    clear: both;
+}
+.profile-header .profile-header-content {
+    color: #fff;
+    padding: 1.25rem;
+}
+body .fc th a,
+body .fc-ltr .fc-basic-view .fc-day-top .fc-day-number,
+body .fc-widget-header a {
+    color: #000;
+}
+.profile-header-img {
+    float: left;
+    width: 7.5rem;
+    height: 7.5rem;
+    overflow: hidden;
+    z-index: 10;
+    margin: 0 1.25rem -1.25rem 0;
+    padding: 0.1875rem;
+    -webkit-border-radius: 0.25rem;
+    -moz-border-radius: 0.25rem;
+    border-radius: 0.25rem;
+    background: #fff;
+}
+
+.profile-container {
+    padding: 1.5625rem;
+}
+@media (max-width: 967px) {
+    .profile-header-img {
+        width: 5.625rem;
+        height: 5.625rem;
+        margin: 0;
+    }
+    .profile-header-info {
+        margin-left: 6.5625rem;
+        padding-bottom: 0.9375rem;
+    }
+    .profile-header .profile-header-tab {
+        padding-left: 0;
+    }
+}
+@media (max-width: 767px) {
+    .profile-header .profile-header-cover {
+        background-position: top;
+    }
+    .profile-header-img {
+        width: 3.75rem;
+        height: 3.75rem;
+        margin: 0;
+    }
+    .profile-header-info {
+        margin-left: 4.6875rem;
+        padding-bottom: 0.9375rem;
+    }
+    .profile-header-info h4 {
+        margin: 0 0 0.3125rem;
+    }
+    .profile-header .profile-header-tab {
+        white-space: nowrap;
+        overflow: scroll;
+        padding: 0;
+    }
+    .profile-container {
+        padding: 0.9375rem 0.9375rem 3.6875rem;
+    }
+
+}
 
 .profilSection{
-    width: 1200px;
-    margin-top:150px;
-    display:inline-block;
-    margin-bottom:20px;
-    padding-bottom:20px;
-    background-color: #5759d9;
-    border-radius: 30px;
-    color:white;
-    position: relative;
-    left: 20%;
+    width: 1115px;
+    margin-top: -3.50%;
+    margin-left: -3.50%;
+    background-color: bisque;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color:black;
+    font-size: 20px;
+    position: center;
+    border-right: 100px solid transparent;
+    border-bottom: 30px solid #057a61;
+    border-left: 100px solid transparent;
+    border: thick double #32a1ce;
+
 }
-#formLeft2{
+.profilSection p {
+    margin-top: 20px;
+    padding-bottom:5px;
+
+
+}
+
+#formLeft3{
     margin-top:30px;
-    width:600px;
     height:300px;
-    margin-left:30px;
+    margin-left:40px;
     display:inline-block;
 }
-#formRight2{
+#formRight4{
     margin-top:30px;
     display:inline-block;
     width:500px;
-    margin-right:30px;
-    font-size: 15px;
     float:right;
-}
-
-#MonProfil {
-    margin-left: 20%;
-    margin-top: 5%;
-    border-width: 20px;
-    border-style: solid;
-    margin-right: 60%;
-    text-align: center;
-    border-color: #130255;
-    border-radius: 25px;
 }
 
 #txt{
@@ -43,11 +172,12 @@
     text-decoration:none;
 }
 
+
 #buttonStyle{
     border: 0;
     line-height: 2.5;
     padding: 0 20px;
-    margin-top: 5%;
+    margin-top: 3%;
     margin-left: 20%;
     font-size: 1rem;
     text-align: center;

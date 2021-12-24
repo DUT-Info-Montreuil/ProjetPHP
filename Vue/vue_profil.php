@@ -12,8 +12,9 @@ class VueProfil
 
     }
 
-    function afficherFormulaireModifier(){
-        Vue::render("Affichage/formulaireModifProfil.php",["titre"=>"Modification"] );
+    function afficherFormulaireModifier($data){
+        $data["titre"]="Modification";
+        Vue::render("Affichage/formulaireModifProfil.php",$data);
 
     }
     function afficherMessageAlerte(){

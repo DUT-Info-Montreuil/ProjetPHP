@@ -10,7 +10,7 @@ header('Refresh:3;url=index.php?module=ModConnexion&action=deconnexion');
 <body>
 <div class="alert">
     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-    <strong>Attention !</strong> En raison de sécurité vous allez se reconnecter .
+    <strong>Attention !</strong> En raison de sécurité vous allez devoir se reconnecter .
 </div>
 </body>
 </html>

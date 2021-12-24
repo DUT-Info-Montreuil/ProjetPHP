@@ -25,7 +25,8 @@ class ModProfil
                 }
                 break;
             case 'FormModifProfil':
-                $this -> controleur-> formulaireModif();
+                $username = $_SESSION['login'];
+                $this -> controleur-> formulaireModif($username);
                 break;
             case 'ModificationProfil':
                 if(isset($_SESSION['login'])){
@@ -38,10 +39,8 @@ class ModProfil
                 $posteMatch =htmlspecialchars($_POST['posteNv']);
                 $email = htmlspecialchars($_POST['emailNv']);
                 $ville=htmlspecialchars($_POST['villeNv']);
-                /*
-                $password = hash('SHA256', $_POST['passwordNv']);
-                */
-                $this -> controleur -> ProfilModification($nom,$prenom,$age,$sexe,$posteMatch ,$email,$ville, $login);
+                $password = password_hash( $_POST['passwordNv'],PASSWORD_DEFAULT);
+                $this -> controleur -> ProfilModification($nom,$prenom,$age,$sexe,$posteMatch ,$email,$ville,$password, $login);
                 break;
             case 'FormSuppProfil' :
                 if(isset($_SESSION['login'])){
