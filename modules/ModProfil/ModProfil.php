@@ -43,10 +43,8 @@ class ModProfil
                 $this -> controleur -> ProfilModification($nom,$prenom,$age,$sexe,$posteMatch ,$email,$ville,$password, $login);
                 break;
             case 'FormSuppProfil' :
-                if(isset($_SESSION['login'])){
                     $username = $_SESSION['login'];
                     $this->controleur->supprimerProfil($username);
-                }
                 break;
 
         }
