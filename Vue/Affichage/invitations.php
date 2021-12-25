@@ -20,7 +20,7 @@ if (!empty($liste)): ?>
                 <td><?= $value['nom'] ?> </td>
                 <td><?= $value['prenom']?></td>
                 <td><button type="submit" class="btn btn-success "><a id="accepterDemande" href='?module=ModAmis&action=AccepterDemande&id=<?= $value['idUtilisateur']?>'>Accepter</a></button></td>
-                <td><button type="submit" class="btn btn-danger"><a id="refuserDemande" href='?module=ModAmis&action=RefuserDemande&id=<?= $value['idUtilisateur']?>'>Refuser</a></button></td>
+                <td><button type="submit" class="btn btn-danger"><a id="refuserDemande" href='?module=ModAmis&action=RetirerAmi&id=<?= $value['idUtilisateur']?>'>Refuser</a></button></td>
             </tr>
         <?php endforeach; ?>
         </tbody>

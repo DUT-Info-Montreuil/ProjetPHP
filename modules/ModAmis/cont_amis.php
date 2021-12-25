@@ -32,13 +32,14 @@ class ContAmis
     }
     public function listeDemandesAmis($login){
         $demandesAmi = $this->modele->getDemandesAmis($login);
+
         $this->vue->afficherLesDemandesAmi($demandesAmi);
     }
-    public function accepterDemande(){
+    public function accepterDemande($login){
         $idAmi=$_GET["id"];
         $val =1;
         try {
-            $this->modele->accepterInvitation($idAmi, $val);
+            $this->modele->accepterInvitation($idAmi,$login, $val);
             echo "demande est Acceptée";
         }
         catch (Exception $e) {
@@ -48,6 +49,17 @@ class ContAmis
     public function listeAmis($login){
         $listeAmis = $this->modele->getListeAmis($login);
         $this->vue->afficherMesAmis($listeAmis);
+    }
+    public function retirerAmiDeLaListe($login){
+        $idAmi=$_GET["id"];
+        try {
+            $this->modele->retirerDeListe($idAmi, $login);
+            echo "utilisateur est Retirée";
+        }
+        catch (Exception $e) {
+            echo "Impossible de la retirer ";
+        }
+
     }
 
 }

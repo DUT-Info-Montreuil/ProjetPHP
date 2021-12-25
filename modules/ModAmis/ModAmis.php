@@ -29,10 +29,13 @@ class ModAmis
                 $this->controleur->listeDemandesAmis($username);
                 break;
             case 'AccepterDemande':
-                $this->controleur->accepterDemande();
+                $this->controleur->accepterDemande($username);
                 break;
             case 'TousMesAmis':
                 $this->controleur->listeAmis($username);
+                break;
+            case 'RetirerAmi':
+                $this->controleur->retirerAmiDeLaListe($username);
                 break;
         }
 
