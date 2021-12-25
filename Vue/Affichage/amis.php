@@ -3,7 +3,7 @@
 </head>
 <body id="body">
 <?php
-$liste = $data;
+$liste = $data["liste"];
 if (!empty($liste)): ?>
 <div class="container mt-5">
     <table class="table table-striped borderStyleTable">

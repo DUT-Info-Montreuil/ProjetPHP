@@ -4,21 +4,27 @@ require_once "./Vue/Vue.php";
 class VueAmis
 {
 
-    function afficherLesUtilisateurs($data)
+    function afficherLesUtilisateurs($liste)
     {
-
-        Vue::render("Affichage/utilisateurs.php",$data);
-
+        $data["titre"] = "utilisateurs";
+        $data["liste"] = $liste;
+        Vue::render("Affichage/utilisateurs.php", $data);
     }
-    function afficherLesDemandesAmi($data){
 
-        Vue::render("Affichage/invitations.php",$data);
-
-    }
-    function afficherMesAmis($data){
-
-        Vue::render("Affichage/amis.php",$data);
+    function afficherLesDemandesAmi($liste)
+    {
+        $data["titre"] = "Invitations";
+        $data["liste"] = $liste;
+        Vue::render("Affichage/invitations.php", $data);
 
     }
 
+    function afficherMesAmis($liste)
+    {
+        $data["titre"] = "Mes Amis";
+        $data["liste"] = $liste;
+        Vue::render("Affichage/amis.php", $data);
+
+
+    }
 }

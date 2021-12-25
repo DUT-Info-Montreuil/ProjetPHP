@@ -3,7 +3,7 @@
 </head>
 <body id="body">
     <?php
-    $liste = $data;
+    $liste = $data["liste"];
     if (!empty($liste)): ?>
         <div class="container mt-5">
         <table class="table table-striped borderStyleTable">
@@ -16,7 +16,6 @@
         </thead>
         <tbody>
         <?php foreach ($liste as $value): ?>
-
                 <tr>
                     <td><?= $value['nom'] ?> </td>
                     <td><?= $value['prenom']?></td>
