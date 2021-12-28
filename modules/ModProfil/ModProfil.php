@@ -46,7 +46,9 @@ class ModProfil
                     $username = $_SESSION['login'];
                     $this->controleur->supprimerProfil($username);
                 break;
-
+            case 'ConsulterProfil':
+                $this->controleur->profilUtilisateur();
+                break;
         }
 
     }

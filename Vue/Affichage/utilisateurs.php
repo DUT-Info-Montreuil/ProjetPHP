@@ -19,10 +19,10 @@
                 <tr>
                     <td><?= $value['nom'] ?> </td>
                     <td><?= $value['prenom']?></td>
-                    <td><button type="submit" class="btn btn-info "><a id="consulterProfil" href='?action=details&id=$value[idLogin]'>Consulter Profil</a></button></td>
+                    <td><button type="submit" class="btn btn-info "><a id="consulterProfil" href='?module=ModProfil&action=ConsulterProfil&id=<?= $value['idUtilisateur']?>'>Consulter Profil</a></button></td>
                     <td><button type="submit" class="btn btn-success "><a id="ajouterAmis" href='?module=ModAmis&action=EnvoyerDemande&id=<?= $value['idUtilisateur']?>'>Ajouter Amis</a></button></td>
                 </tr>
-            <?php endforeach; ?>
+        <?php endforeach; ?>
         </tbody>
         </table>
     <?php else: ?>

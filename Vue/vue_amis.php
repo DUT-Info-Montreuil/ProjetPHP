@@ -25,6 +25,6 @@ class VueAmis
         $data["liste"] = $liste;
         Vue::render("Affichage/amis.php", $data);
 
-
     }
+
 }

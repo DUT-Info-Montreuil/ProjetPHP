@@ -31,6 +31,11 @@ class ContProfil{
         $SupprimerProfil = $this->modele->supprimerLeProfil($login);
         $this->vue->afficherMessageAlerte();
     }
+    public function profilUtilisateur(){
+        $idUtilisateur=$_GET["id"];
+        $ProfilUtilisateur= $this->modele->getUtilisateur($idUtilisateur);
+        $this->vue->afficherProfilUtilisateur($ProfilUtilisateur);
+    }
 
 }
 

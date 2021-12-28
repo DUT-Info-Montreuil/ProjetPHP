@@ -93,6 +93,13 @@ class ModeleProfil extends Connexion
             $req = self::$bdd->prepare($sql);
             $req->execute(array($login));
         }
+        function getUtilisateur($idUtilisateur){
+        $req = self::$bdd->prepare("SELECT * FROM utilisateur natural join identifiants where idUtilisateur=:idUtilisateur");
+        $req->bindParam('idUtilisateur', $idUtilisateur);
+        $req->execute();
+        $res = $req->fetch();
+        return $res;
+    }
 
 }
 ?>

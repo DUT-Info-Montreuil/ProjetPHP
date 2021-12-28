@@ -79,5 +79,6 @@ class ModeleAmis extends Connexion
         $req2->bindParam('login', $login);
         $req2->execute();
     }
+
 }
 
