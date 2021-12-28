@@ -1,0 +1,40 @@
+.borderStyleTable {
+    border: none;
+    border-radius: 20px;
+    width: 100%;
+    border: thick double #32a1ce;
+    background-color: #fff;
+
+}
+#consulterProfil{
+    color: #050141;
+    text-decoration: none;
+}
+#ajouterAmis{
+    color: #ffffff;
+    text-decoration: none;
+}
+#consulterProfil{
+    color: #050141;
+    text-decoration: none;
+}
+#ajouterAmis{
+    color: #ffffff;
+    text-decoration: none;
+}
+#accepterDemande{
+    color: #ffffff;
+    text-decoration: none;
+}
+#refuserDemande{
+    color: #ffffff;
+    text-decoration: none;
+}
+#supprimerAmi{
+    color: #ffffff;
+    text-decoration: none;
+}
+#envoyerMessage{
+    color: #ffffff;
+    text-decoration: none;
+}

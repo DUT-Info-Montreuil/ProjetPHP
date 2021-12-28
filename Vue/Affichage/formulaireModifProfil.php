@@ -1,48 +1,53 @@
 
-		<main>
-		<!-- /Section modification profil -->
-		<section class="profilSection">
-				<div id="topModification">
-				<h2>Modification Profil</h2>
-			</div>
-            <form action="index.php?module=ModProfil&action=ModificationProfil" method="post">
-					<div>
-					<!--partie à gauche avec nom, civilite, prenom -->
-						<div id="formLeft2">
-                            <input type="radio" id="choix1" class="civilite" name="civilite" value="monsieur" required>
-                            <label for="choix1">Mr</label>
+</style>
+<head>
+    <script src="https://kit.fontawesome.com/6440c9a3af.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body id="body">
+<div class="container rounded bg-light mt-3" >
+    <div class="row">
+        <div class="col-md-4 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="https://bootdey.com/img/Content/avatar/avatar7.png" width="90"><?= $data['nom'] ?> <?= $data['prenom'] ?><span class="font-weight-bold"></span><span class="text-black-50"><?= $data['login'] ?></span><span><?= $data['ville'] ?></span></div>
+        </div>
 
-                            <input type="radio" id="choix2" class="civilite" name="civilite" value="madame" required>
-                            <label for="choix2">Mme</label>
+        <div class="col-md-8">
+            <div class="p-3 py-5 ">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="d-flex flex-row align-items-center back"><i class="fa fa-long-arrow-left mr-1 mr mb-1"></i>
+                        <a href="index.php?module=ModProfil&action=Profil" class="btn btn-info" role="button">Annuler Modification</a>
 
-                            <input id="nom" type="text" name="nomNv" size="30"/>
-                            <label for="nom">Nom</label>
+                    </div>
+                </div>
+                <form id="formulaireModif" action="index.php?module=ModProfil&action=ModificationProfil" method="post">
+                <input type="radio" id="choix1" class="civilite" name="civiliteNv" value="monsieur" required>
+                <label for="choix1">Mr</label>
 
-							<input id="prenom" type="text" name="prenomNv" size="49"/>
-							<label id="prenomlabel" for="prenom">Prenom</label>
-
-                            <label id="LabelPoste">Poste</label>
-                            <select name="poste" required>
-                                <option value="Att">Attaquant</option>
-                                <option value="Mil">Milieux</option>
-                                <option value="Def">Défenseur</option>
-                                <option value="G">Gardien</option>
-                            </select>
-						</div>
-						<!--Form à droite avec email, mot de passe ... -->
-						<div id="formRight2">
-							<label for="age">Age</label> 	
-							<input id="age" type="text" name="ageNv" size="47"/>
-                            <label for="ville">ville</label>
-                            <input id="ville" type="ville" name="villeNv" size="47"/>
-							<label for="email">E-mail</label> 	
-							<input id="email" type="email" name="emailNv" class="" size="47"/>
-                            <button id="buttonValidAcc" name="FormModifProfil" type="submit">Je valide mes modifications</button>
-							<button id="buttonStyle" type="button"><a id="txt" href="index.php?module=ModProfil&action=Profil">Annuler Modification</a></button>
-						</div>
-
-					</div>		
-				</form>
-			</main>	
-		</section>
-
+                <input type="radio" id="choix2" class="civilite" name="civiliteNv" value="madame" required>
+                <label for="choix2">Mme</label>
+                <div class="row mt-4 mr-3">
+                    <div class="col-md-6"><input type="text" class="form-control" name="prenomNv" placeholder="Prenom"></div>
+                    <div class="col-md-6"><input type="text" class="form-control" name="nomNv" placeholder="Nom"></div>
+                </div>
+                <label id="LabelPoste">Poste Match : </label>
+                <select name="posteNv" required>
+                    <option value="Att">Attaquant</option>
+                    <option value="Mil">Milieux</option>
+                    <option value="Def">Défenseur</option>
+                    <option value="G">Gardien</option>
+                </select>
+                <div class="row mt-3">
+                    <div class="col-md-6"><input type="text" class="form-control" name="emailNv" placeholder="Email"></div>
+                    <div class="col-md-6"><input type="text" class="form-control"  name="ageNv" placeholder="Age"></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6"><input type="text" class="form-control" name="passwordNv"placeholder="password" ></div>
+                    <div class="col-md-6"><input type="text" class="form-control" name="villeNv" placeholder="Ville"></div>
+                </div>
+                <div class=btn><button class="btn btn-danger "  class="mr-3" name="FormModifProfil" type="submit">Enregistrer Profile</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>

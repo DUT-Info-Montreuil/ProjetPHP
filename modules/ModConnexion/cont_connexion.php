@@ -14,6 +14,7 @@ class ContConnexion {
 
     function test_connexion () {
         $this->vue->form_connexion();
+
     }
 
     function connexion () {
@@ -21,14 +22,18 @@ class ContConnexion {
         $login=$_POST['login'];
         $password=$_POST['password'];
         $user=$this->modele->connexion($login);
-
-
         if(!empty($user)) {
             $count=password_verify($password,$user['password']);
 
             if($count) {
                 $_SESSION['login']=$login;
                 header('Location: index.php?module=ModProfil');
+                if (isset($_POST['check'])){
+                    setcookie('login' , $login ,time()+360*24*3600,null,null,false,true);
+                    setcookie('password' , $password,time()+360*24*3600,null,null,false,true);
+                }
+                exit();
+
             }
             else {
                 $this->vue->form_script_mdp_incorrect();

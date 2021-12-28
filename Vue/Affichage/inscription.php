@@ -1,6 +1,6 @@
 
 <div id="container">
-    <form action="index.php?module=ModInscription&action=inscription" method="POST">
+    <form id="formulaire" action="index.php?module=ModInscription&action=inscription" method="POST">
         <h1>Inscription</h1>
 
         <input type="radio" id="choix1" class="civilite" name="civilite" value="monsieur" required>

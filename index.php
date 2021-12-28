@@ -3,6 +3,7 @@
 require_once "./Connexion.php";
 session_start();
 
+
 if (!isset($_GET['module'])) {
     $module="ModAccueil";
 }
@@ -17,6 +18,7 @@ switch ($module) {
     case "ModInscription":
     case "ModAccueil":
     case "ModProfil":
+    case "ModAmis":
         require_once "./modules/$module/$module.php";
         new $module();
     break;
