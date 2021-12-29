@@ -19,7 +19,8 @@ switch ($module) {
     case "ModAccueil":
     case "ModProfil":
     case "ModAmis":
-        require_once "./modules/$module/$module.php";
+    case "ModMatchs":
+    require_once "./modules/$module/$module.php";
         new $module();
     break;
     default :

@@ -1,0 +1,17 @@
+#mesMatchs {
+    color: #ffffff;
+    display: inline-block;
+    text-decoration: none;
+}
+#rechercherMatchs{
+    color: #ffffff;
+    text-decoration: none;
+}
+#creerMatch{
+    color: #ffffff;
+    text-decoration: none;
+}
+.btn-group-vertical > button{
+    margin-bottom:15px;
+    border-radius:10px !important;
+}

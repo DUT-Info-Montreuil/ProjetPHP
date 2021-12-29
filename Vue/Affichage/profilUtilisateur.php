@@ -41,6 +41,8 @@
                                 <p>Poste Match : <?= $data['posteMatch']?></p>
                                 <p>Adresse Email : <?= $data['login']?></p>
                                 <button id="buttonStyle" type="button"><a id="txt" href="index.php?module=ModAmis&action=TousLesUtilisateurs" >Revenir Au Liste</a></button>
+                                <button id="buttonStyle" type="button"><a id="txt" href="index.php?module=ModAmis&action=NoterUtilisateur" >Noter </a></button>
+
                             </div>
                         </section>
                     </div>

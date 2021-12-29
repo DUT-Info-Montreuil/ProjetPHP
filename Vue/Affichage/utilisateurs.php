@@ -11,7 +11,7 @@
             <th scope="col">Nom</th>
             <th scope="col">Prenom</th>
             <th scope="col">Consuler Profil</th>
-            <th scope="col">Demander invitation</th>
+            <th scope="col">Demande Ami</th>
         </tr>
         </thead>
         <tbody>
