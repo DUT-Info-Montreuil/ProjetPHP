@@ -25,6 +25,7 @@
         <?php endforeach; ?>
         </tbody>
         </table>
+
     <?php else: ?>
             <div class="alert alert-danger mt-5">Aucun utilisateurs</div>
     <?php endif; ?>

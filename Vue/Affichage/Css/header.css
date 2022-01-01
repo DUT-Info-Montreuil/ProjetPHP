@@ -2,7 +2,7 @@ body {
     font-family:'Open Sans',Arial,sans-serif;
     font-weight:300;
     margin:auto;
-    background-color:#130255;
+    background-color:#130255 !important;
     width: 100%;
 }
 

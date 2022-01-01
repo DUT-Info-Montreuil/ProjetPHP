@@ -9,7 +9,7 @@ class ModMatchs
     public function __construct()
     {
         $this->controleur = new ContMatchs();
-        $username = $_SESSION['login'];
+
         if (isset($_GET['action'])) {
             $action = $_GET['action'];
         } else {
@@ -17,7 +17,16 @@ class ModMatchs
         }
         switch ($action) {
             case 'PageMatchs':
-                $this->controleur->pageMatchs($username);
+                $this->controleur->pageMatchs();
+                break;
+            case 'FormulaireCreationMatch':
+                $this->controleur->formulaireMatch();
+                break;
+            case 'CreerMatch':
+                $this->controleur->creerMatch();
+                break;
+            case 'RechercherMatchs' :
+                $this->controleur->rechercherMatchs();
                 break;
         }
     }

@@ -11,4 +11,13 @@ class VueMatchs
         Vue::render("Affichage/matchs.php", $data);
 
     }
+    function afficherFormulaireCreationMatch(){
+        Vue::render("Affichage/creationMatch.php",["titre"=>"Creation Match"]);
+
+    }
+    function afficherLaListeMatch($liste){
+        $data["titre"] = "Matchs";
+        $data["liste"] = $liste;
+        Vue::render("Affichage/pageMatchs.php", $data);
+    }
 }

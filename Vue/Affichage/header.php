@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="./Vue/Affichage/Css/Style.css" type="text/css" />
+    <script src="./Vue/Affichage/JavaScript/script.js"></script>
     <title><?= $data['titre']?></title>
 </head>
 <body>

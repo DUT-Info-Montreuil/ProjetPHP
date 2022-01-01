@@ -17,7 +17,6 @@
             <option value="G">Gardien</option>
         </select>
 
-
         <label id="prenom">Prénom</label>
         <input type="text"  placeholder="Entrer un prénom" name="prenom" required>
 
