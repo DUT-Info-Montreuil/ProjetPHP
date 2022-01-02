@@ -21,8 +21,11 @@
     height: 60px;
     margin-left: 20px;
 }
-#tdImage{
-    width:200px
+#imageMatch img {
+    width:100%;
+    height: 100px;
+    margin-left: 35px;
+    border-radius: 10px;
 }
 #consulterMatch{
     color: #ffffff;
@@ -31,4 +34,15 @@
 #participerMatch{
     color: #ffffff;
     text-decoration: none;
+}
+.card-body h5{
+    margin-top: 30px;
+}
+
+#buttonsMatch button{
+    float: left;
+    margin-left: 20px;
+}
+#idCard{
+    width: 17rem; margin-bottom:10px; text-align:center;display:inline-block;
 }

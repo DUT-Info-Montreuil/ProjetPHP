@@ -5,32 +5,29 @@
 <?php
 $liste = $data["liste"];
 if (!empty($liste)): ?>
-     <div class="container mt-5">
-        <table class="table table-striped borderStyleTable">
-            <tr>
-                <th scope="col">Photo Match</th>
-                <th scope="col">Nom Match</th>
-                <th scope="col">lieu Match</th>
-                <th scope="col">Consulter Match </th>
-                <th scope="col">Participation</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php foreach ($liste as $value): ?>
-                <tr>
-                    <td id="tdImage"><img id="imageMatch" src="./Vue/Affichage/Images/<?= $value['Image'] ?>" </td>
-                    <td><?= $value['nomMatch']?></td>
-                    <td><?= $value['lieu']?></td>
-                    <td><button type="submit" class="btn btn-info "><a id="consulterMatch" href='?module=ModMatchs&action=ConsulterMatch&id=<?= $value['idMatch']?>'>Consulter Match</a></button></td>
-                    <td><button type="submit" class="btn btn-success "><a id="participerMatch" href='?module=ModMatchs&action=Participer&id=<?= $value['idMatch']?>'>Participer</a></button></td>
-                </tr>
-            <?php endforeach; ?>
-            </tbody>
-        </table>
-
-
-
+<div class="container">
+    <div class="row-fluid ">
+        <?php foreach ( $liste as $elements) : ?>
+            <div id="idCard" >
+                <div class="card-columns-fluid" >
+                    <div class="card  bg-light" >
+                        <div id="imageMatch">
+                            <img  src="./Vue/Affichage/Images/<?= $elements['Image'] ?>"  alt="Card image cap">
+                        </div>
+                        <div class="card-body">
+                            <h5><b><?php echo $elements['nomMatch']?></b></h5>
+                            <p><?php echo $elements['lieu'] ?></b></p>
+                            <div id="buttonsMatch">
+                            <button type="submit" class="btn btn-info "><a id="consulterMatch" href='?module=ModMatchs&action=ConsulterMatch&id=<?= $elements['idMatch']?>'>Consulter</a></button>
+                            <button type="submit" class="btn btn-success "><a id="participerMatch" href='?module=ModMatchs&action=Participer&id=<?= $elements['idMatch']?>'>Participer</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+         </div>
+    <?php endforeach; ?>
     </div>
+</div>
 <?php else: ?>
     <div class="alert alert-danger mt-5">Aucun Matchs n'est encor crée</div>
 <?php endif; ?>
