@@ -24,7 +24,7 @@
                     <label>Date De match :  </label>
                     <input type="date" name="dateMatch"
                            value="2021-07-22"
-                           min="2022-01-01" max="2050-12-31">
+                           min="01-01-2022" max="01-12-2050">
                     </div>
                     <div id="heureMatch">
                         <label>Heure De match :  </label>
