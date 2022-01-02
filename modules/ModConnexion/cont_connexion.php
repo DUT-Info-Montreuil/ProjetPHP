@@ -29,6 +29,7 @@ class ContConnexion {
             if($count) {
                 $_SESSION['login']=$login;
                 header('Location: index.php?module=ModProfil');
+                exit();
             }
             else {
                 $this->vue->form_script_mdp_incorrect();
