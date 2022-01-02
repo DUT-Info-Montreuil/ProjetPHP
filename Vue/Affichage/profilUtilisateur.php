@@ -10,21 +10,17 @@
                 <div class="profile-header-img mb-4">
                     <?php
                     if ($data['sexe']=='madame'): ?>
-                        <img src="https://bootdey.com/img/Content/avatar/avatar3.png" class="mb-4" alt="" />
+                    <img src="https://bootdey.com/img/Content/avatar/avatar3.png" class="mb-4" alt="" />
                     <?php else: ?>
                         <img src="https://bootdey.com/img/Content/avatar/avatar7.png" class="mb-4" alt="" />
-                    <?php endif; ?>                </div>
+                    <?php endif; ?>
+                </div>
                 <div class="profile-header-info">
                     <h4 class="m-t-sm"><?= $data['nom'] ?></h4>
-                    <a href="index.php?module=ModProfil&action=FormModifProfil" class="btn btn-xs btn-primary mb-2">Modifier Profile</a>
                 </div>
             </div>
             <ul class="profile-header-tab nav nav-tabs">
                 <li class="nav-item"><a href="#profile" class="nav-link" name="profil" data-toggle="tab">Information</a></li>
-                <li class="nav-item"><a href="index.php?module=ModMatchs&action=PageMatchs" class="nav-link " data-toggle="tab">Gerer Matchs</a></li>
-                <li class="nav-item"><a href="index.php?module=ModAmis&action=TousMesAmis" class="nav-link " data-toggle="tab">Mes Amis</a></li>
-                <li class="nav-item"><a href="index.php?module=ModAmis&action=TousLesDemandesAmis" class="nav-link " data-toggle="tab">Mes invitations d'amis</a></li>
-                <li class="nav-item"><a href="index.php?module=ModAmis&action=TousLesUtilisateurs" class="nav-link " data-toggle="tab">Tous les users</a>
             </ul>
         </div>
         <div class="profile-container">
@@ -44,7 +40,9 @@
                                 <p>ville : <?=  $data['ville']?></p>
                                 <p>Poste Match : <?= $data['posteMatch']?></p>
                                 <p>Adresse Email : <?= $data['login']?></p>
-                                <button id="buttonStyle" type="button"><a id="txt" href="index.php?module=ModProfil&action=FormSuppProfil" >Supprimer  Compte</a></button>
+                                <button id="buttonStyle" type="button"><a id="txt" href="index.php?module=ModAmis&action=TousLesUtilisateurs" >Revenir Au Liste</a></button>
+                                <button id="buttonStyle" type="button"><a id="txt" href="index.php?module=ModAmis&action=NoterUtilisateur" >Noter </a></button>
+
                             </div>
                         </section>
                     </div>

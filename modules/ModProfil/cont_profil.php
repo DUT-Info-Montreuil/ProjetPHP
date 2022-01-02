@@ -18,17 +18,23 @@ class ContProfil{
         $this->vue->afficherProfil($profil);
     }
 
-    public function formulaireModif() {
-        $this -> vue -> afficherFormulaireModifier();
+    public function formulaireModif($login) {
+        $profil = $this->modele->getProfil($login);
+        $this -> vue -> afficherFormulaireModifier($profil);
     }
 
-    public function ProfilModification($nomNv,$prenomNv,$ageNv,$sexeNv,$posteNv,$emailNv,$villeNv,$login){
-        $this->modele->modifierProfil($nomNv,$prenomNv,$ageNv,$sexeNv,$posteNv,$emailNv,$villeNv,$login);
+    public function ProfilModification($nomNv,$prenomNv,$ageNv,$sexeNv,$posteNv,$emailNv,$villeNv,$passwordNv,$login){
+        $this->modele->modifierProfil($nomNv,$prenomNv,$ageNv,$sexeNv,$posteNv,$emailNv,$villeNv,$passwordNv,$login);
     }
 
     public function supprimerProfil($login){
         $SupprimerProfil = $this->modele->supprimerLeProfil($login);
         $this->vue->afficherMessageAlerte();
+    }
+    public function profilUtilisateur(){
+        $idUtilisateur=$_GET["id"];
+        $ProfilUtilisateur= $this->modele->getUtilisateur($idUtilisateur);
+        $this->vue->afficherProfilUtilisateur($ProfilUtilisateur);
     }
 
 }

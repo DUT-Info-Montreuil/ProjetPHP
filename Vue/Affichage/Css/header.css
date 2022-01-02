@@ -6,6 +6,7 @@ body {
     width: 100%;
 }
 
+
 #titre {
     color: #FF7B7B;
     text-decoration: none;
@@ -40,14 +41,14 @@ header >a ,header button{
     text-decoration:none;
 }
 
- .deroulant {
-     position: absolute;
-     height: 100%;
-     display: flex;
-     right: 2%;
-     text-align: center;
-     font-weight: bold;
- }
+.deroulant {
+    position: absolute;
+    height: 100%;
+    display: flex;
+    right: 2%;
+    text-align: center;
+    font-weight: bold;
+}
 
 #buttonImage {
     position: relative;
@@ -56,8 +57,8 @@ header >a ,header button{
 
 
 header .content {
-     display: none;
- }
+    display: none;
+}
 
 header button {
     background-color: transparent;
@@ -68,16 +69,16 @@ header button {
     right: 0;
 }
 
- header .deroulant:hover .content  {
-     display: flex;
-     flex-direction: column;
-     position: absolute;
-     background-color: rgb(245,245,245);
-     top: 60px;
-     width: 100%;
-     padding: 10px 15px;
-     z-index: 1000;
- }
+header .deroulant:hover .content  {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: rgb(245,245,245);
+    top: 60px;
+    width: 100%;
+    padding: 10px 15px;
+    z-index: 1000;
+}
 
 
 header .content a {
@@ -94,7 +95,7 @@ header .icon {
 
 
     header >a,#buttonSimple,#buttonImage{
-       display: none;
+        display: none;
     }
 
     header .icon {
