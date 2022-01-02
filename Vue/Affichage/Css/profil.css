@@ -150,7 +150,9 @@ body .fc-widget-header a {
 .profilSection p {
     margin-top: 20px;
     padding-bottom:5px;
-
+    cursor: pointer;
+    color: #340101;
+    font-weight: bold;
 
 }
 

@@ -19,8 +19,8 @@
                 <tr>
                     <td><?= $value['nom'] ?> </td>
                     <td><?= $value['prenom']?></td>
-                    <td><button type="submit" class="btn btn-info "><a id="consulterProfil" href='?module=ModProfil&action=ConsulterProfil&id=<?= $value['idUtilisateur']?>'>Consulter Profil</a></button></td>
-                    <td><button type="submit" class="btn btn-success "><a id="ajouterAmis" href='?module=ModAmis&action=EnvoyerDemande&id=<?= $value['idUtilisateur']?>'>Ajouter Amis</a></button></td>
+                    <td><button type="submit" class="btn btn-info "><a id="consulterProfil" href='?module=ModProfil&action=ConsulterProfil&id=<?= $value['idUtilisateur']?>'>Consulter</a></button></td>
+                    <td><button type="submit" class="btn btn-success "><a id="ajouterAmis" href='?module=ModAmis&action=EnvoyerDemande&id=<?= $value['idUtilisateur']?>'>Ajouter Ami</a></button></td>
                 </tr>
         <?php endforeach; ?>
         </tbody>

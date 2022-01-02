@@ -12,22 +12,32 @@
                         <div class="col-md-6"><input type="text" class="form-control" name="nomMatch" placeholder="Nom Match"></div>
                         <div class="col-md-6"><input type="text" class="form-control" name="lieuMatch" placeholder="Lieu Du Match"></div>
                     </div>
-                    <label id="LabelNbJoueurs">Nombre de joueurs : </label>
-                    <select name="LabelNbJoueurs" required>
-                        <option value="10">10</option>
-                        <option value="5">5</option>
-                    </select>
-                    <label>Date De match:</label>
+                    <div id="NbJoueurs">
+                        <label>Nombre de joueurs : </label>
+                        <select name="LabelNbJoueurs" required>
+                            <option value="10">10</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <div id ="dateMatch">
+                    <label>Date De match :  </label>
                     <input type="date" name="dateMatch"
                            value="2021-07-22"
-                           min="2021-01-01" max="2050-12-31">
-                    <label>Heure De match:</label>
-                    <input type="time" name="heureMatch">
-                    <br>
-                    <label>Image De match :</label>
-                    <input type="file" name="imageMatch">
+                           min="2022-01-01" max="2050-12-31">
+                    </div>
+                    <div id="heureMatch">
+                        <label>Heure De match :  </label>
+                        <input type="time" name="heureMatch">
+                    </div>
 
-                    <div class=btn><button class="btn btn-danger "  class="mr-3" name="CreerMatch" type="submit">Creer ce Match</button></div>
+                    <div id="InputImageMatch">
+                        <label>Image De match :  </label>
+                        <input type="file" name="imageMatch">
+                    </div>
+
+
+                    <div class="btnCreerMatch"><button class="btn btn-danger "  class="mr-3" name="CreerMatch" type="submit">Creer ce Match</button></div>
                 </form>
             </div>
         </div>
