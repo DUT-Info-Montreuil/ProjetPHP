@@ -1,5 +1,4 @@
 <head>
-    <script src="https://kit.fontawesome.com/6440c9a3af.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body id="body">
@@ -19,7 +18,6 @@
                             <option value="5">5</option>
                         </select>
                     </div>
-
                     <div id ="dateMatch">
                     <label>Date De match :  </label>
                     <input type="date" name="dateMatch"
@@ -35,12 +33,20 @@
                         <label>Image De match :  </label>
                         <input type="file" name="imageMatch">
                     </div>
-
-
-                    <div class="btnCreerMatch"><button class="btn btn-danger "  class="mr-3" name="CreerMatch" type="submit">Creer ce Match</button></div>
+                    <div class="btnCreerMatch"><button  onclick="showFunction()" class="btn btn-danger "  class="mr-3" type="button" >Creer ce Match</button></div>
+                    <div class="show2" id="show">
+                        <h2>Vous voulez participer à ce match ?</h2>
+                        <button name="CreerMatch" >Oui je veux bien ! </button>
+                        <button id="buttonNonMerci" ><a id="txt" href="index.php?module=ModProfil&ation=Profil">Non Merci </button>
+                    </div>
                 </form>
-            </div>
+
+
+
+        </div>
         </div>
     </div>
 </div>
 </body>
+<script src="https://kit.fontawesome.com/6440c9a3af.js" crossorigin="anonymous"></script>
+<script src="./Vue/Affichage/JavaScript/script.js"></script>

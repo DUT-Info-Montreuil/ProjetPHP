@@ -8,7 +8,7 @@ class VueMatchs
     function afficherPageMatchs($data)
     {
         $data["titre"] = "Matchs";
-        Vue::render("Affichage/matchs.php", $data);
+        Vue::render("Affichage/GererMatchs.php", $data);
 
     }
     function afficherFormulaireCreationMatch(){
