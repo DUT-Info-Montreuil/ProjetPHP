@@ -18,9 +18,7 @@ class VueProfil
         Vue::render("Affichage/formulaireModifProfil.php",$data);
 
     }
-    function afficherMessageAlerte(){
-        Vue::render("Affichage/MessageAlerte.php");
-    }
+
     function afficherProfilUtilisateur($data){
         $data["titre"]="Profil Utilisateur";
         Vue::render("Affichage/profilUtilisateur.php",$data);
