@@ -22,11 +22,11 @@ class ModeleAmis extends Connexion
     public function demanderEtreAmis($login, $idAmi, $val)
     {
 
-        $sql = "INSERT INTO `etreami`(`idUtilisateur`, `idUtilisateur_1`, `testerValidation`) VALUES ((SELECT idUtilisateur from utilisateur natural join identifiants where login = ?),?,?);";
+        $sql = "INSERT INTO `etreAmi`(`idUtilisateur`, `idUtilisateur_1`, `testerValidation`) VALUES ((SELECT idUtilisateur from utilisateur natural join identifiants where login = ?),?,?);";
         $req = self::$bdd->prepare($sql);
         $req->execute(array($login, $idAmi, $val));
 
-        $sql2 = "INSERT INTO `etreami`(`idUtilisateur`, `idUtilisateur_1`, `testerValidation`) VALUES (?,(SELECT idUtilisateur from utilisateur natural join identifiants where login = ?),2);";
+        $sql2 = "INSERT INTO `etreAmi`(`idUtilisateur`, `idUtilisateur_1`, `testerValidation`) VALUES (?,(SELECT idUtilisateur from utilisateur natural join identifiants where login = ?),2);";
         $req2 = self::$bdd->prepare($sql2);
         $req2->execute(array($idAmi,$login));
 
@@ -35,7 +35,7 @@ class ModeleAmis extends Connexion
 
     public function getDemandesAmis($login)
     {
-        $req = self::$bdd->prepare("SELECT * from utilisateur where idUtilisateur IN (SELECT idUtilisateur FROM etreami WHERE idUtilisateur_1 = (SELECT idUtilisateur from utilisateur natural join identifiants where login=:login) and testerValidation=0)");
+        $req = self::$bdd->prepare("SELECT * from utilisateur where idUtilisateur IN (SELECT idUtilisateur FROM etreAmi WHERE idUtilisateur_1 = (SELECT idUtilisateur from utilisateur natural join identifiants where login=:login) and testerValidation=0)");
         $req->bindParam('login', $login);
         $req->execute();
         $res = $req->fetchAll();
@@ -60,7 +60,7 @@ class ModeleAmis extends Connexion
 
     public function getListeAmis($login)
     {
-        $req = self::$bdd->prepare("SELECT * from utilisateur where idUtilisateur IN (SELECT idUtilisateur FROM etreami WHERE idUtilisateur_1 = (SELECT idUtilisateur from utilisateur natural join identifiants where login=:login and testerValidation=1))");
+        $req = self::$bdd->prepare("SELECT * from utilisateur where idUtilisateur IN (SELECT idUtilisateur FROM etreAmi WHERE idUtilisateur_1 = (SELECT idUtilisateur from utilisateur natural join identifiants where login=:login and testerValidation=1))");
         $req->bindParam('login', $login);
         $req->execute();
         $res = $req->fetchAll();

@@ -63,7 +63,8 @@ class ContMatchs
                 echo "erreur lors de la creation du match ";
             }
         } catch (Exception $e) {
-            echo "match non crée";
+            var_dump($e);
+            exit();
 
         }
 
