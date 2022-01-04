@@ -62,7 +62,7 @@ class ModeleProfil extends Connexion
                     a.login=? WHERE a.login =? ';
             $req = self::$bdd->prepare($sql);
             $req->execute(array($emailNv, $login));
-            Vue::render("Affichage/MessageAlerte.php");
+            Vue::render("Affichage/messageAlerte.php");
             $ChangementLogin=true;
             }
             if (!empty($_POST['passwordNv'])) {
@@ -70,7 +70,7 @@ class ModeleProfil extends Connexion
                     a.password=? WHERE a.login =? ';
             $req = self::$bdd->prepare($sql);
             $req->execute(array($passwordNv, $login));
-            Vue::render("Affichage/MessageAlerte.php");
+            Vue::render("Affichage/messageAlerte.php");
             $ChangementLogin=true;
             }
             if($ChangementLogin!=true){
