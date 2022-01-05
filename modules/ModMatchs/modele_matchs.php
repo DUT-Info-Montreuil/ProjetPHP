@@ -53,8 +53,22 @@ class ModeleMatchs extends Connexion
             $idnotif=self::$bdd->lastInsertId();
 
             $req2 = self::$bdd->prepare("INSERT INTO `matchs`(`nomMatch`, `dateMatch`, `lieu`, `nbrJoueur`, `heure`, `Image`, `idUtilisateur`, `idNotification`) VALUES (?,?,?,?,?,?,(SELECT idUtilisateur from utilisateur natural join identifiants where login = ?),? )");
+
             $req2->execute(array($nomMatch,$dateMatch,$lieuMatch,$NbJoueurs,$heureMatch,$imageMatch,$login,$idnotif));
+            $idMatch=self::$bdd->lastInsertId();
+
+            $req3 = self::$bdd->prepare("INSERT INTO `participer`(`idUtilisateur`, `idMatch`) VALUES ((select idUtilisateur from utilisateur natural join identifiants where login = ?),?)");
+            $req3->execute(array($login,$idMatch));
         }
+    function creerMatchSansParticipation($login,$notif, $nomMatch,$lieuMatch,$NbJoueurs,$dateMatch,$heureMatch,$imageMatch){
+        $contenuMatch = $notif.",".$lieuMatch;
+        $req = self::$bdd->prepare("INSERT INTO `notification`(`ContenuNotification`, `DateNotification`) VALUES (?,now())");
+        $req->execute(array($contenuMatch));
+        $idnotif=self::$bdd->lastInsertId();
+
+        $req2 = self::$bdd->prepare("INSERT INTO `matchs`(`nomMatch`, `dateMatch`, `lieu`, `nbrJoueur`, `heure`, `Image`, `idUtilisateur`, `idNotification`) VALUES (?,?,?,?,?,?,(SELECT idUtilisateur from utilisateur natural join identifiants where login = ?),? )");
+        $req2->execute(array($nomMatch,$dateMatch,$lieuMatch,$NbJoueurs,$heureMatch,$imageMatch,$login,$idnotif));
+    }
     function getMesMatchs($idUtilisateur){
         $req = self::$bdd->prepare("SELECT * FROM matchs natural join participer where idUtilisateur = ? ");
         $req->execute(array($idUtilisateur));

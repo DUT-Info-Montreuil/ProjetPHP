@@ -41,12 +41,9 @@
                     <div class="show2" id="show">
                         <h2>Vous voulez participer à ce match ?</h2>
                         <button name="CreerMatch" >Oui je veux bien ! </button>
-                        <button id="buttonNonMerci" ><a id="txt" href="index.php?module=ModProfil&ation=Profil">Non Merci </button>
+                        <button id="buttonNonMerci" >Non Merci </button>
                     </div>
                 </form>
-
-
-
         </div>
         </div>
     </div>

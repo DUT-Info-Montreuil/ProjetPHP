@@ -28,7 +28,7 @@
             </ul>
         </div>
         <div class="tab-pane fade active show" id="profile"></div>
-                            <div class="card">
+                            <div class="card" >
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-sm-3">

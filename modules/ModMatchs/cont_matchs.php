@@ -52,8 +52,17 @@ class ContMatchs
                         $new_img_name = uniqid("IMG-", true).'.'.$img_ex_lc;
                         $img_upload_path = './Vue/Affichage/Images/'.$new_img_name;
                         move_uploaded_file($tmp_name, $img_upload_path);
-                        $this->modele->creerMatch($login,$notif , $nomMatch,$lieuMatch,$NbJoueurs,$dateMatch,$heureMatch,$new_img_name);//enlever username et changer methods model
-                        echo "match crée";
+                        if(isset($_POST['CreerMatch'])){
+
+                            $this->modele->creerMatch($login,$notif , $nomMatch,$lieuMatch,$NbJoueurs,$dateMatch,$heureMatch,$new_img_name);
+                            echo "Match créé avec votre participation";
+
+                        }else{
+                            $this->modele->creerMatchSansParticipation($login,$notif , $nomMatch,$lieuMatch,$NbJoueurs,$dateMatch,$heureMatch,$new_img_name);
+                            echo "Match créé sans votre participation";
+
+                        }
+
                     }else {
                         $erreur = "Vous ne pouvez pas mettre ce type de fichier ";
                         echo $erreur;
@@ -104,4 +113,5 @@ class ContMatchs
         $this->vue->afficherMesMatchs($mesMatchs);
 
     }
+
 }
