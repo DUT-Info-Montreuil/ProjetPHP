@@ -20,4 +20,9 @@ class VueMatchs
         $data["liste"] = $liste;
         Vue::render("Affichage/pageMatchs.php", $data);
     }
+    function afficherMesMatchs($liste){
+            $data["titre"] = "Mes Matchs";
+            $data["liste"] = $liste;
+            Vue::render("Affichage/mesMatchs.php", $data);
+    }
 }

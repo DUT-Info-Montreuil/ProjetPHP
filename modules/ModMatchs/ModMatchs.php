@@ -35,6 +35,9 @@ class ModMatchs
             case 'Participer' :
                 $this->controleur->participer();
                 break;
+            case 'MesMatchs' :
+                $this->controleur->mesMatchs();
+                break;
         }
     }
 }

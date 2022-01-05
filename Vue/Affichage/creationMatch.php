@@ -11,6 +11,7 @@
                         <div class="col-md-6"><input type="text" class="form-control" name="nomMatch" placeholder="Nom Match"></div>
                         <div class="col-md-6"><input type="text" class="form-control" name="lieuMatch" placeholder="Lieu Du Match"></div>
                     </div>
+                    <hr>
                     <div id="NbJoueurs">
                         <label>Nombre de joueurs : </label>
                         <select name="LabelNbJoueurs" required>
@@ -18,21 +19,24 @@
                             <option value="5">5</option>
                         </select>
                     </div>
+                    <hr>
                     <div id ="dateMatch">
                     <label>Date De match :  </label>
                     <input type="date" name="dateMatch"
                            value="2021-07-22"
                            min="01-01-2022" max="01-12-2050">
                     </div>
+                    <hr>
                     <div id="heureMatch">
                         <label>Heure De match :  </label>
                         <input type="time" name="heureMatch">
                     </div>
-
+                    <hr>
                     <div id="InputImageMatch">
                         <label>Image De match :  </label>
                         <input type="file" name="imageMatch">
                     </div>
+                    <hr>
                     <div class="btnCreerMatch"><button  onclick="showFunction()" class="btn btn-danger "  class="mr-3" type="button" >Creer ce Match</button></div>
                     <div class="show2" id="show">
                         <h2>Vous voulez participer à ce match ?</h2>

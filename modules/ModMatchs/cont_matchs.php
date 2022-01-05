@@ -98,4 +98,10 @@ class ContMatchs
 
         }
     }
+    public function mesMatchs(){
+        $username =$_GET["id"];
+        $mesMatchs = $this->modele->getMesMatchs($username);
+        $this->vue->afficherMesMatchs($mesMatchs);
+
+    }
 }

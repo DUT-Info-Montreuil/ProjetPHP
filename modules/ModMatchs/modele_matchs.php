@@ -9,6 +9,7 @@ class ModeleMatchs extends Connexion
     {
 
     }
+
     function getProfil($login)
     {
         $sql = 'select * from utilisateur natural join identifiants where login = ?';
@@ -24,9 +25,7 @@ class ModeleMatchs extends Connexion
     }
     function  getTousLesMatchsParFiltre($adresseMatch){
         $req = self::$bdd->prepare("SELECT * FROM matchs where lieu LIKE '%".$adresseMatch."%'");
-
         $req->execute();
-
         $res = $req->fetchAll();
         return $res;
     }
@@ -48,7 +47,6 @@ class ModeleMatchs extends Connexion
         $req->execute(array($login,$idMatch));
     }
     function creerMatch($login,$notif, $nomMatch,$lieuMatch,$NbJoueurs,$dateMatch,$heureMatch,$imageMatch){
-        {
             $contenuMatch = $notif.",".$lieuMatch;
             $req = self::$bdd->prepare("INSERT INTO `notification`(`ContenuNotification`, `DateNotification`) VALUES (?,now())");
             $req->execute(array($contenuMatch));
@@ -56,10 +54,12 @@ class ModeleMatchs extends Connexion
 
             $req2 = self::$bdd->prepare("INSERT INTO `matchs`(`nomMatch`, `dateMatch`, `lieu`, `nbrJoueur`, `heure`, `Image`, `idUtilisateur`, `idNotification`) VALUES (?,?,?,?,?,?,(SELECT idUtilisateur from utilisateur natural join identifiants where login = ?),? )");
             $req2->execute(array($nomMatch,$dateMatch,$lieuMatch,$NbJoueurs,$heureMatch,$imageMatch,$login,$idnotif));
-
         }
-
-
+    function getMesMatchs($idUtilisateur){
+        $req = self::$bdd->prepare("SELECT * FROM matchs natural join participer where idUtilisateur = ? ");
+        $req->execute(array($idUtilisateur));
+        $res = $req->fetchAll();
+        return $res;
     }
 
 }

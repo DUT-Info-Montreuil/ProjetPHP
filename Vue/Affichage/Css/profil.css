@@ -125,48 +125,7 @@ body .fc-widget-header a {
         overflow: scroll;
         padding: 0;
     }
-    .profile-container {
-        padding: 0.9375rem 0.9375rem 3.6875rem;
-    }
 
-}
-
-.profilSection{
-    width: 1115px;
-    margin-top: -3.50%;
-    margin-left: -3.50%;
-    background-color: bisque;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    color:black;
-    font-size: 20px;
-    position: center;
-    border-right: 100px solid transparent;
-    border-bottom: 30px solid #057a61;
-    border-left: 100px solid transparent;
-    border: thick double #32a1ce;
-
-}
-.profilSection p {
-    margin-top: 20px;
-    padding-bottom:5px;
-    cursor: pointer;
-    color: #340101;
-    font-weight: bold;
-
-}
-
-#formLeft3{
-    margin-top:30px;
-    height:300px;
-    margin-left:40px;
-    display:inline-block;
-}
-#formRight4{
-    margin-top:30px;
-    display:inline-block;
-    width:500px;
-    float:right;
 }
 
 #txt{
@@ -174,13 +133,11 @@ body .fc-widget-header a {
     text-decoration:none;
 }
 
-
 #buttonStyle{
     border: 0;
     line-height: 2.5;
     padding: 0 20px;
-    margin-top: 3%;
-    margin-left: 20%;
+    margin-left: 80%;
     font-size: 1rem;
     text-align: center;
     color: #fff;
