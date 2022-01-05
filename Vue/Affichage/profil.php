@@ -28,8 +28,7 @@
             </ul>
         </div>
         <div class="tab-pane fade active show" id="profile"></div>
-                        <div class="mx-auto" style="width:auto;">
-                            <div class="card mb-5 ">
+                            <div class="card">
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-sm-3">
