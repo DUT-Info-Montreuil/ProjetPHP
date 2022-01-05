@@ -60,9 +60,7 @@ class ContMatchs
                         }else{
                             $this->modele->creerMatchSansParticipation($login,$notif , $nomMatch,$lieuMatch,$NbJoueurs,$dateMatch,$heureMatch,$new_img_name);
                             echo "Match créé sans votre participation";
-
                         }
-
                     }else {
                         $erreur = "Vous ne pouvez pas mettre ce type de fichier ";
                         echo $erreur;
