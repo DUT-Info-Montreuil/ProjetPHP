@@ -22,7 +22,7 @@ if (!empty($liste)): ?>
                                 <p><?php echo $elements['heure'] ?></b> H</p>
                                 <div id="buttonsMatch">
                                     <button type="submit" class="btn btn-info "><a id="consulterMatch" href='?module=ModMatchs&action=ConsulterMatch&id=<?= $elements['idMatch']?>'>Consulter</a></button>
-                                    <button type="submit" class="btn btn-success "><a id="inviterMatch" href='?module=ModMatchs&action=Inviter&id=<?= $elements['idMatch']?>'>Inviter</a></button>
+                                    <button type="submit" class="btn btn-danger "><a id="retirerMatch" href='?module=ModMatchs&action=Retirer&id=<?= $elements['idMatch']?>'>Retirer</a></button>
                                 </div>
                             </div>
                         </div>
