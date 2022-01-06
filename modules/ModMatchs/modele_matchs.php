@@ -75,5 +75,10 @@ class ModeleMatchs extends Connexion
         $res = $req->fetchAll();
         return $res;
     }
+    function retirerParticipation($idMatch, $login){
+        $req = self::$bdd->prepare("DELETE FROM participer  where idMatch = ? and idUtilisateur = (SELECT idUtilisateur from utilisateur natural join identifiants where login= ?) ");
+        $req->execute(array($idMatch,$login));
+
+    }
 
 }

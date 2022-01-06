@@ -111,5 +111,17 @@ class ContMatchs
         $this->vue->afficherMesMatchs($mesMatchs);
 
     }
+    public function retirerParticipation(){
+        $idMatch=$_GET["id"];
+        $username = $_SESSION['login'];
+        try {
+            $this->modele->retirerParticipation($idMatch, $username);
+            echo "Vous avez annulé votre participation";
+        }
+        catch (Exception $e) {
+            echo "Erreur survenue ";
+        }
+
+    }
 
 }

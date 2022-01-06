@@ -38,6 +38,9 @@ class ModMatchs
             case 'MesMatchs' :
                 $this->controleur->mesMatchs();
                 break;
+            case 'RetirerParticipation':
+                $this->controleur->retirerParticipation();
+                break;
         }
     }
 }
