@@ -52,25 +52,80 @@ class ContMatchs
                         $new_img_name = uniqid("IMG-", true).'.'.$img_ex_lc;
                         $img_upload_path = './Vue/Affichage/Images/'.$new_img_name;
                         move_uploaded_file($tmp_name, $img_upload_path);
-                        $this->modele->creerMatch($login,$notif , $nomMatch,$lieuMatch,$NbJoueurs,$dateMatch,$heureMatch,$new_img_name);//enlever username et changer methods model
-                        echo "match crée";
+                        if(isset($_POST['CreerMatch'])){
+
+                            $this->modele->creerMatch($login,$notif , $nomMatch,$lieuMatch,$NbJoueurs,$dateMatch,$heureMatch,$new_img_name);
+                            echo "Match créé avec votre participation";
+
+                        }else{
+                            $this->modele->creerMatchSansParticipation($login,$notif , $nomMatch,$lieuMatch,$NbJoueurs,$dateMatch,$heureMatch,$new_img_name);
+                            echo "Match créé sans votre participation";
+                        }
                     }else {
-                        $erreur = "Vous ne pourrez pas mettre ce type de fichier";
+                        $erreur = "Vous ne pouvez pas mettre ce type de fichier ";
                         echo $erreur;
                     }
                 }
             }else {
-                echo "erreur de création lors de la creation du match ";
+                echo "erreur lors de la creation du match ";
             }
         } catch (Exception $e) {
-            echo "match non crée";
+            var_dump($e);
+            exit();
 
         }
 
     }
-    public function rechercherMatchs()
+    public function rechercherTousLesMatchs()
     {
         $matchs = $this->modele->getTousLesMatchs();
         $this->vue->afficherLaListeMatch($matchs);
     }
+    public function filtrerMatchs($adresseMatch){
+        $matchs = $this->modele->getTousLesMatchsParFiltre($adresseMatch);
+        $this->vue->afficherLaListeMatch($matchs);
+    }
+    public function participer(){
+        $idMatch=$_GET["id"];
+        $username = $_SESSION['login'];
+        $nombreParticipants = $this->modele->verifierNombresParticipants($idMatch);
+        $nombreParticipantsValable= $this->modele->getNombreParticipantsValable($idMatch);
+        $int_value_nb_ParticipantsValable= intval( $nombreParticipantsValable );
+
+        if ($nombreParticipants < $int_value_nb_ParticipantsValable) {
+            try {
+                $this->modele->participerMatch($username, $idMatch);
+                echo "vous etes parmi les participants";
+            } catch (Exception $e) {
+                echo "deja vous avez participé ";
+            }
+        }
+        else{
+            echo "Le nombre de participants est atteint";
+
+        }
+    }
+    public function mesMatchs(){
+        $username =$_GET["id"];
+        $mesMatchs = $this->modele->getMesMatchs($username);
+        $this->vue->afficherMesMatchs($mesMatchs);
+
+    }
+    public function retirerParticipation(){
+        $idMatch=$_GET["id"];
+        $username = $_SESSION['login'];
+        try {
+            $this->modele->retirerParticipation($idMatch, $username);
+            echo "Vous avez annulé votre participation";
+        }
+        catch (Exception $e) {
+            echo "Erreur survenue ";
+        }
+
+    }
+    public function formAfficherMatchs(){
+        $this->vue->afficherFormAjoutePhotos();
+    }
+
+
 }

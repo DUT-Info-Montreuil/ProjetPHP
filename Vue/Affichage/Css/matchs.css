@@ -46,6 +46,11 @@
     color: #ffffff;
     text-decoration: none;
 }
+#agendaMatchs{
+    color: #ffffff;
+    text-decoration: none;
+
+}
 #creerMatch{
     color: #ffffff;
     text-decoration: none;
@@ -67,6 +72,14 @@
     border-radius: 10px;
 }
 #consulterMatch{
+    color: #ffffff;
+    text-decoration: none;
+}
+#retirerMatch{
+    color: #ffffff;
+    text-decoration: none;
+}
+#ajouterPhotos{
     color: #ffffff;
     text-decoration: none;
 }
@@ -129,4 +142,51 @@ input[type='file'] {
     margin-left: 60%;
     margin-top: 2%;
     margin-bottom: 5%;
+}
+.show2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 350px;
+    padding: 20px;
+    border-radius: 15px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.show2 > h2{
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+.show2 > button{
+    display: inline-block;
+    border: none;
+    background: #44dd08;
+    color: #fff;
+    font-size: 16px;
+    text-align:center;
+    padding: 10px 25px;
+    cursor: pointer;
+    border-radius: 50px;
+    margin-top: 10px;
+}
+.show2 #buttonNonMerci{
+    display: inline-block;
+    border: none;
+    background: #ff0000;
+    color: #fff;
+    font-size: 16px;
+    text-align:center;
+    padding: 10px 25px;
+    cursor: pointer;
+    border-radius: 50px;
+    margin-top: 10px;
 }

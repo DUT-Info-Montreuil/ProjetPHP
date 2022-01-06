@@ -9,7 +9,6 @@ class VueProfil
     {
         $data["titre"]="Mon Profil";
         Vue::render("Affichage/profil.php",$data);
-
     }
 
 
@@ -18,9 +17,11 @@ class VueProfil
         Vue::render("Affichage/formulaireModifProfil.php",$data);
 
     }
+
     function afficherMessageAlerte(){
-        Vue::render("Affichage/MessageAlerte.php");
+        Vue::render("Affichage/messageAlerte.php");
     }
+
     function afficherProfilUtilisateur($data){
         $data["titre"]="Profil Utilisateur";
         Vue::render("Affichage/profilUtilisateur.php",$data);

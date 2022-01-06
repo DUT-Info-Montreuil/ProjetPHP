@@ -41,11 +41,11 @@
                     <option value="G">Gardien</option>
                 </select>
                 <div class="row mt-3">
-                    <div class="col-md-6"><input type="text" class="form-control" name="emailNv" placeholder="Email"></div>
-                    <div class="col-md-6"><input type="text" class="form-control"  name="ageNv" placeholder="Age"></div>
+                    <div class="col-md-6"><input type="email" class="form-control" name="emailNv" placeholder="Email"></div>
+                    <div class="col-md-6"><input type="number" class="form-control"  name="ageNv" placeholder="Age"></div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-6"><input type="text" class="form-control" name="passwordNv"placeholder="password" ></div>
+                    <div class="col-md-6"><input type="password" class="form-control" name="passwordNv"placeholder="password" ></div>
                     <div class="col-md-6"><input type="text" class="form-control" name="villeNv" placeholder="Ville"></div>
                 </div>
                 <div class=btn><button class="btn btn-danger "  class="mr-3" name="FormModifProfil" type="submit">Enregistrer Profile</button></div>

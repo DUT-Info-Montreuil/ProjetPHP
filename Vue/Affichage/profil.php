@@ -27,30 +27,77 @@
                 <li class="nav-item"><a href="index.php?module=ModAmis&action=TousLesUtilisateurs" class="nav-link " data-toggle="tab">Tous les users</a>
             </ul>
         </div>
-        <div class="profile-container">
-            <div class="row row-space-20">
-                <div class="col-md-8">
-                    <div class="tab-content p-0">
-                        <div class="tab-pane fade active show" id="profile">
-                        </div>
-                        <section class="profilSection">
-                            <div id="formLeft3">
-                                <p>Nom : <?= $data['nom'] ?></p>
-                                <p>Prenom :<?= $data['prenom']?></p>
-                                <p>Age : <?= $data['age']?></p>
+        <div class="tab-pane fade active show" id="profile"></div>
+                            <div class="card" >
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0 mr-30">Civilite : </p>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <p class="mb-0"><?= $data['sexe'] ?></p>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">Nom : </p>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <p class="mb-0"><?= $data['nom']?></p>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">Prenom :</p>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <p class="mb-0"><?= $data['prenom']?></p>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">Age : </p>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <p class="mb-0"><?= $data['age']?></p>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">Poste Match :</p>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <p class="mb-0"><?=  $data['posteMatch']?></p>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">Ville :</p>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <p class="mb-0"><?=  $data['ville']?></p>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">Email :</p>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <p class="mb-0"><?=  $data['login']?></p>
+                                        </div>
+                                    </div>
+                                    <button id="buttonStyle" type="button"><a id="txt" href="index.php?module=ModProfil&action=FormSuppProfil" >Supprimer  Compte</a></button>
+
+                                </div>
                             </div>
-                            <div id="formRight4">
-                                <p>Sexe : <?= $data['sexe']?></p>
-                                <p>ville : <?=  $data['ville']?></p>
-                                <p>Poste Match : <?= $data['posteMatch']?></p>
-                                <p>Adresse Email : <?= $data['login']?></p>
-                                <button id="buttonStyle" type="button"><a id="txt" href="index.php?module=ModProfil&action=FormSuppProfil" >Supprimer  Compte</a></button>
-                            </div>
-                        </section>
+
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
+         </div>
 </div>
 </body>

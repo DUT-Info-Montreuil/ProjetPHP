@@ -1,5 +1,4 @@
 <head>
-    <script src="https://kit.fontawesome.com/6440c9a3af.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body id="body">
@@ -12,35 +11,47 @@
                         <div class="col-md-6"><input type="text" class="form-control" name="nomMatch" placeholder="Nom Match"></div>
                         <div class="col-md-6"><input type="text" class="form-control" name="lieuMatch" placeholder="Lieu Du Match"></div>
                     </div>
+                    <hr>
                     <div id="NbJoueurs">
                         <label>Nombre de joueurs : </label>
                         <select name="LabelNbJoueurs" required>
                             <option value="10">10</option>
+                            <option value="9">9</option>
+                            <option value="8">8</option>
+                            <option value="7">7</option>
+                            <option value="6">6</option>
                             <option value="5">5</option>
                         </select>
                     </div>
-
+                    <hr>
                     <div id ="dateMatch">
                     <label>Date De match :  </label>
                     <input type="date" name="dateMatch"
-                           value="2021-07-22"
-                           min="01-01-2022" max="01-12-2050">
+                           value='<?= date('Y-m-d');?>'
+                           min='<?= date('Y-m-d');?>' max="2023-01-01">
                     </div>
+                    <hr>
                     <div id="heureMatch">
                         <label>Heure De match :  </label>
                         <input type="time" name="heureMatch">
                     </div>
-
+                    <hr>
                     <div id="InputImageMatch">
                         <label>Image De match :  </label>
                         <input type="file" name="imageMatch">
                     </div>
-
-
-                    <div class="btnCreerMatch"><button class="btn btn-danger "  class="mr-3" name="CreerMatch" type="submit">Creer ce Match</button></div>
+                    <hr>
+                    <div class="btnCreerMatch"><button  onclick="showFunction()" class="btn btn-danger "  class="mr-3" type="button" >Creer ce Match</button></div>
+                    <div class="show2" id="show">
+                        <h2>Vous voulez participer à ce match ?</h2>
+                        <button name="CreerMatch" >Oui je veux bien ! </button>
+                        <button id="buttonNonMerci" >Non Merci </button>
+                    </div>
                 </form>
-            </div>
+        </div>
         </div>
     </div>
 </div>
 </body>
+<script src="https://kit.fontawesome.com/6440c9a3af.js" crossorigin="anonymous"></script>
+<script src="./Vue/Affichage/JavaScript/script.js"></script>
