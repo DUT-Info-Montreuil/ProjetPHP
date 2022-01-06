@@ -44,6 +44,9 @@ class ModMatchs
             case 'FormAjouterPhotosMatchs' :
                 $this->controleur->formAfficherMatchs();
                 break;
+            case 'DiscuterMatch' :
+                $this->controleur->formulaireDiscussion();
+                break;
         }
     }
 }

@@ -29,4 +29,5 @@ class VueMatchs
         Vue::render("Affichage/ajouterPhotosMatchs.php",["titre"=>"Ajouter Photos"]);
 
     }
+
 }

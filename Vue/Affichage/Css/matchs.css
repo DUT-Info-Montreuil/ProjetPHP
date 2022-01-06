@@ -46,10 +46,16 @@
     color: #ffffff;
     text-decoration: none;
 }
+#discuterMatch{
+    color: #ffffff;
+    text-decoration: none;
+}
 #agendaMatchs{
     color: #ffffff;
     text-decoration: none;
-
+}
+#buttonRetirer{
+    margin-top: 4%;
 }
 #creerMatch{
     color: #ffffff;
