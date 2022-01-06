@@ -123,5 +123,9 @@ class ContMatchs
         }
 
     }
+    public function formAfficherMatchs(){
+        $this->vue->afficherFormAjoutePhotos();
+    }
+
 
 }

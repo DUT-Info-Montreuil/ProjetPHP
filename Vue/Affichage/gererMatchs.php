@@ -27,7 +27,13 @@
                     <button type="submit" class="btn btn-danger "><a id="mesMatchs" href='?module=ModMatchs&action=MesMatchs&id=<?= $data['idUtilisateur']?>'>Mes Matchs</a></button>
                     <button type="submit" class="btn btn-success "><a id="rechercherMatchs" href='?module=ModMatchs&action=RechercherTousLesMatchs&id=<?= $data['idUtilisateur']?>'>Rechercher Matchs</a></button>
                     <button type="submit" class="btn btn-warning "><a id="creerMatch" href='?module=ModMatchs&action=FormulaireCreationMatch'>Creer Un Match</a></button>
-                    <button type="submit" class="btn btn-primary "><a id="ajouterPhotos" href='?module=ModMatchs&action=AjouterPhotos'>Ajouter des photos</a></button>
+                    <button type="submit" class="btn btn-primary "><a id="ajouterPhotos" href='?module=ModMatchs&action=FormAjouterPhotosMatchs'>Ajouter des photos</a></button>
+                </div>
+                <div class="mt-3 btn-group-vertical">
+                    <button type="submit" class="btn btn-danger "><a id="agendaMatchs" href='?module=ModMatchs&action=ConsulterAgenda&id=<?= $data['idUtilisateur']?>'>Agenda des matchs</a></button>
+                    <button type="submit" class="btn btn-success "><a id="agendaMatchs" href='?module=ModMatchs&action=vide&id=<?= $data['idUtilisateur']?>'>Vide</a></button>
+                    <button type="submit" class="btn btn-warning "><a id="agendaMatchs" href='?module=ModMatchs&action=vide&id=<?= $data['idUtilisateur']?>'>Vide</a></button>
+                    <button type="submit" class="btn btn-primary "><a id="agendaMatchs" href='?module=ModMatchs&action=vide&id=<?= $data['idUtilisateur']?>'>Vide</a></button>
 
                 </div>
             </div>

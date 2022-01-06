@@ -25,4 +25,8 @@ class VueMatchs
             $data["liste"] = $liste;
             Vue::render("Affichage/mesMatchs.php", $data);
     }
+    function afficherFormAjoutePhotos(){
+        Vue::render("Affichage/ajouterPhotosMatchs.php",["titre"=>"Ajouter Photos"]);
+
+    }
 }

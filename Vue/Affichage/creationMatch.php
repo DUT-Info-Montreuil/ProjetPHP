@@ -16,6 +16,10 @@
                         <label>Nombre de joueurs : </label>
                         <select name="LabelNbJoueurs" required>
                             <option value="10">10</option>
+                            <option value="9">9</option>
+                            <option value="8">8</option>
+                            <option value="7">7</option>
+                            <option value="6">6</option>
                             <option value="5">5</option>
                         </select>
                     </div>
@@ -23,8 +27,8 @@
                     <div id ="dateMatch">
                     <label>Date De match :  </label>
                     <input type="date" name="dateMatch"
-                           value="2021-07-22"
-                           min="01-01-2022" max="01-12-2050">
+                           value='<?= date('Y-m-d');?>'
+                           min='<?= date('Y-m-d');?>' max="2023-01-01">
                     </div>
                     <hr>
                     <div id="heureMatch">

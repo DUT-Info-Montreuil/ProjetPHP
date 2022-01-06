@@ -41,6 +41,9 @@ class ModMatchs
             case 'RetirerParticipation':
                 $this->controleur->retirerParticipation();
                 break;
+            case 'FormAjouterPhotosMatchs' :
+                $this->controleur->formAfficherMatchs();
+                break;
         }
     }
 }
