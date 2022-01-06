@@ -1,17 +1,65 @@
+<section class="vh-100" id="form_log">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid"
+                     alt="Sample image" id="log_img">
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <form>
 
-<div id="container">
-    <form id="formulaire" action="index.php?module=ModConnexion&action=connexion" method="POST">
-        <h1>Se connecter</h1>
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                        <input type="email" id="form3Example3" class="form-control form-control-lg"
+                               placeholder="Saisir adresse mail" />
+                        <label for="form3Example3"></label>
+                    </div>
 
-        <label>Adresse mail</label>
-        <input type="email" value="<?php if (isset($_COOKIE['login'])) echo $_COOKIE['login'];?>" placeholder="Entrer l'adresse mail" name="login" required>
+                    <!-- Password input -->
+                    <div class="form-outline mb-3">
+                        <input type="password" id="form3Example4" class="form-control form-control-lg"
+                               placeholder="Saisir mot de passe" />
+                        <label for="form3Example4"></label>
 
-        <label>Mot de passe</label>
-        <input type="password" value="<?php if (isset($_COOKIE['password'])) echo $_COOKIE['password'];?>"placeholder="Entrer le mot de passe" name="password" required>
-        <input  type="checkbox" name="check" id="check">
-        <label for="check">Rester connecté(e)</label>
-        <input type="submit" id='submit' value='Connexion' >
+                    </div>
 
-        <a href="index.php?module=ModInscription" id="msgInscription">Vous n'avez pas de compte ? Inscription</a>
-    </form>
-</div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <!-- Checkbox -->
+                        <div class="form-check mb-0">
+                            <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+                            <label class="form-check-label" for="form2Example3" style="color: white;">
+                                Rester connecté(e)
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                        <button type="button" class="btn btn-primary btn-lg"
+                                style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+                        <p class="small fw-bold mt-2 pt-1 mb-0"style="color: white;">Vous n'avez pas de compte ? <a href="index.php?module=ModInscription"
+                                                                                          class="link-danger">Inscription</a></p>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+        <!-- Right -->
+        <div>
+            <a href="#!" class="text-white me-4">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#!" class="text-white me-4">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#!" class="text-white me-4">
+                <i class="fab fa-google"></i>
+            </a>
+            <a href="#!" class="text-white">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+        <!-- Right -->
+    </div>
+</section>
