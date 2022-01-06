@@ -1,9 +1,9 @@
 body {
-    font-family:'Open Sans',Arial,sans-serif;
-    font-weight:300;
-    margin:0;
-    background-color:#130255;
-    width: 100%;
+    font-family:'Open Sans',Arial,sans-serif !important;
+    font-weight: 300 !important;
+    margin:0 !important;
+    background-color:#130255 !important;
+    width: 100% !important;
 }
 
 #titre {
@@ -15,5 +15,13 @@ body {
 
 
 #image {
-    width: 70px;
+    width: 70px !important;
+}
+
+
+@media (max-width: 992px) {
+
+    #image {
+        display: none !important;
+    }
 }

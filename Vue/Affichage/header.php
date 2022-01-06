@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title><?= $data['titre']?></title>
+
 </head>
 <body>
 <!--<header id="navbar" class="nav">
@@ -29,33 +30,42 @@
         </div>
     </div>-->
 
+
+
 <header >
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #130255;" >
-        <div class="container-fluid" >
+        <div class="container-fluid">
             <a class="navbar-brand" href="index.php?module=ModAccueil" id="titre">BasicFoot</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav" >
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle"  href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="Vue/Affichage/Images/compte.png" id="image" class="position-absolute bottom-0 end-0">
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
+                    <?php
+                    if(isset($_SESSION['login'])) {
+                        echo '<li class="nav-item"><a class="nav-link" href="#">Matchs</a></li>';
+                    }
+                    ?>
 
-                            <?php
-                                 if(empty($_SESSION['login'])) {
-                                        echo '<li><a class="dropdown-item" href="index.php?module=ModConnexion">Connexion</a></li>
-                                        <li><a class="dropdown-item" href="index.php?module=ModInscription">Inscription</a></li>';
-                                 }
-                                 else {
-                                     echo '<li><a class="dropdown-item" href="index.php?module=ModProfil">Mon Compte</a></li>
-                                      <li><a class="dropdown-item" href="index.php?module=ModConnexion&action=deconnexion">Déconnexion</a></li>';
-                                 }?>
-                        </ul>
-                    </li>
                 </ul>
+                <span class="navbar-text">  <li class="nav-item dropdown" style="list-style: none">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="Vue/Affichage/Images/compte.png" id="image">
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="min-width: 0;">
+                        <?php
+                        if(empty($_SESSION['login'])) {
+                            echo '<li><a class="dropdown-item" href="index.php?module=ModConnexion" style="color: black;">Connexion</a></li>
+                               <li><a class="dropdown-item" href="index.php?module=ModInscription"style="color: black;">Inscription</a></li>';
+                        }
+                        else {
+                            echo '<li><a class="dropdown-item" href="index.php?module=ModProfil" style="color: black;">Mon Compte</a></li>
+                             <li><a class="dropdown-item" href="index.php?module=ModConnexion&action=deconnexion"style="color: black;">Déconnexion</a></li>';
+                        }?>
+                    </ul>
+
+                </span>
+
             </div>
         </div>
     </nav>

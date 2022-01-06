@@ -1,5 +1,3 @@
-
-<body id="body">
 <div class="container">
     <div id="content" class="content p-0">
         <div class="profile-header">
@@ -11,7 +9,8 @@
                         <img src="https://bootdey.com/img/Content/avatar/avatar3.png" class="mb-4" alt="" />
                     <?php else: ?>
                         <img src="https://bootdey.com/img/Content/avatar/avatar7.png" class="mb-4" alt="" />
-                    <?php endif; ?>                </div>
+                    <?php endif; ?>
+                </div>
                 <div class="profile-header-info">
                     <h4 class="m-t-sm"><?= $data['nom'] ?></h4>
                     <a href="index.php?module=ModProfil&action=FormModifProfil" class="btn btn-xs btn-primary mb-2">Modifier Profile</a>
@@ -94,8 +93,7 @@
 
                                 </div>
                             </div>
-
-                    </div>
-         </div>
+        </div>
 </div>
-</body>
+
+
