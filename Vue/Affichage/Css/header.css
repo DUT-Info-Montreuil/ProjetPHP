@@ -1,11 +1,10 @@
 body {
     font-family:'Open Sans',Arial,sans-serif;
     font-weight:300;
-    margin:auto;
+    margin:0;
     background-color:#130255;
     width: 100%;
 }
-
 
 #titre {
     color: #FF7B7B;
@@ -14,126 +13,7 @@ body {
     font-size: 2.5em;
 }
 
-header {
-    width: 100%;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    position: relative;
-    flex-direction: row;
-    margin-bottom: 70px;
-}
-
-
-#buttonSimple {
-    display: none;
-}
 
 #image {
     width: 70px;
-
-}
-
-header >a ,header button{
-    color: white;
-    margin: 0 20px;
-    font-size: 1.3em;
-    text-decoration:none;
-}
-
-.deroulant {
-    position: absolute;
-    height: 100%;
-    display: flex;
-    right: 2%;
-    text-align: center;
-    font-weight: bold;
-}
-
-#buttonImage {
-    position: relative;
-    right: 0;
-}
-
-
-header .content {
-    display: none;
-}
-
-header button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    position: relative;
-    right: 0;
-}
-
-header .deroulant:hover .content  {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    background-color: rgb(245,245,245);
-    top: 60px;
-    width: 100%;
-    padding: 10px 15px;
-    z-index: 1000;
-}
-
-
-header .content a {
-    color: black;
-    text-decoration:none;
-    padding: 7px 0;
-}
-
-header .icon {
-    display: none;
-}
-
-@media (max-width: 600px) {
-
-
-    header >a,#buttonSimple,#buttonImage{
-        display: none;
-    }
-
-    header .icon {
-        display: block;
-        position: absolute;
-        right: 0;
-        text-align: center;
-        width: 5% !important;
-        padding: 0 !important;
-    }
-
-    header.responsive>a{
-        padding: 10px 0;
-    }
-
-    header.responsive>a, header.responsive .deroulant {
-        display: block;
-        width: 100%;
-    }
-
-    header.responsive #buttonSimple {
-        display: block;
-        padding:10px 0;
-    }
-
-
-    header {
-        background-color: #3a3a3a;
-        flex-direction: column;
-        min-height: 70px;
-        height: 100%;
-        align-items: flex-start;
-    }
-
-    header .deroulant:hover .content {
-        position: relative;
-        width: 100%;
-        top: 0;
-        padding-left: 30px;
-    }
 }
