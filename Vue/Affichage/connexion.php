@@ -6,21 +6,18 @@
                      alt="Sample image" id="log_img">
             </div>
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                <form>
+                <form action="index.php?module=ModConnexion&action=connexion" method="POST">
 
                     <!-- Email input -->
                     <div class="form-outline mb-4">
-                        <input type="email" id="form3Example3" class="form-control form-control-lg"
-                               placeholder="Saisir adresse mail" />
+                        <input type="email" id="form3Example3" class="form-control form-control-lg" value="<?php if (isset($_COOKIE['login'])) echo $_COOKIE['login'];?>" placeholder="Entrer l'adresse mail" name="login" required/>
                         <label for="form3Example3"></label>
                     </div>
 
                     <!-- Password input -->
                     <div class="form-outline mb-3">
-                        <input type="password" id="form3Example4" class="form-control form-control-lg"
-                               placeholder="Saisir mot de passe" />
+                        <input type="password" id="form3Example4" class="form-control form-control-lg" value="<?php if (isset($_COOKIE['password'])) echo $_COOKIE['password'];?>"placeholder="Entrer le mot de passe" name="password" required/>
                         <label for="form3Example4"></label>
-
                     </div>
 
                     <div class="d-flex justify-content-between align-items-center">
@@ -34,32 +31,12 @@
                     </div>
 
                     <div class="text-center text-lg-start mt-4 pt-2">
-                        <button type="button" class="btn btn-primary btn-lg"
-                                style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
-                        <p class="small fw-bold mt-2 pt-1 mb-0"style="color: white;">Vous n'avez pas de compte ? <a href="index.php?module=ModInscription"
-                                                                                          class="link-danger">Inscription</a></p>
+                        <button type="submit" class="btn btn-primary btn-lg"  style="padding-left: 2.5rem; padding-right: 2.5rem;" value="Connexion">Connexion</button>
+                        <p class="small fw-bold mt-2 pt-1 mb-0"style="color: white;">Vous n'avez pas de compte ? <a href="index.php?module=ModInscription" class="link-danger">Inscription</a></p>
                     </div>
 
                 </form>
             </div>
         </div>
-    </div>
-
-        <!-- Right -->
-        <div>
-            <a href="#!" class="text-white me-4">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#!" class="text-white me-4">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#!" class="text-white me-4">
-                <i class="fab fa-google"></i>
-            </a>
-            <a href="#!" class="text-white">
-                <i class="fab fa-linkedin-in"></i>
-            </a>
-        </div>
-        <!-- Right -->
     </div>
 </section>

@@ -1,41 +1,77 @@
+<section class="vh-100" id="form_log">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid"
+                     alt="Sample image" id="log_img">
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <form action="index.php?module=ModInscription&action=inscription" method="POST">
 
-<div id="container">
-    <form id="formulaire" action="index.php?module=ModInscription&action=inscription" method="POST">
-        <h1>Inscription</h1>
+                    <!-- Civilite-->
+                    <div class="form-outline mb-4">
+                        <input type="radio" id="choix1" class="civilite" name="civilite" value="monsieur">
+                        <label for="choix1" class="labelCivilite">Mr</label>
+                        <input type="radio" id="choix2" class="civilite" name="civilite" value="madame">
+                        <label for="choix2" class="labelCivilite">Mme</label>
+                    </div>
 
-        <input type="radio" id="choix1" class="civilite" name="civilite" value="monsieur" required>
-        <label for="choix1">Mr</label>
+                    <!-- Poste-->
+                    <div class="form-outline mb-4">
+                        <label class="labelCivilite">Poste</label>
+                        <select name="poste">
+                            <option value="Att">Attaquant</option>
+                            <option value="Mil">Milieux</option>
+                            <option value="Def">Défenseur</option>
+                            <option value="G">Gardien</option>
+                        </select>
+                    </div>
 
-        <input type="radio" id="choix2" class="civilite" name="civilite" value="madame" required>
-        <label for="choix2">Mme</label>
 
-        <label id="LabelPoste">Poste</label>
-        <select name="poste" required>
-            <option value="Att">Attaquant</option>
-            <option value="Mil">Milieux</option>
-            <option value="Def">Défenseur</option>
-            <option value="G">Gardien</option>
-        </select>
+                    <!-- Prenom -->
+                    <div class="form-outline mb-4">
+                        <input type="text" id="form3Example3" class="form-control form-control-lg"  placeholder="Entrer l'adresse mail" name="prenom" required/>
+                        <label for="form3Example3"></label>
+                    </div>
 
-        <label id="prenom">Prénom</label>
-        <input type="text"  placeholder="Entrer un prénom" name="prenom" required>
+                    <!-- Nom -->
+                    <div class="form-outline mb-4">
+                        <input type="text" id="form3Example4" class="form-control form-control-lg"  placeholder="Entrer un nom" name="nom" required/>
+                        <label for="form3Example4"></label>
+                    </div>
 
-        <label>Nom</label>
-        <input type="text" placeholder="Entrer un nom" name="nom" required>
+                    <!-- Age -->
+                    <div class="form-outline mb-4">
+                        <input type="number" id="form3Example5" class="form-control form-control-lg"  placeholder="Entrer un age" name="age" required/>
+                        <label for="form3Example5"></label>
+                    </div>
 
-        <label>Age</label>
-        <input type="number" placeholder="Entrer l'age" name="age" required>
+                    <!-- Ville -->
+                    <div class="form-outline mb-4">
+                        <input type="text" id="form3Example6" class="form-control form-control-lg"  placeholder="Entrer une ville" name="ville" required/>
+                        <label for="form3Example6"></label>
+                    </div>
 
-        <label>Ville</label>
-        <input type="text" placeholder="Entrer une ville" name="ville" required>
+                    <!-- Email -->
+                    <div class="form-outline mb-4">
+                        <input type="email" id="form3Example7" class="form-control form-control-lg" value="<?php if (isset($_COOKIE['login'])) echo $_COOKIE['login'];?>" placeholder="Entrer l'adresse mail" name="login" required/>
+                        <label for="form3Example7"></label>
+                    </div>
 
-        <label>Adresse mail</label>
-        <input type="email" placeholder="Entrer l'adresse mail" name="login" required>
+                    <!-- Password -->
+                    <div class="form-outline mb-3">
+                        <input type="password" id="form3Example8" class="form-control form-control-lg" value="<?php if (isset($_COOKIE['password'])) echo $_COOKIE['password'];?>"placeholder="Entrer le mot de passe" name="password" required/>
+                        <label for="form3Example8"></label>
+                    </div>
 
-        <label>Mot de passe</label>
-        <input type="password" placeholder="Entrer le mot de passe" name="password" required>
 
-        <input type="submit" id='submit' value='Inscription' >
-        <a href="index.php?module=ModConnexion" id="msgConnexion">Vous avez déjà un compte ? Connexion</a>
-    </form>
-</div>
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                        <button type="submit" class="btn btn-primary btn-lg"  style="padding-left: 2.5rem; padding-right: 2.5rem;" value="Inscription">Inscription</button>
+                        <p class="small fw-bold mt-2 pt-1 mb-0"style="color: white;">Vous avez déjà un compte ? <a href="index.php?module=ModConnexion" class="link-danger">Connexion</a></p>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
