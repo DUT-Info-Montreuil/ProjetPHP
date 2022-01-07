@@ -30,7 +30,7 @@
 
                     <!-- Prenom -->
                     <div class="form-outline mb-4">
-                        <input type="text" id="form3Example3" class="form-control form-control-lg"  placeholder="Entrer l'adresse mail" name="prenom" required/>
+                        <input type="text" id="form3Example3" class="form-control form-control-lg"  placeholder="Entrer un prenom" name="prenom" required/>
                         <label for="form3Example3"></label>
                     </div>
 
