@@ -12,7 +12,7 @@ class ModeleDiscussion extends Connexion
 
     }
     function getMessages($idMatch){
-        $req = self::$bdd->prepare("SELECT * from espacediscussion where idMatch=?");
+        $req = self::$bdd->prepare("SELECT * from espacediscussion where idMatch=? order by idMessage ASC");
         $req->execute(array($idMatch));
         $res = $req->fetchAll();
         return $res;

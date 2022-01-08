@@ -70,7 +70,7 @@ class ModeleMatchs extends Connexion
         $req2->execute(array($nomMatch,$dateMatch,$lieuMatch,$NbJoueurs,$heureMatch,$imageMatch,$login,$idnotif));
     }
     function getMesMatchs($idUtilisateur){
-        $req = self::$bdd->prepare("SELECT * FROM matchs natural join participer where idUtilisateur = ? ");
+        $req = self::$bdd->prepare("SELECT * FROM matchs where idMatch IN (SELECT idMatch from participer where idUtilisateur=?) ");
         $req->execute(array($idUtilisateur));
         $res = $req->fetchAll();
         return $res;
