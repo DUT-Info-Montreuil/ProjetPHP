@@ -47,6 +47,9 @@ class ModMatchs
             case 'DiscuterMatch' :
                 $this->controleur->formulaireDiscussion();
                 break;
+            case 'ConsulterMatchAmis' :
+                $this->controleur->consulterMatchAmis();
+                break;
         }
     }
 }

@@ -4,8 +4,9 @@ $userId=$data["userTest"];
 <div id="discussion">
   <div id="menu">
 		<p class="Bienvenue">Bienvenue <b><?= $userId[0]['nom']?></b></p>
-		<p class="quitterConversation"><a id="exit" href="index.php?module=ModProfil">Quitter la discussion</a></p>
-		<div style="clear:both"></div>
+
+      <button onclick="location.href='index.php?module=ModProfil&action=Profil'" class="quitterConversation" style="vertical-align:middle"><span>Quitter </span></button>
+      <div style="clear:both"></div>
 
     <div id="msgForm" >
         <?php
@@ -17,11 +18,11 @@ $userId=$data["userTest"];
             if ($value['idUtilisateur'] == $userId[0][0]): ?>
                 <div id="msgSender_1">
                 <span id="<?= $value['idUtilisateur'] ?>"><?= nl2br($value['contenu']) ?></span>
-                <div id="msgSender_2">Par <?= $userId[0]['nom']?>, le <?= $value['DatePublication']?></div></div>
+                <div id="msgSender_2">Par <?= $value['nomUtilisateur']?>, le <?= $value['DatePublication']?></div></div>
                <?php else: ?>
                 <div id="msgReceiver_1">
                 <span id="<?= $value['idUtilisateur'] ?>"><?= nl2br($value['contenu']) ?></span>
-                <div id="msgReceiver_2">Par <?= $value['idUtilisateur'] ?>, le <?= $value['DatePublication'] ?></div></div>
+                <div id="msgReceiver_2">Par <?= $value['nomUtilisateur'] ?>, le <?= $value['DatePublication'] ?></div></div>
             <?php endif; ?>
                 <?php endforeach; ?>
 

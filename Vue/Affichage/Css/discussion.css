@@ -54,10 +54,46 @@
 
 .welcome { float:left; }
 
-.quitterConversation { float:right; }
-
 .msgln { margin:0 0 2px 0; }
 #submitmsg{
     width: 250px;
     background-color: #08026c;
+}
+.quitterConversation {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #08026c;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px;
+    padding: 20px;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-left: 500px;
+}
+
+.quitterConversation span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.quitterConversation span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.quitterConversation:hover span {
+    padding-right: 25px;
+}
+.quitterConversation:hover span:after {
+    opacity: 1;
+    right: 0;
 }

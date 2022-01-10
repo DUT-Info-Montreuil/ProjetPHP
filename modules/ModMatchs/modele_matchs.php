@@ -80,6 +80,25 @@ class ModeleMatchs extends Connexion
         $req->execute(array($idMatch,$login));
 
     }
+    function getDatesMatchsAmis($login){
+        $req = self::$bdd->prepare("SELECT dateMatch FROM matchs where idMatch IN (SELECT idMatch from participer where idUtilisateur IN (SELECT idUtilisateur_1 from etreami where idUtilisateur=(SELECT idUtilisateur from utilisateur natural join identifiants where login= ?) ))");
+        $req->execute(array($login));
+        $res = $req->fetchAll();
+        return $res;
+    }
+    function getMatchsAmis($login , $dateMatch){
+        $req = self::$bdd->prepare("SELECT * FROM matchs where idMatch IN (SELECT idMatch from participer where idUtilisateur IN (SELECT idUtilisateur_1 from etreami where idUtilisateur=(SELECT idUtilisateur from utilisateur natural join identifiants where login= ?) )) and dateMatch = ?");
+        $req->execute(array($login,$dateMatch));
+        $res = $req->fetchAll();
+        return $res;
+    }
+    function getAmisParticipants($login ,$dateMatch){
+        $req = self::$bdd->prepare("SELECT nom FROM utilisateur where idUtilisateur IN (SELECT idUtilisateur_1 from etreami where idUtilisateur=(SELECT idUtilisateur from utilisateur natural join identifiants where login=?)) and idUtilisateur IN (SELECT idUtilisateur from participer where idMatch IN (SELECT idMatch from matchs where dateMatch=?))");
+        $req->execute(array($login,$dateMatch));
+        $res = $req->fetchAll();
+        return $res;
+    }
+
 
 
 }

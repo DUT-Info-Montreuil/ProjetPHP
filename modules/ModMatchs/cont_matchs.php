@@ -18,7 +18,8 @@ class ContMatchs
     {
         $login = $_SESSION['login'];
         $profil = $this->modele->getProfil($login);
-        $this->vue->afficherPageMatchs($profil);
+        $datesMatchs = $this->modele->getDatesMatchsAmis($login);
+        $this->vue->afficherPageMatchs($profil , $datesMatchs);
     }
 
     public function formulaireMatch()
@@ -125,6 +126,13 @@ class ContMatchs
     }
     public function formAfficherMatchs(){
         $this->vue->afficherFormAjoutePhotos();
+    }
+    public function consulterMatchAmis(){
+        $username = $_SESSION['login'];
+        $dateMatch = $_POST["dateMatchAmis"];
+        $matchsAmis = $this->modele->getMatchsAmis($username ,$dateMatch);
+        $AmisParticipants = $this->modele->getAmisParticipants($username ,$dateMatch);
+        $this->vue->afficherMatchsAmis($matchsAmis ,$AmisParticipants);
     }
 
 
