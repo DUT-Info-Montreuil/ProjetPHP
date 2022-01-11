@@ -41,6 +41,5 @@
 </script>
 
 <script src="./Vue/Affichage/JavaScript/script.js"></script>
-<script src="./Vue/Affichage/JavaScript/agenda.js"></script>
 
 <!-- https://www.pierre-giraud.com/html-css-apprendre-coder-cours/creation-menu-deroulant/-->

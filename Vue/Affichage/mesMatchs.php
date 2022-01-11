@@ -32,7 +32,7 @@ if (!empty($liste)): ?>
                                     <button type="submit" class="btn btn-info "><a id="consulterMatch" href='?module=ModMatchs&action=ConsulterMatch&id=<?= $elements['idMatch']?>'>Consulter</a></button>
                                     <button type="submit" class="btn btn-primary "><a id="discuterMatch" href='?module=ModDiscussion&action=DiscuterMatch&id=<?= $elements['idMatch']?>'>Discuter</a></button>
                                     <button id="buttonRetirer" type="submit" class="btn btn-danger "><a id="retirerMatch" href='?module=ModMatchs&action=RetirerParticipation&id=<?= $elements['idMatch']?>'>Retirer</a></button>
-                                    <button type="submit" id="buttonAjouterPhotos" class="btn btn-warning "><a id="ajouterPhotos" href='?module=ModMatchs&action=FormAjouterPhotosMatchs&id=<?= $elements['idMatch']?>'>Ajouter Photo</a></button>-->
+                                    <button type="submit" id="buttonAjouterPhotos" class="btn btn-warning "><a id="ajouterPhotos" href='?module=ModMatchs&action=FormAjouterPhotosMatchs&id=<?= $elements['idMatch']?>'>Ajouter Photo</a></button>
                                 </div>
                             </div>
                         </div>

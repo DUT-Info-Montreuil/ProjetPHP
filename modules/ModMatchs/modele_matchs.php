@@ -102,6 +102,10 @@ class ModeleMatchs extends Connexion
         $req = self::$bdd->prepare("INSERT INTO `photos`(`photo`, `idMatch`) VALUES (?,?)");
         $req->execute(array($photo,$idMatch));
     }
+    function getPhotosMatch($idMatch){
+        $req = self::$bdd->prepare("SELECT photo FROM `photos` WHERE idMatch=?");
+
+    }
 
 
 
