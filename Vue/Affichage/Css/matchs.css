@@ -46,10 +46,16 @@
     color: #ffffff;
     text-decoration: none;
 }
+#discuterMatch{
+    color: #ffffff;
+    text-decoration: none;
+}
 #agendaMatchs{
     color: #ffffff;
     text-decoration: none;
-
+}
+#buttonRetirer{
+    margin-top: 4%;
 }
 #creerMatch{
     color: #ffffff;
@@ -70,6 +76,15 @@
     height: 100px;
     margin-left: 35px;
     border-radius: 10px;
+}
+#imageMatchAmis img{
+    width:50%;
+    height: 50px;
+    border-radius: 10px;
+}
+#buttonAjouterPhotos{
+    margin-top: 4%;
+    float: right;
 }
 #consulterMatch{
     color: #ffffff;
@@ -142,6 +157,9 @@ input[type='file'] {
     margin-left: 60%;
     margin-top: 2%;
     margin-bottom: 5%;
+}
+.btnAjouterPhoto{
+    margin-left: -10%;
 }
 .show2{
     position: absolute;

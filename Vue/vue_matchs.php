@@ -5,9 +5,10 @@ class VueMatchs
 {
 
 
-    function afficherPageMatchs($data)
+    function afficherPageMatchs($data,$dates)
     {
         $data["titre"] = "Matchs";
+        $data["liste"] = $dates;
         Vue::render("Affichage/gererMatchs.php", $data);
 
     }
@@ -29,4 +30,16 @@ class VueMatchs
         Vue::render("Affichage/ajouterPhotosMatchs.php",["titre"=>"Ajouter Photos"]);
 
     }
+    function afficherMatchsAmis($liste,$AmisParticipants){
+        $data["titre"] = "Matchs Amis";
+        $data["liste"] = $liste;
+        $data["AmisParticipants"] = $AmisParticipants;
+        Vue::render("Affichage/matchsAmis.php",$data);
+
+    }
+    function afficherFormAjouterPhotos(){
+        Vue::render("Affichage/espaceAjoutPhotos.php",["titre"=>"Ajouter Photos"]);
+
+    }
+
 }

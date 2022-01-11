@@ -18,7 +18,8 @@ class ContMatchs
     {
         $login = $_SESSION['login'];
         $profil = $this->modele->getProfil($login);
-        $this->vue->afficherPageMatchs($profil);
+        $datesMatchs = $this->modele->getDatesMatchsAmis($login);
+        $this->vue->afficherPageMatchs($profil , $datesMatchs);
     }
 
     public function formulaireMatch()
@@ -123,9 +124,57 @@ class ContMatchs
         }
 
     }
-    public function formAfficherMatchs(){
-        $this->vue->afficherFormAjoutePhotos();
+    public function FormAjouterPhotos(){
+        $this->vue->afficherFormAjouterPhotos();
+
     }
+    public function ajouterPhotos(){
+        $idMatch=$_GET["id"];
+        $img_name = $_FILES['photoMatch']['name'];
+        $img_size = $_FILES['photoMatch']['size'];
+        $tmp_name = $_FILES['photoMatch']['tmp_name'];
+        $error = $_FILES['photoMatch']['error'];
+        try {
+            if ($error === 0) {
+                if ($img_size > 125000) {
+                    $erreur = "Désolé, votre image est trop grand.";
+                    echo $erreur;
+                }else {
+                    $img_ex = pathinfo($img_name, PATHINFO_EXTENSION);
+                    $img_ex_lc = strtolower($img_ex);
+                    $allowed_exs = array("jpg", "jpeg", "png");
+                    if (in_array($img_ex_lc, $allowed_exs)) {
+                        $new_img_name = uniqid("IMG-", true).'.'.$img_ex_lc;
+                        $img_upload_path = './Vue/Affichage/Images/'.$new_img_name;
+                        move_uploaded_file($tmp_name, $img_upload_path);
+                        if(isset($_POST['AjouterPhotosMatchs'])){
+                            $this->modele->ajouterPhotos($idMatch,$new_img_name);
+                            echo "photo ajoutée ";
+                        }else{
+                            echo "photo n'est pas ajoutée";
+                        }
+                    }else {
+                        $erreur = "Vous ne pouvez pas mettre ce type de fichier ";
+                        echo $erreur;
+                    }
+                }
+            }else {
+                echo "erreur lors d'ajout de la photo";
+            }
+        } catch (Exception $e) {
+            var_dump($e);
+            exit();
+
+        }
+    }
+    public function consulterMatchAmis(){
+        $username = $_SESSION['login'];
+        $dateMatch = $_POST["dateMatchAmis"];
+        $matchsAmis = $this->modele->getMatchsAmis($username ,$dateMatch);
+        $AmisParticipants = $this->modele->getAmisParticipants($username ,$dateMatch);
+        $this->vue->afficherMatchsAmis($matchsAmis ,$AmisParticipants);
+    }
+
 
 
 }

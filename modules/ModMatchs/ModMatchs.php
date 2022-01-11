@@ -42,7 +42,17 @@ class ModMatchs
                 $this->controleur->retirerParticipation();
                 break;
             case 'FormAjouterPhotosMatchs' :
-                $this->controleur->formAfficherMatchs();
+                $this->controleur->FormAjouterPhotos();
+                break;
+            case 'AjouterPhotosMatchs' :
+                $this->controleur->ajouterPhotos();
+                break;
+
+            case 'DiscuterMatch' :
+                $this->controleur->formulaireDiscussion();
+                break;
+            case 'ConsulterMatchAmis' :
+                $this->controleur->consulterMatchAmis();
                 break;
         }
     }
