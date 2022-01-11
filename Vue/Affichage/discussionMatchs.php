@@ -72,7 +72,7 @@
                     <?php endif; ?>
                     <script>document.getElementById('msgForm').scrollTop = document.getElementById('msgForm').scrollHeight;
                     </script>
-                </div>
+                    </div>
                 </div>
                 <div class="card-footer">
                     <form name="message" action="index.php?module=ModDiscussion&action=EnvoyerMessage&id=<?= $data[0]?>" method="post">

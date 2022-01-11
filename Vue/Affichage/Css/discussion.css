@@ -235,6 +235,15 @@ input[type="file"] + label {
     background: #0b0133;
     color: white;
 }
+#msgForm{
+    border: 3px solid #cccccc;
+    padding: 10px 0;
+    border-radius: 5px;
+    overflow: scroll;
+    height: 400px;
+    margin: 30px 0;
+    background: #0b0133;
+}
 
 @media(max-width: 576px){
     .contacts_card{
