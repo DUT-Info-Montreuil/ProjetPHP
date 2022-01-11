@@ -29,8 +29,7 @@
                     <button type="submit" class="btn btn-danger "><a id="mesMatchs" href='?module=ModMatchs&action=MesMatchs&id=<?= $data['idUtilisateur']?>'>Mes Matchs</a></button>
                     <button type="submit" class="btn btn-success "><a id="rechercherMatchs" href='?module=ModMatchs&action=RechercherTousLesMatchs&id=<?= $data['idUtilisateur']?>'>Rechercher Matchs</a></button>
                     <button type="submit" class="btn btn-warning "><a id="creerMatch" href='?module=ModMatchs&action=FormulaireCreationMatch'>Creer Un Match</a></button>
-                    <button type="submit" class="btn btn-primary "><a id="ajouterPhotos" href='?module=ModMatchs&action=FormAjouterPhotosMatchs'>Ajouter des photos</a></button>
-                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                         agenda de nos amis
                     </button>
                     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -42,16 +41,14 @@
                                 </div>
                                 <div class="modal-body">
                                     <?=include_once('agenda.php'); ?>
-
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                 </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
+                         </div>
+                     </div>
                 </div>
             </div>
         </div>

@@ -82,7 +82,10 @@
     height: 50px;
     border-radius: 10px;
 }
-
+#buttonAjouterPhotos{
+    margin-top: 4%;
+    float: right;
+}
 #consulterMatch{
     color: #ffffff;
     text-decoration: none;
@@ -154,6 +157,9 @@ input[type='file'] {
     margin-left: 60%;
     margin-top: 2%;
     margin-bottom: 5%;
+}
+.btnAjouterPhoto{
+    margin-left: -10%;
 }
 .show2{
     position: absolute;

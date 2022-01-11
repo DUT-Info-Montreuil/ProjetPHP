@@ -37,5 +37,9 @@ class VueMatchs
         Vue::render("Affichage/matchsAmis.php",$data);
 
     }
+    function afficherFormAjouterPhotos(){
+        Vue::render("Affichage/espaceAjoutPhotos.php",["titre"=>"Ajouter Photos"]);
+
+    }
 
 }
