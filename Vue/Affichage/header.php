@@ -11,26 +11,6 @@
 
 </head>
 <body>
-<!--<header id="navbar" class="nav">
-    <a href="index.php?module=ModAccueil" id="titre">BasicFoot</a>
-    <div class="deroulant">
-        <button id="buttonImage"><img src="Vue/Affichage/Images/compte.png" id="image"></button>
-        <button id="buttonSimple">Mon compte</button>
-        <div class="content">
-            <?php
-/*                if(empty($_SESSION['login'])) {
-                    echo '<a href="index.php?module=ModConnexion">Connexion</a>
-                    <a href="index.php?module=ModInscription">Inscription</a>';
-                }
-                else {
-                    echo '<a href="index.php?module=ModProfil">Mon compte</a>
-                        <a href="index.php?module=ModConnexion&action=deconnexion">Deconnexion</a>';
-                }*/?>
-
-        </div>
-    </div>-->
-
-
 
 <header >
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #130255;" >
@@ -43,7 +23,7 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
                     <?php
                     if(isset($_SESSION['login'])) {
-                        echo '<li class="nav-item"><a class="nav-link" href="#">Matchs</a></li>';
+                        echo '<li class="nav-item"><a class="nav-link" href="index.php?module=ModMatchs&action=PageMatchs" id="titreMatch">Matchs</a></li>';
                     }
                     ?>
 

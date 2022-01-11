@@ -5,6 +5,8 @@
     background-color: green;
     color:white;
 }
-#formAgenda h{
+#h2_Dates{
     color:black;
+    font-size: 1.1em;
+    display: inline-block;
 }
