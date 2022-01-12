@@ -7,7 +7,9 @@ class Vue {
         $contenu = ob_get_clean();
 
         include_once "./Vue/Affichage/header.php";
+        echo "<div>";
         echo $contenu;
+        echo "</div>";
         include_once "./Vue/Affichage/footer.php";
 
     }

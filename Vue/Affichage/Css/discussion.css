@@ -217,7 +217,8 @@
     width: 0;
     overflow: hidden;
 }
-#file+ #labelFile {
+
+#file + #labelFile {
     border: 1px solid rgba(0,0,0,.2);
     padding: 5px;
     background: #0b0133;
