@@ -11,6 +11,6 @@ class Vue {
         echo $contenu;
         echo "</div>";
         include_once "./Vue/Affichage/footer.php";
-
     }
 }
+

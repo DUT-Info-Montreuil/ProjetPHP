@@ -1,5 +1,3 @@
-
-<body id="body">
 <div class="container">
     <div id="content" class="content p-0">
         <div class="profile-header">
@@ -91,5 +89,3 @@
         </div>
     </div>
 </div>
-
-</body>
