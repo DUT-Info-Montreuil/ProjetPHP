@@ -6,7 +6,7 @@ class VueAmis
 
     function afficherLesUtilisateurs($liste)
     {
-        $data["titre"] = "utilisateurs";
+        $data["titre"] = "Utilisateurs";
         $data["liste"] = $liste;
         Vue::render("Affichage/utilisateurs.php", $data);
     }
