@@ -20,10 +20,10 @@
                     <div class="form-outline mb-4">
                         <label class="labelCivilite">Poste</label>
                         <select name="poste">
-                            <option value="Att">Attaquant</option>
-                            <option value="Mil">Milieux</option>
-                            <option value="Def">Défenseur</option>
-                            <option value="G">Gardien</option>
+                            <option value="Attaquant">Attaquant</option>
+                            <option value="Milieux">Milieux</option>
+                            <option value="Défenseur">Défenseur</option>
+                            <option value="Gardien">Gardien</option>
                         </select>
                     </div>
 

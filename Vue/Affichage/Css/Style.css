@@ -11,3 +11,18 @@
 @import "StyleAlerte.css";
 @import "accueil.css";
 @import "footer.css";
+
+body::-webkit-scrollbar{
+    display: none;
+}
+#wrapper2{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+
+#wrapper2 footer{
+    margin-top: auto;
+    justify-self: end;
+}
