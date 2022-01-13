@@ -40,7 +40,7 @@ class ContAmis
         $val =1;
         try {
             $this->modele->accepterInvitation($idAmi,$login, $val);
-            $this->vue->alerte_message("Demande acceptée avec succès","success","index.php?module=ModProfil&action=TousMesAmis");
+            $this->vue->alerte_message("Demande acceptée avec succès","success","index.php?module=ModAmis&action=TousMesAmis");
         }
         catch (Exception $e) {
             echo "Impossible d'accepter ";
