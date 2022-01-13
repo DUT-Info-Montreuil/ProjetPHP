@@ -41,5 +41,11 @@ class VueMatchs
         Vue::render("Affichage/espaceAjoutPhotos.php",["titre"=>"Ajouter Photos"]);
 
     }
+    function afficherPhotosMatchs($PhotosDiscussion,$photosGalerry){
+        $data["titre"] = "Photos Matchs";
+        $data["liste"] = $PhotosDiscussion;
+        $data["liste2"] = $photosGalerry;
+        Vue::render("Affichage/photosMatchs.php",$data);
+    }
 
 }

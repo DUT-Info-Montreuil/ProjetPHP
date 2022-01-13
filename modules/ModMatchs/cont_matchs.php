@@ -149,7 +149,7 @@ class ContMatchs
                         move_uploaded_file($tmp_name, $img_upload_path);
                         if(isset($_POST['AjouterPhotosMatchs'])){
                             $this->modele->ajouterPhotos($idMatch,$new_img_name);
-                            echo "photo ajoutée ";
+                            $this->photosMatch();
                         }else{
                             echo "photo n'est pas ajoutée";
                         }
@@ -173,6 +173,12 @@ class ContMatchs
         $matchsAmis = $this->modele->getMatchsAmis($username ,$dateMatch);
         $AmisParticipants = $this->modele->getAmisParticipants($username ,$dateMatch);
         $this->vue->afficherMatchsAmis($matchsAmis ,$AmisParticipants);
+    }
+    public function photosMatch(){
+        $idMatch=$_GET["id"];
+        $photoMatchsDiscussion = $this->modele->getPhotosMatchsDiscussion($idMatch);
+        $photosGalerry = $this->modele->getPhotosMatchs($idMatch);
+        $this->vue->afficherPhotosMatchs($photoMatchsDiscussion,$photosGalerry);
     }
 
 

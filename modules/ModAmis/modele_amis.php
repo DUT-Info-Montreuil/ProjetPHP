@@ -79,6 +79,12 @@ class ModeleAmis extends Connexion
         $req2->bindParam('login', $login);
         $req2->execute();
     }
+    function rechercherUtilisateur($user){
+        $req = self::$bdd->prepare("SELECT * FROM utilisateur where prenom LIKE '".$user."%'");
+        $req->execute();
+        $res = $req->fetchAll();
+        return $res;
+    }
 
 }
 
