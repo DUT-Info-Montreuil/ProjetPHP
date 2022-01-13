@@ -79,8 +79,9 @@ class ModeleAmis extends Connexion
         $req2->bindParam('login', $login);
         $req2->execute();
     }
-    function rechercherUtilisateur($user){
-        $req = self::$bdd->prepare("SELECT * FROM utilisateur where prenom LIKE '".$user."%'");
+    function rechercherUtilisateur($user,$login){
+        $req = self::$bdd->prepare("SELECT * FROM utilisateur where prenom LIKE '".$user."%' and idUtilisateur NOT IN (select idUtilisateur from utilisateur where idUtilisateur = (SELECT idUtilisateur from utilisateur natural join identifiants where login=:login ))");
+        $req->bindParam('login', $login);
         $req->execute();
         $res = $req->fetchAll();
         return $res;

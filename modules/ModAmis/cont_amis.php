@@ -61,10 +61,11 @@ class ContAmis
         }
 
     }
-    public function rechercherUtilisateur(){
+    public function rechercherUtilisateur($login){
+
         $user = (String)trim($_GET['user']);
         if (isset($_GET['user'])){
-            $userTrouve = $this->modele->rechercherUtilisateur($user);
+            $userTrouve = $this->modele->rechercherUtilisateur($user,$login);
             $this->vue->afficherUsersRechercher($userTrouve);
         }
     }
