@@ -102,6 +102,20 @@ class ModeleMatchs extends Connexion
         $req = self::$bdd->prepare("INSERT INTO `photos`(`photo`, `idMatch`) VALUES (?,?)");
         $req->execute(array($photo,$idMatch));
     }
+    function getPhotosMatchsDiscussion($idMatch){
+        $req = self::$bdd->prepare("SELECT photo FROM espaceDiscussion where idMatch =? ");
+        $req->execute(array($idMatch));
+        $res = $req->fetchAll();
+        return $res;
+    }
+    function getPhotosMatchs($idMatch){
+        $req = self::$bdd->prepare("SELECT photo FROM photos where idMatch =? ");
+        $req->execute(array($idMatch));
+        $res = $req->fetchAll();
+        return $res;
+    }
+
+
 
 
 

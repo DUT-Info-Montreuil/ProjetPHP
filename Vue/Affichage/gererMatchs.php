@@ -2,7 +2,6 @@
 <div class="container rounded bg-light mt-3" >
     <div class="row">
         <div class="col-md-4 border-right">
-
             <div class="d-flex flex-column align-items-center text-center p-3 py-5">
                 <?php
                 if ($data['sexe']=='madame'): ?>

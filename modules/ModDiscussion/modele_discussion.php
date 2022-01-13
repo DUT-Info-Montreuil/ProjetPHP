@@ -5,12 +5,13 @@ require_once "./Connexion.php";
 class ModeleDiscussion extends Connexion
 {
 
-    function envoyerMessage($contenuMessage, $login,$idMatch)
+    function envoyerMessage($contenuMessage, $photoDiscussion,$login,$idMatch)
     {
-        $req = self::$bdd->prepare("INSERT INTO `espaceDiscussion`(`contenu`, `nomUtilisateur`,`DatePublication`, `idUtilisateur`, `idMatch`) VALUES (?,(select nom from utilisateur natural join identifiants where login = ?),now(),(select idUtilisateur from utilisateur natural join identifiants where login = ?),?) ");
-        $req->execute(array($contenuMessage,$login,$login,$idMatch));
+        $req = self::$bdd->prepare("INSERT INTO `espaceDiscussion`(`contenu`,`photo`, `nomUtilisateur`,`DatePublication`, `idUtilisateur`, `idMatch`) VALUES (?,?,(select nom from utilisateur natural join identifiants where login = ?),now(),(select idUtilisateur from utilisateur natural join identifiants where login = ?),?) ");
+        $req->execute(array($contenuMessage,$photoDiscussion,$login,$login,$idMatch));
 
     }
+
     function getMessages($idMatch){
         $req = self::$bdd->prepare("SELECT * from espaceDiscussion where idMatch=? order by idMessage ASC");
         $req->execute(array($idMatch));

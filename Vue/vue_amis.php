@@ -26,6 +26,11 @@ class VueAmis
         Vue::render("Affichage/amis.php", $data);
 
     }
+     function afficherUsersRechercher($liste){
+         $data["titre"] = "users";
+         $data["liste"] = $liste;
+         Vue::render("Affichage/recherche_utilisateur.php", $data);
+     }
 
     function alerte_message($message,$alerte,$url) {
         Vue::alerte_message($message,$alerte,$url);

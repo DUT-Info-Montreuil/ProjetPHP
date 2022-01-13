@@ -19,8 +19,8 @@
             <ul class="profile-header-tab nav nav-tabs">
                 <li class="nav-item"><a href="#profile" class="nav-link" name="profil" data-toggle="tab">Information</a></li>
                 <li class="nav-item"><a href="index.php?module=ModAmis&action=TousMesAmis" class="nav-link " data-toggle="tab">Mes amis</a></li>
+                <li class="nav-item"><a href="index.php?module=ModAmis&action=TousLesUtilisateurs" class="nav-link " data-toggle="tab">Ajouter amis</a>
                 <li class="nav-item"><a href="index.php?module=ModAmis&action=TousLesDemandesAmis" class="nav-link " data-toggle="tab">Mes invitations d'amis</a></li>
-                <li class="nav-item"><a href="index.php?module=ModAmis&action=TousLesUtilisateurs" class="nav-link " data-toggle="tab">Tous les users</a>
             </ul>
         </div>
         <div class="tab-pane fade active show" id="profile"></div>

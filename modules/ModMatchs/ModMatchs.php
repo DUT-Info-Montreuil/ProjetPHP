@@ -47,13 +47,16 @@ class ModMatchs
             case 'AjouterPhotosMatchs' :
                 $this->controleur->ajouterPhotos();
                 break;
-
+            case 'PhotosMatchs' :
+                $this->controleur->photosMatch();
+                break;
             case 'DiscuterMatch' :
                 $this->controleur->formulaireDiscussion();
                 break;
             case 'ConsulterMatchAmis' :
                 $this->controleur->consulterMatchAmis();
                 break;
+
         }
     }
 }

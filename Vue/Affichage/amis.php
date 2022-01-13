@@ -1,4 +1,3 @@
-
 <?php
 $liste = $data["liste"];
 if (!empty($liste)): ?>
@@ -34,3 +33,5 @@ if (!empty($liste)): ?>
             <a class="btn btn-danger" href="index.php?module=ModProfil&action=Profil" role="button">Revenir au profil</a>
         </div>
     <?php endif; ?>
+
+</div>
