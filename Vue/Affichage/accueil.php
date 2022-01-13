@@ -4,7 +4,10 @@
         <div id="textePresentation">
             <p id="p1">BasicFoot facilite l'organisation de matchs de football entre amis</p>
             <p>Invitez vos amis, discuter avec eux, gérer les matchs,</p>
-            <p>consulter l’agenda des matchs autour de vous,donnez vos avis sur les joueurs !.</p>
+            <p>consulter l’agenda des matchs autour de vous,donnez vos avis sur les joueurs !</p>
+
+            <?php echo password_hash("Marie1234",PASSWORD_DEFAULT);
+            ?>
         </div>
         <div id="imagesPresentation">
             <img src="./Vue/Affichage/Images/Messi.png" alt="" />

@@ -23,10 +23,10 @@ class ContAmis
         $val =0;
         try {
             $this->modele->demanderEtreAmis($login, $idAmi, $val);
-            echo "demande envoyer";
+            $this->vue->alerte_message("Demande d'amis envoyé avec succès","success","index.php?module=ModProfil&action=Profil");
         }
         catch (Exception $e) {
-            echo "deja vous avez envoyée l'invitation ";
+            $this->vue->alerte_message("Demande d'amis déjà envoyée, en attente d'une réponse de l'utilisateur","warning","index.php?module=ModProfil&action=Profil");
         }
 
     }
@@ -40,7 +40,7 @@ class ContAmis
         $val =1;
         try {
             $this->modele->accepterInvitation($idAmi,$login, $val);
-            echo "demande est Acceptée";
+            $this->vue->alerte_message("Demande acceptée avec succès","success","index.php?module=ModProfil&action=TousMesAmis");
         }
         catch (Exception $e) {
             echo "Impossible d'accepter ";

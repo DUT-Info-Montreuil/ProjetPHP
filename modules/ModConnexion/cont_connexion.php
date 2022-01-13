@@ -36,14 +36,12 @@ class ContConnexion {
 
             }
             else {
-                $this->vue->form_script_mdp_incorrect();
-                $this->vue->form_connexion();
+                $this->vue->alerte_message("L'adresse mail ou le mot de passe saisie est incorrecte</br>Veuillez réessayer de vous <a href='index.php?module=ModConnexion' class='alert-link'>connecter</a>","danger","index.php?module=ModConnexion");
             }
         }
 
         else {
-            $this->vue->form_script_login_incorrect($login);
-            $this->vue->form_connexion();
+            $this->vue->alerte_message("L'adresse mail $login n'appartient à aucun compte</br>Veuillez réessayer de vous <a href='index.php?module=ModConnexion' class='alert-link'>connecter </a>ou vous <a href='index.php?module=ModInscription' class='alert-link'>inscrire</a>","danger","index.php?module=ModInscription");
         }
 
     }

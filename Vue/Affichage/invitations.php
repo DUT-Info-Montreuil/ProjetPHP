@@ -1,7 +1,4 @@
-<head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-</head>
-<body id="body">
+
 <?php
 $liste = $data["liste"];
 if (!empty($liste)): ?>
@@ -9,9 +6,9 @@ if (!empty($liste)): ?>
     <table class="table table-striped borderStyleTable">
         <tr>
             <th scope="col">Nom</th>
-            <th scope="col">Prenom</th>
+            <th scope="col">Prénom</th>
             <th scope="col">Confirmation</th>
-            <th scope="col">Refuse</th>
+            <th scope="col">Refusé</th>
         </tr>
         </thead>
         <tbody>
@@ -19,13 +16,17 @@ if (!empty($liste)): ?>
             <tr>
                 <td><?= $value['nom'] ?> </td>
                 <td><?= $value['prenom']?></td>
-                <td><button type="submit" class="btn btn-success "><a id="accepterDemande" href='?module=ModAmis&action=AccepterDemande&id=<?= $value['idUtilisateur']?>'>Accepter</a></button></td>
-                <td><button type="submit" class="btn btn-danger"><a id="refuserDemande" href='?module=ModAmis&action=RetirerAmi&id=<?= $value['idUtilisateur']?>'>Refuser</a></button></td>
+                <td><a href='?module=ModAmis&action=AccepterDemande&id=<?= $value['idUtilisateur']?>' class="btn btn-success" role="button">Accepter</a></td>
+                <td><a href='?module=ModAmis&action=RetirerAmi&id=<?= $value['idUtilisateur']?>' class="btn btn-danger" role="button">Refuser</a></td>
             </tr>
         <?php endforeach; ?>
         </tbody>
     </table>
     <?php else: ?>
-        <div class="alert alert-danger mt-5">Aucun Demandes d'ami</div>
+        <div class="alert alert-danger mt-5" >Aucune demandes d'amis</div>
+        <div class="float-end">
+            <a class="btn btn-danger" href="index.php?module=ModProfil&action=Profil" role="button">Revenir au profil</a>
+        </div>
+
     <?php endif; ?>
-</body>
+

@@ -12,9 +12,7 @@
 @import "accueil.css";
 @import "footer.css";
 
-body::-webkit-scrollbar{
-    display: none;
-}
+
 #wrapper2{
     display: flex;
     flex-direction: column;

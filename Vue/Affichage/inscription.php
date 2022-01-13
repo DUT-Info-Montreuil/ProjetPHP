@@ -10,9 +10,9 @@
 
                     <!-- Civilite-->
                     <div class="form-outline mb-4">
-                        <input type="radio" id="choix1" class="civilite" name="civilite" value="monsieur">
+                        <input type="radio" id="choix1" class="civilite" name="civilite" value="Monsieur">
                         <label for="choix1" class="labelCivilite">Mr</label>
-                        <input type="radio" id="choix2" class="civilite" name="civilite" value="madame">
+                        <input type="radio" id="choix2" class="civilite" name="civilite" value="Madame">
                         <label for="choix2" class="labelCivilite">Mme</label>
                     </div>
 
@@ -66,7 +66,7 @@
 
 
                     <div class="text-center text-lg-start mt-4 pt-2">
-                        <button type="submit" class="btn btn-primary btn-lg"  style="padding-left: 2.5rem; padding-right: 2.5rem;" value="Inscription">Inscription</button>
+                        <button type="submit" class="btn btn-primary btn-lg"  data-bs-toggle="modal" data-bs-target="#exampleModal" style="padding-left: 2.5rem; padding-right: 2.5rem;" value="Inscription">Inscription</button>
                         <p class="small fw-bold mt-2 pt-1 mb-0"style="color: white;">Vous avez déjà un compte ? <a href="index.php?module=ModConnexion" class="link-danger">Connexion</a></p>
                     </div>
 

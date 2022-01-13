@@ -7,14 +7,14 @@
             <div class="profile-header-content">
                 <div class="profile-header-img mb-4">
                     <?php
-                    if ($data['sexe']=='madame'): ?>
+                    if ($data['sexe']=='Madame'): ?>
                     <img src="https://bootdey.com/img/Content/avatar/avatar3.png" class="mb-4" alt="" />
                     <?php else: ?>
                         <img src="https://bootdey.com/img/Content/avatar/avatar7.png" class="mb-4" alt="" />
                     <?php endif; ?>
                 </div>
                 <div class="profile-header-info">
-                    <h4 class="m-t-sm"><?= $data['nom'] ?></h4>
+                    <h4 class="m-t-sm"><?= $data['prenom'] ?></h4>
                 </div>
             </div>
             <ul class="profile-header-tab nav nav-tabs">
@@ -25,7 +25,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-sm-3">
-                        <p class="mb-0 mr-30">Civilite : </p>
+                        <p class="mb-0 mr-30">Civilité : </p>
                     </div>
                     <div class="col-sm-9">
                         <p class="mb-0"><?= $data['sexe'] ?></p>
@@ -43,7 +43,7 @@
                 <hr>
                 <div class="row">
                     <div class="col-sm-3">
-                        <p class="mb-0">Prenom :</p>
+                        <p class="mb-0">Prénom :</p>
                     </div>
                     <div class="col-sm-9">
                         <p class="mb-0"><?= $data['prenom']?></p>
@@ -77,16 +77,11 @@
                     </div>
                 </div>
                 <hr>
-                <div class="row">
-                    <div class="col-sm-3">
-                        <p class="mb-0">Email :</p>
-                    </div>
-                    <div class="col-sm-9">
-                        <p class="mb-0"><?=  $data['login']?></p>
-                    </div>
+                <div class="float-end">
+                    <a href="index.php?module=ModAmis&action=TousLesUtilisateurs" class="btn btn-primary" role="button">Retour</a>
+                    <a href="index.php?module=ModAmis&action=NoterUtilisateur" class="btn btn-primary" role="button">Noter </a>
                 </div>
-                <button id="buttonStyle" type="button"><a id="txt" href="index.php?module=ModAmis&action=TousLesUtilisateurs" >Revenir Au Liste</a></button>
-                <button id="buttonStyle" type="button"><a id="txt" href="index.php?module=ModAmis&action=NoterUtilisateur" >Noter </a></button>
+
                 </div>
         </div>
     </div>

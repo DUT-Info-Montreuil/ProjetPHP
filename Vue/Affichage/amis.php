@@ -1,19 +1,19 @@
-<head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-</head>
-<body id="body">
+
 <?php
 $liste = $data["liste"];
 if (!empty($liste)): ?>
+
+
 <div class="container mt-5">
+    <div class="mb-3"> <a class="btn btn-primary" href="index.php?module=ModProfil&action=Profil" role="button">Revenir au profil</a></div>
     <table class="table table-striped borderStyleTable">
+        <thead>
         <tr>
             <th scope="col">Nom</th>
-            <th scope="col">Prenom</th>
+            <th scope="col">Prénom</th>
             <th scope="col">Supprimer Ami</th>
             <th scope="col">Message</th>
             <th scope="col">Invitation Match</th>
-
         </tr>
         </thead>
         <tbody>
@@ -21,14 +21,16 @@ if (!empty($liste)): ?>
             <tr>
                 <td><?= $value['nom'] ?> </td>
                 <td><?= $value['prenom']?></td>
-                <td><button type="submit" class="btn btn-danger "><a id="supprimerAmi" href='?module=ModAmis&action=RetirerAmi&id=<?= $value['idUtilisateur']?>'>Retirer</a></button></td>
-                <td><button type="submit" class="btn btn-info "><a id="envoyerMessage" href='?module=ModAmis&action=EnvoyerMessage&id=<?= $value['idUtilisateur']?>'>Messsage</a></button></td>
-                <td><button type="submit" class="btn btn-warning "><a id="inviterMatch" href='?module=ModAmis&action=InviterMatch&id=<?= $value['idUtilisateur']?>'>Inviter</a></button></td>
+                <td><a href='?module=ModAmis&action=RetirerAmi&id=<?= $value['idUtilisateur']?>' role="button" class="btn btn-danger">Retirer</a></td>
+                <td><a href='?module=ModAmis&action=EnvoyerMessage&id=<?= $value['idUtilisateur']?>' role="button" class="btn btn-warning">Messsage</a></td>
+                <td><a href='?module=ModAmis&action=InviterMatch&id=<?= $value['idUtilisateur']?>' role="button" class="btn btn-success">Inviter</a></td>
             </tr>
         <?php endforeach; ?>
         </tbody>
     </table>
     <?php else: ?>
-        <div class="alert alert-danger mt-5">Vous posséder aucun Amis</div>
+        <div class="alert alert-danger mt-5">Vous n'avez aucun amis</div>
+        <div class="float-end">
+            <a class="btn btn-danger" href="index.php?module=ModProfil&action=Profil" role="button">Revenir au profil</a>
+        </div>
     <?php endif; ?>
-</body>

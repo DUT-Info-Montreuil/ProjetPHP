@@ -1,7 +1,5 @@
-<head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-</head>
-<body id="body">
+
+
 <div class="container rounded bg-light mt-3" >
     <div class="row">
         <div class="col-md-4 border-right">
@@ -23,10 +21,10 @@
                     </div>
                 </div>
                 <form id="formulaireModif" action="index.php?module=ModProfil&action=ModificationProfil" method="post">
-                <input type="radio" id="choix1" class="civilite" name="civiliteNv" value="monsieur" required>
+                <input type="radio" id="choix1" class="civilite" name="civiliteNv" value="Monsieur" required>
                 <label for="choix1">Mr</label>
 
-                <input type="radio" id="choix2" class="civilite" name="civiliteNv" value="madame" required>
+                <input type="radio" id="choix2" class="civilite" name="civiliteNv" value="Madame" required>
                 <label for="choix2">Mme</label>
                 <div class="row mt-4 mr-3">
                     <div class="col-md-6"><input type="text" class="form-control" name="prenomNv" placeholder="Prenom"></div>
@@ -34,17 +32,17 @@
                 </div>
                 <label id="LabelPoste">Poste Match : </label>
                 <select name="posteNv" required>
-                    <option value="Att">Attaquant</option>
-                    <option value="Mil">Milieux</option>
-                    <option value="Def">Défenseur</option>
-                    <option value="G">Gardien</option>
+                    <option value="Attaquant">Attaquant</option>
+                    <option value="Milieux">Milieux</option>
+                    <option value="Défenseur">Défenseur</option>
+                    <option value="Gardien">Gardien</option>
                 </select>
                 <div class="row mt-3">
                     <div class="col-md-6"><input type="email" class="form-control" name="emailNv" placeholder="Email"></div>
                     <div class="col-md-6"><input type="number" class="form-control"  name="ageNv" placeholder="Age"></div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-6"><input type="password" class="form-control" name="passwordNv"placeholder="password" ></div>
+                    <div class="col-md-6"><input type="password" class="form-control" name="passwordNv"placeholder="Mot de passe" ></div>
                     <div class="col-md-6"><input type="text" class="form-control" name="villeNv" placeholder="Ville"></div>
                 </div>
                 <div class=btn><button class="btn btn-danger "  class="mr-3" name="FormModifProfil" type="submit">Enregistrer Profile</button></div>
@@ -53,4 +51,4 @@
         </div>
     </div>
 </div>
-</body>
+

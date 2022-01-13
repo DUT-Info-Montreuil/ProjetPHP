@@ -27,4 +27,8 @@ class VueAmis
 
     }
 
+    function alerte_message($message,$alerte,$url) {
+        Vue::alerte_message($message,$alerte,$url);
+    }
+
 }
