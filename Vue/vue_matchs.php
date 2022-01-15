@@ -8,7 +8,7 @@ class VueMatchs
     function afficherPageMatchs($data,$dates)
     {
         $data["titre"] = "Matchs";
-        $data["liste"] = $dates;
+        $data["listeDatesMatchs"] = $dates;
         Vue::render("Affichage/gererMatchs.php", $data);
 
     }
@@ -46,6 +46,15 @@ class VueMatchs
         $data["liste"] = $PhotosDiscussion;
         $data["liste2"] = $photosGalerry;
         Vue::render("Affichage/photosMatchs.php",$data);
+    }
+
+    function afficherNotifications($liste){
+        $data["liste3"] = $liste;
+        include("Affichage/notifications.php");
+    }
+    function afficherNombreNotifications($nbNotif){
+        $data["liste4"] =$nbNotif;
+        include("Affichage/nombreNotifications.php");
     }
 
 }

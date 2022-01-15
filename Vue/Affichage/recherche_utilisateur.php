@@ -4,6 +4,7 @@ if (!empty($liste)):
 ?>
 <div class="container mt-5">
     <table class="table table-striped borderStyleTable">
+        <thead>
         <tr>
             <th scope="col">Nom</th>
             <th scope="col">Prenom</th>

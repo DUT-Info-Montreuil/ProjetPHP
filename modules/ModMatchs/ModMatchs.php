@@ -56,7 +56,15 @@ class ModMatchs
             case 'ConsulterMatchAmis' :
                 $this->controleur->consulterMatchAmis();
                 break;
-
+            case 'Notifications';
+                $this->controleur->notifications();
+                break;
+            case 'lireNotifications' :
+                $this->controleur ->lireNotifications();
+                break;
+            case 'NombreNotifications':
+                $this->controleur->getNombreNotifications();
+                break;
         }
     }
 }

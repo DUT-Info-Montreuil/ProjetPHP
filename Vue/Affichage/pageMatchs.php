@@ -1,8 +1,4 @@
-<head>
-    <script src="https://kit.fontawesome.com/6440c9a3af.js" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-</head>
-<body id="body">
+
 <form class ="barreRecherche" action="index.php?module=ModMatchs&action=FiltrerMatchs" method="post">
     <div class="search">
         <input type="text" class="searchTerm" name="filtrerMatchs" placeholder="Dans quelle ville vous-cherchez ">
@@ -42,4 +38,3 @@ if (!empty($liste)): ?>
 <?php else: ?>
     <div class="alert alert-danger mt-5">Aucun Matchs n'est encor crée</div>
 <?php endif; ?>
-</body>

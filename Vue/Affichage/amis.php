@@ -3,13 +3,13 @@ $liste = $data["liste"];
 if (!empty($liste)): ?>
 <div class="container mt-5">
     <table class="table table-striped borderStyleTable">
+        <thead>
         <tr>
             <th scope="col">Nom</th>
             <th scope="col">Prenom</th>
             <th scope="col">Supprimer Ami</th>
             <th scope="col">Message</th>
             <th scope="col">Invitation Match</th>
-
         </tr>
         </thead>
         <tbody>
@@ -23,7 +23,7 @@ if (!empty($liste)): ?>
             </tr>
         <?php endforeach; ?>
         </tbody>
-    </table>
+        </table>
     <?php else: ?>
         <div class="alert alert-danger mt-5">Vous posséder aucun Amis</div>
     <?php endif; ?>
