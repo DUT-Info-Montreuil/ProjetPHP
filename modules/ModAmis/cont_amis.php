@@ -69,6 +69,25 @@ class ContAmis
             $this->vue->afficherUsersRechercher($userTrouve);
         }
     }
+    public function ajouterDeslike($login){
+        $idUtilisateur = $_GET['id'];
+        $this->modele->ajouterDeslike($login, $idUtilisateur);
+    }
+    public function ajouterLike($login){
+        $idUtilisateur = $_GET['id'];
+        $this->modele->ajouterLike($login, $idUtilisateur);
+    }
+    public function getNombreLikesUser(){
+        $idUtilisateur = $_GET['id'];
+        $nbLikes = $this->modele->getNombreLikesUser($idUtilisateur);
+        $this->vue->afficherNombreLikes($nbLikes);
+    }
+    public function getNombreDeslikesUser(){
+        $idUtilisateur = $_GET['id'];
+        $nbDesLikes = $this->modele->getNombreDesLikesUser($idUtilisateur);
+        $this->vue->afficherNombreDesLikes($nbDesLikes);
+    }
+
 
 
 

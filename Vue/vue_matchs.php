@@ -5,13 +5,16 @@ class VueMatchs
 {
 
 
-    function afficherPageMatchs($data,$dates)
+    function afficherPageMatchs($data,$dates,$sommeLikes,$sommeDeslikes)
     {
         $data["titre"] = "Matchs";
         $data["listeDatesMatchs"] = $dates;
+        $data['sommeLikes']= $sommeLikes;
+        $data['sommeDeslikes'] = $sommeDeslikes;
         Vue::render("Affichage/gererMatchs.php", $data);
 
     }
+
     function afficherFormulaireCreationMatch(){
         Vue::render("Affichage/creationMatch.php",["titre"=>"Creation Match"]);
 

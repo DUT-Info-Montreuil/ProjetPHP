@@ -19,8 +19,12 @@ class ContMatchs
         $login = $_SESSION['login'];
         $profil = $this->modele->getProfil($login);
         $datesMatchs = $this->modele->getDatesMatchsAmis($login);
-        $this->vue->afficherPageMatchs($profil, $datesMatchs);
+        $sommeLikes = $this->modele->getSommeMesDesLikes($login);
+        $sommesDeslikes = $this->modele->getSommeMesDesLikes($login);
+        $this->vue->afficherPageMatchs($profil,$datesMatchs,$sommeLikes,$sommesDeslikes);
+
     }
+
 
     public function formulaireMatch()
     {

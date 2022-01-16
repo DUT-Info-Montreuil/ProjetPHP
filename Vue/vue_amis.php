@@ -30,5 +30,14 @@ class VueAmis
          $data["liste"] = $liste;
          include_once("Affichage/recherche_utilisateur.php");
      }
+     function afficherNombreLikes($nbLikes){
+             $data["liste5"] =$nbLikes;
+             include("Affichage/nombreLikes.php");
+     }
+     function afficherNombreDesLikes($nbDesLikes){
+         $data["liste6"] =$nbDesLikes;
+         include("Affichage/nombreDesLikes.php");
+     }
+
 
 }

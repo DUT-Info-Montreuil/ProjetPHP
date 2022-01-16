@@ -86,6 +86,53 @@ class ModeleAmis extends Connexion
         $res = $req->fetchAll();
         return $res;
     }
+    function ajouterDeslike($login ,$idUser){
+        if (($this->testerSiDejaLike($login,$idUser))==1){
+            echo $this->testerSiDejaLike($login,$idUser);
+
+            $req = self::$bdd->prepare("UPDATE avoirnote SET `deslike` = 1 , `like`= 0 where idUtilisateur = (select idUtilisateur from utilisateur where idUtilisateur = (SELECT idUtilisateur from utilisateur natural join identifiants where login=? )) and idUtilisateur_1 = ?");
+            $req->execute(array($login,$idUser));
+        }
+        $req2 = self::$bdd->prepare("INSERT INTO `avoirnote`(`like`, `deslike`, `idUtilisateur`, `idUtilisateur_1`) VALUES (0,1,(select idUtilisateur from utilisateur where idUtilisateur = (SELECT idUtilisateur from utilisateur natural join identifiants where login=? )),?)");
+        $req2->execute(array($login,$idUser));
+    }
+    function testerSiDejaDeslike($login ,$idUser){
+        $req = self::$bdd->prepare("SELECT * from avoirnote where idUtilisateur = (select idUtilisateur from utilisateur where idUtilisateur = (SELECT idUtilisateur from utilisateur natural join identifiants where login=? ) ) and deslike =1 and idUtilisateur_1 = ?");
+        $req->execute(array($login,$idUser));
+        $res = $req->rowCount();
+        return $res;
+    }
+    function testerSiDejaLike($login,$idUser){
+        $req = self::$bdd->prepare("SELECT * from avoirnote where idUtilisateur = (select idUtilisateur from utilisateur where idUtilisateur = (SELECT idUtilisateur from utilisateur natural join identifiants where login=? ) )  and `like` =1  and idUtilisateur_1 = ?");
+        $req->execute(array($login,$idUser));
+        $res = $req->rowCount();
+        return $res;
+    }
+    function ajouterLike($login ,$idUser){
+
+        if (($this->testerSiDejaDeslike($login,$idUser))==1){
+           echo $this->testerSiDejaDeslike($login,$idUser);
+
+            $req = self::$bdd->prepare("UPDATE avoirnote SET `deslike` = 0 , `like`= 1 where idUtilisateur = (select idUtilisateur from utilisateur where idUtilisateur = (SELECT idUtilisateur from utilisateur natural join identifiants where login=? )) and idUtilisateur_1 = ?");
+            $req->execute(array($login,$idUser));
+        }else{
+            $req2 = self::$bdd->prepare("INSERT INTO `avoirnote`(`like`, `deslike`, `idUtilisateur`, `idUtilisateur_1`) VALUES (1,0,(select idUtilisateur from utilisateur where idUtilisateur = (SELECT idUtilisateur from utilisateur natural join identifiants where login=? )),?)");
+            $req2->execute(array($login,$idUser));
+        }
+
+    }
+    function getNombreLikesUser($idUser){
+        $req = self::$bdd->prepare("SELECT * from avoirnote where `like` = 1 and idUtilisateur_1 = ?");
+        $req->execute(array($idUser));
+        $res = $req->rowCount();
+        return $res;
+    }
+    function getNombreDeslikesUser($idUser){
+        $req = self::$bdd->prepare("SELECT * from avoirnote where `deslike` = 1 and idUtilisateur_1 = ?");
+        $req->execute(array($idUser));
+        $res = $req->rowCount();
+        return $res;
+    }
 
 }
 

@@ -36,6 +36,11 @@ class ContProfil{
         $ProfilUtilisateur= $this->modele->getUtilisateur($idUtilisateur);
         $this->vue->afficherProfilUtilisateur($ProfilUtilisateur);
     }
+    public function getNombreMesLikesDeslikes(){
+        $sommeLikes = $this->modele->getSommeMesDesLikes();
+        $sommesDeslikes = $this->modele->getSommeMesDesLikes();
+        $this->vue->afficherMesLikesDeslikes($sommeLikes ,$sommesDeslikes);
+    }
 
 }
 
