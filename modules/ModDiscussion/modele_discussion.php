@@ -7,8 +7,8 @@ class ModeleDiscussion extends Connexion
 
     function envoyerMessage($contenuMessage, $photoDiscussion,$login,$idMatch)
     {
-        $req = self::$bdd->prepare("INSERT INTO `espaceDiscussion`(`contenu`,`photo`, `nomUtilisateur`,`DatePublication`, `idUtilisateur`, `idMatch`) VALUES (?,?,(select nom from utilisateur natural join identifiants where login = ?),now(),(select idUtilisateur from utilisateur natural join identifiants where login = ?),?) ");
-        $req->execute(array($contenuMessage,$photoDiscussion,$login,$login,$idMatch));
+        $req = self::$bdd->prepare("INSERT INTO `espaceDiscussion`(`contenu`, `nomUtilisateur`,`photo`,`DatePublication`, `idUtilisateur`, `idMatch`) VALUES (?,(select nom from utilisateur natural join identifiants where login = ?),?,now(),(select idUtilisateur from utilisateur natural join identifiants where login = ?),?) ");
+        $req->execute(array($contenuMessage,$login,$photoDiscussion,$login,$idMatch));
 
     }
 
