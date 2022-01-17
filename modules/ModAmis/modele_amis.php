@@ -90,14 +90,14 @@ class ModeleAmis extends Connexion
         if (($this->testerSiDejaLike($login,$idUser))==1){
             echo $this->testerSiDejaLike($login,$idUser);
 
-            $req = self::$bdd->prepare("UPDATE avoirnote SET `deslike` = 1 , `like`= 0 where idUtilisateur = (select idUtilisateur from utilisateur where idUtilisateur = (SELECT idUtilisateur from utilisateur natural join identifiants where login=? )) and idUtilisateur_1 = ?");
+            $req = self::$bdd->prepare("UPDATE avoirnote SET `dislike` = 1 , `like`= 0 where idUtilisateur = (select idUtilisateur from utilisateur where idUtilisateur = (SELECT idUtilisateur from utilisateur natural join identifiants where login=? )) and idUtilisateur_1 = ?");
             $req->execute(array($login,$idUser));
         }
-        $req2 = self::$bdd->prepare("INSERT INTO `avoirnote`(`like`, `deslike`, `idUtilisateur`, `idUtilisateur_1`) VALUES (0,1,(select idUtilisateur from utilisateur where idUtilisateur = (SELECT idUtilisateur from utilisateur natural join identifiants where login=? )),?)");
+        $req2 = self::$bdd->prepare("INSERT INTO `avoirnote`(`like`, `dislike`, `idUtilisateur`, `idUtilisateur_1`) VALUES (0,1,(select idUtilisateur from utilisateur where idUtilisateur = (SELECT idUtilisateur from utilisateur natural join identifiants where login=? )),?)");
         $req2->execute(array($login,$idUser));
     }
     function testerSiDejaDeslike($login ,$idUser){
-        $req = self::$bdd->prepare("SELECT * from avoirnote where idUtilisateur = (select idUtilisateur from utilisateur where idUtilisateur = (SELECT idUtilisateur from utilisateur natural join identifiants where login=? ) ) and deslike =1 and idUtilisateur_1 = ?");
+        $req = self::$bdd->prepare("SELECT * from avoirnote where idUtilisateur = (select idUtilisateur from utilisateur where idUtilisateur = (SELECT idUtilisateur from utilisateur natural join identifiants where login=? ) ) and dislike =1 and idUtilisateur_1 = ?");
         $req->execute(array($login,$idUser));
         $res = $req->rowCount();
         return $res;

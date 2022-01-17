@@ -1,14 +1,14 @@
 <?php
 $liste = $data["liste"];
 if (!empty($liste)): ?>
-    <div class="container">
-        <div class="row-fluid ">
+    <div class="container" >
+        <div class="row-fluid" >
             <?php foreach ( $liste as $elements) : ?>
-                <div id="idCard" >
-                    <div class="card-columns-fluid" >
+            <div id="idCard" >
+                <div class="card-columns-fluid">
                         <div class="card  bg-light" >
                             <div id="imageMatch">
-                                <img  src="./Vue/Affichage/Images/<?= $elements['Image'] ?>"  alt="Card image cap">
+                                <img src="./Vue/Affichage/Images/<?= $elements['Image'] ?>"  alt="Card image cap">
                             </div>
                             <div class="card-body">
                                 <h5><b><?php echo $elements['nomMatch']?></b></h5>

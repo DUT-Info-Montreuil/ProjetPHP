@@ -19,7 +19,7 @@ class ContMatchs
         $login = $_SESSION['login'];
         $profil = $this->modele->getProfil($login);
         $datesMatchs = $this->modele->getDatesMatchsAmis($login);
-        $sommeLikes = $this->modele->getSommeMesDesLikes($login);
+        $sommeLikes = $this->modele->getSommeMesLikes($login);
         $sommesDeslikes = $this->modele->getSommeMesDesLikes($login);
         $this->vue->afficherPageMatchs($profil,$datesMatchs,$sommeLikes,$sommesDeslikes);
 
@@ -219,6 +219,9 @@ class ContMatchs
         $nombreNotifications = $this->modele->compterNombreDeNotifications($login);
         $this->vue->afficherNombreNotifications($nombreNotifications);
 
+    }
+    public function consulterMatch(){
+        $login = $_SESSION['login'];
     }
 
 
