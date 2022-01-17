@@ -29,8 +29,7 @@ class ModMatchs
                 $this->controleur->rechercherTousLesMatchs();
                 break;
             case 'FiltrerMatchs' :
-                $adresseMatch = htmlspecialchars($_POST['filtrerMatchs']);
-                $this->controleur->filtrerMatchs($adresseMatch);
+                $this->controleur->filtrerMatchs();
                 break;
             case 'Participer' :
                 $this->controleur->participer();

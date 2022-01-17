@@ -113,10 +113,10 @@ class ModeleAmis extends Connexion
         if (($this->testerSiDejaDeslike($login,$idUser))==1){
            echo $this->testerSiDejaDeslike($login,$idUser);
 
-            $req = self::$bdd->prepare("UPDATE avoirnote SET `deslike` = 0 , `like`= 1 where idUtilisateur = (select idUtilisateur from utilisateur where idUtilisateur = (SELECT idUtilisateur from utilisateur natural join identifiants where login=? )) and idUtilisateur_1 = ?");
+            $req = self::$bdd->prepare("UPDATE avoirnote SET `dislike` = 0 , `like`= 1 where idUtilisateur = (select idUtilisateur from utilisateur where idUtilisateur = (SELECT idUtilisateur from utilisateur natural join identifiants where login=? )) and idUtilisateur_1 = ?");
             $req->execute(array($login,$idUser));
         }else{
-            $req2 = self::$bdd->prepare("INSERT INTO `avoirnote`(`like`, `deslike`, `idUtilisateur`, `idUtilisateur_1`) VALUES (1,0,(select idUtilisateur from utilisateur where idUtilisateur = (SELECT idUtilisateur from utilisateur natural join identifiants where login=? )),?)");
+            $req2 = self::$bdd->prepare("INSERT INTO `avoirnote`(`like`, `dislike`, `idUtilisateur`, `idUtilisateur_1`) VALUES (1,0,(select idUtilisateur from utilisateur where idUtilisateur = (SELECT idUtilisateur from utilisateur natural join identifiants where login=? )),?)");
             $req2->execute(array($login,$idUser));
         }
 
@@ -128,7 +128,7 @@ class ModeleAmis extends Connexion
         return $res;
     }
     function getNombreDeslikesUser($idUser){
-        $req = self::$bdd->prepare("SELECT * from avoirnote where `deslike` = 1 and idUtilisateur_1 = ?");
+        $req = self::$bdd->prepare("SELECT * from avoirnote where `dislike` = 1 and idUtilisateur_1 = ?");
         $req->execute(array($idUser));
         $res = $req->rowCount();
         return $res;
