@@ -71,18 +71,9 @@ class ModeleMatchs extends Connexion
         $req->execute(array($adressMatch));
         $res = $req->fetchAll();
         return $res;
-        }
-    function creerMatchSansParticipation($login,$notif, $nomMatch,$lieuMatch,$NbJoueurs,$dateMatch,$heureMatch,$imageMatch){
-        $contenuMatch = $notif."".$lieuMatch;
-
-        foreach ($this->getIdUsers($lieuMatch) as $idUsers) {
-            $req = self::$bdd->prepare("INSERT INTO `notification`(`idUtilisateur`,`ContenuNotification`, `DateNotification`,`status`) VALUES ($idUsers[0],?,now(),0)");
-            $req->execute(array($contenuMatch));
-        }
-        $idnotif = self::$bdd->lastInsertId();
-        $req2 = self::$bdd->prepare("INSERT INTO `matchs`(`nomMatch`, `dateMatch`, `lieu`, `nbrJoueur`, `heure`, `Image`, `idUtilisateur`, `idNotification`) VALUES (?,?,?,?,?,?,(SELECT idUtilisateur from utilisateur natural join identifiants where login = ?),? )");
-        $req2->execute(array($nomMatch,$dateMatch,$lieuMatch,$NbJoueurs,$heureMatch,$imageMatch,$login,$idnotif));
     }
+
+
     function getMesMatchs($idUtilisateur){
         $req = self::$bdd->prepare("SELECT * FROM matchs where idMatch IN (SELECT idMatch from participer where idUtilisateur=?) ");
         $req->execute(array($idUtilisateur));
