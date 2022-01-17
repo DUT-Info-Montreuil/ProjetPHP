@@ -39,7 +39,7 @@ class ContMatchs
         $NbJoueurs = $_POST['LabelNbJoueurs'];
         $dateMatch = $_POST['dateMatch'];
         $heureMatch = $_POST['heureMatch'];
-        $notif = "Nouveau Match Ville : ";
+        $notif = "Nouveau match à : ";
         $img_name = $_FILES['imageMatch']['name'];
         $img_size = $_FILES['imageMatch']['size'];
         $tmp_name = $_FILES['imageMatch']['tmp_name'];
