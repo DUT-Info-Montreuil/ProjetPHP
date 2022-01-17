@@ -27,10 +27,18 @@ class VueAmis
 
     }
      function afficherUsersRechercher($liste){
-         $data["titre"] = "users";
          $data["liste"] = $liste;
-         Vue::render("Affichage/recherche_utilisateur.php", $data);
+         include_once("Affichage/recherche_utilisateur.php");
      }
+     function afficherNombreLikes($nbLikes){
+             $data["liste5"] =$nbLikes;
+             include("Affichage/nombreLikes.php");
+     }
+     function afficherNombreDesLikes($nbDesLikes){
+         $data["liste6"] =$nbDesLikes;
+         include("Affichage/nombreDesLikes.php");
+     }
+
 
     function alerte_message($message,$alerte,$url) {
         Vue::alerte_message($message,$alerte,$url);

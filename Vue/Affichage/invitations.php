@@ -1,9 +1,9 @@
-
 <?php
 $liste = $data["liste"];
 if (!empty($liste)): ?>
 <div class="container mt-5">
     <table class="table table-striped borderStyleTable">
+        <thead>
         <tr>
             <th scope="col">Nom</th>
             <th scope="col">Prénom</th>
@@ -29,4 +29,3 @@ if (!empty($liste)): ?>
         </div>
 
     <?php endif; ?>
-

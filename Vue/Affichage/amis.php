@@ -26,7 +26,7 @@ if (!empty($liste)): ?>
             </tr>
         <?php endforeach; ?>
         </tbody>
-    </table>
+        </table>
     <?php else: ?>
         <div class="alert alert-danger mt-5">Vous n'avez aucun amis</div>
         <div class="float-end">

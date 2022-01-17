@@ -47,10 +47,12 @@ class ModeleMatchs extends Connexion
         $req->execute(array($login,$idMatch));
     }
     function creerMatch($login,$notif, $nomMatch,$lieuMatch,$NbJoueurs,$dateMatch,$heureMatch,$imageMatch){
-            $contenuMatch = $notif.",".$lieuMatch;
-            $req = self::$bdd->prepare("INSERT INTO `notification`(`ContenuNotification`, `DateNotification`) VALUES (?,now())");
+            $contenuMatch = $notif."".$lieuMatch;
+            foreach ($this->getIdUsers($lieuMatch) as $idUsers) {
+            $req = self::$bdd->prepare("INSERT INTO `notification`(`idUtilisateur`,`ContenuNotification`, `DateNotification`,`status`) VALUES ($idUsers[0],?,now(),0)");
             $req->execute(array($contenuMatch));
-            $idnotif=self::$bdd->lastInsertId();
+            }
+            $idnotif = self::$bdd->lastInsertId();
 
             $req2 = self::$bdd->prepare("INSERT INTO `matchs`(`nomMatch`, `dateMatch`, `lieu`, `nbrJoueur`, `heure`, `Image`, `idUtilisateur`, `idNotification`) VALUES (?,?,?,?,?,?,(SELECT idUtilisateur from utilisateur natural join identifiants where login = ?),? )");
 
@@ -60,12 +62,20 @@ class ModeleMatchs extends Connexion
             $req3 = self::$bdd->prepare("INSERT INTO `participer`(`idUtilisateur`, `idMatch`) VALUES ((select idUtilisateur from utilisateur natural join identifiants where login = ?),?)");
             $req3->execute(array($login,$idMatch));
         }
+    function getIdUsers($adressMatch){
+        $req = self::$bdd->prepare("SELECT idUtilisateur from utilisateur where ville LIKE '".$adressMatch."'");
+        $req->execute(array($adressMatch));
+        $res = $req->fetchAll();
+        return $res;
+        }
     function creerMatchSansParticipation($login,$notif, $nomMatch,$lieuMatch,$NbJoueurs,$dateMatch,$heureMatch,$imageMatch){
-        $contenuMatch = $notif.",".$lieuMatch;
-        $req = self::$bdd->prepare("INSERT INTO `notification`(`ContenuNotification`, `DateNotification`) VALUES (?,now())");
-        $req->execute(array($contenuMatch));
-        $idnotif=self::$bdd->lastInsertId();
+        $contenuMatch = $notif."".$lieuMatch;
 
+        foreach ($this->getIdUsers($lieuMatch) as $idUsers) {
+            $req = self::$bdd->prepare("INSERT INTO `notification`(`idUtilisateur`,`ContenuNotification`, `DateNotification`,`status`) VALUES ($idUsers[0],?,now(),0)");
+            $req->execute(array($contenuMatch));
+        }
+        $idnotif = self::$bdd->lastInsertId();
         $req2 = self::$bdd->prepare("INSERT INTO `matchs`(`nomMatch`, `dateMatch`, `lieu`, `nbrJoueur`, `heure`, `Image`, `idUtilisateur`, `idNotification`) VALUES (?,?,?,?,?,?,(SELECT idUtilisateur from utilisateur natural join identifiants where login = ?),? )");
         $req2->execute(array($nomMatch,$dateMatch,$lieuMatch,$NbJoueurs,$heureMatch,$imageMatch,$login,$idnotif));
     }
@@ -114,9 +124,35 @@ class ModeleMatchs extends Connexion
         $res = $req->fetchAll();
         return $res;
     }
+    function getNotifications($login){
 
-
-
+        $req = self::$bdd->prepare("SELECT * FROM notification where ContenuNotification LIKE Concat('%' ,(SELECT ville from utilisateur  natural join identifiants where login = ? ORDER BY RAND() LIMIT 1)  ) and status=0 and idUtilisateur =(SELECT idUtilisateur from utilisateur  natural join identifiants where login = ?);");
+        $req->execute(array($login,$login));
+        $res = $req->fetchAll();
+        return $res;
+    }
+    function lireNotifications($login){
+        $req = self::$bdd->prepare("UPDATE notification SET status = 1 where status = 0 and idUtilisateur = (SELECT idUtilisateur from utilisateur natural join identifiants where login= ?)  ");
+        $req->execute(array($login));
+    }
+    function compterNombreDeNotifications($login){
+        $req = self::$bdd->prepare("SELECT * from notification where status = 0 and ContenuNotification LIKE Concat('%' ,(SELECT ville from utilisateur  natural join identifiants where login = ? ORDER BY RAND() LIMIT 1) ) and idUtilisateur =(SELECT idUtilisateur from utilisateur  natural join identifiants where login = ?)");
+        $req->execute(array($login,$login));
+        $res = $req->rowCount();
+        return $res;
+    }
+    function getSommeMesLikes($login){
+        $req = self::$bdd->prepare("SELECT * from avoirnote where `like` = 1 and idUtilisateur_1 = (SELECT idUtilisateur from utilisateur natural join identifiants where login= ?)");
+        $req->execute(array($login));
+        $res = $req->rowCount();
+        return $res;
+    }
+    function getSommeMesDesLikes($login){
+        $req = self::$bdd->prepare("SELECT * from avoirnote where `deslike` = 1 and idUtilisateur_1 = (SELECT idUtilisateur from utilisateur natural join identifiants where login= ?)");
+        $req->execute(array($login));
+        $res = $req->rowCount();
+        return $res;
+    }
 
 
 }

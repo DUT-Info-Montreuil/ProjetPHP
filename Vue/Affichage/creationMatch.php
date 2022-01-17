@@ -1,9 +1,8 @@
-
 <div class="container rounded bg-light mt-3 " >
     <div class="row">
         <div class="d-wrapper mt-3 flex-row align-items-center back"><i class="fa fa-long-arrow-left mr-1 mr mb-1"></i>
             <a href="index.php?module=ModMatchs&action=PageMatchs" class=" mb-3 btn btn-info" role="button">Revenir au page des Matchs</a>
-                <form  action="index.php?module=ModMatchs&action=CreerMatch" method="post" enctype="multipart/form-data" class="pb-5">
+                <form  action="index.php?module=ModMatchs&action=CreerMatch" method="post" enctype="multipart/form-data">
                     <div class="row mt-4 ">
                         <div class="col-md-6"><input type="text" class="form-control" name="nomMatch" placeholder="Nom Match"></div>
                         <div class="col-md-6"><input type="text" class="form-control" name="lieuMatch" placeholder="Lieu Du Match"></div>
@@ -38,31 +37,13 @@
                         <input type="file" name="imageMatch">
                     </div>
                     <hr>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="float: right;">
-                       Créer le match
-                    </button>
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="staticBackdropLabel">Voulez-vous vraiment créer ce match ?</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary" name="CreerMatch">Oui</button>
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Non</button>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="btnCreerMatch"><button  onclick="showFunction()" class="btn btn-danger "  class="mr-3" type="button" >Creer ce Match</button></div>
+                    <div class="show2" id="show">
+                        <h2>Vous voulez participer à ce match ?</h2>
+                        <button name="CreerMatch" >Oui je veux bien ! </button>
+                        <button id="buttonNonMerci" >Non Merci </button>
                     </div>
-
                 </form>
-        </div>
+            </div>
         </div>
 </div>
-
-<script src="https://kit.fontawesome.com/6440c9a3af.js" crossorigin="anonymous"></script>
-<script src="./Vue/Affichage/JavaScript/script.js"></script>

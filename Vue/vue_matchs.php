@@ -5,13 +5,16 @@ class VueMatchs
 {
 
 
-    function afficherPageMatchs($data,$dates)
+    function afficherPageMatchs($data,$dates,$sommeLikes,$sommeDeslikes)
     {
         $data["titre"] = "Matchs";
-        $data["liste"] = $dates;
+        $data["listeDatesMatchs"] = $dates;
+        $data['sommeLikes']= $sommeLikes;
+        $data['sommeDeslikes'] = $sommeDeslikes;
         Vue::render("Affichage/gererMatchs.php", $data);
 
     }
+
     function afficherFormulaireCreationMatch(){
         Vue::render("Affichage/creationMatch.php",["titre"=>"Creation Match"]);
 
@@ -46,6 +49,15 @@ class VueMatchs
         $data["liste"] = $PhotosDiscussion;
         $data["liste2"] = $photosGalerry;
         Vue::render("Affichage/photosMatchs.php",$data);
+    }
+
+    function afficherNotifications($liste){
+        $data["liste3"] = $liste;
+        include("Affichage/notifications.php");
+    }
+    function afficherNombreNotifications($nbNotif){
+        $data["liste4"] =$nbNotif;
+        include("Affichage/nombreNotifications.php");
     }
 
 }

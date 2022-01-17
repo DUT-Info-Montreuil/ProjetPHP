@@ -22,52 +22,44 @@ class ModeleProfil extends Connexion
     {
             $ChangementLogin=false;
             if (!empty($_POST['nomNv'])) {
-                $sql = 'UPDATE  utilisateur a INNER JOIN identifiants b ON a.idLogin = b.idLogin SET 
-                a.nom=? WHERE b.login =? ';
+                $sql = 'UPDATE  utilisateur a INNER JOIN identifiants b ON a.idLogin = b.idLogin SET a.nom=? WHERE b.login =? ';
                 $req = self::$bdd->prepare($sql);
                 $req->execute(array($nomNv, $login));
             }
             if (!empty($_POST['prenomNv'])) {
-                $sql = 'UPDATE  utilisateur a INNER JOIN identifiants b ON a.idLogin = b.idLogin SET
-                a.prenom=? WHERE b.login =? ';
+                $sql = 'UPDATE  utilisateur a INNER JOIN identifiants b ON a.idLogin = b.idLogin SET a.prenom=? WHERE b.login =? ';
                 $req = self::$bdd->prepare($sql);
                 $req->execute(array($prenomNv, $login));
             }
             if(!empty($_POST['ageNv'])) {
-                $sql = 'UPDATE  utilisateur a INNER JOIN identifiants b ON a.idLogin = b.idLogin SET
-                    a.age=? WHERE b.login =? ';
+                $sql = 'UPDATE  utilisateur a INNER JOIN identifiants b ON a.idLogin = b.idLogin SET a.age=? WHERE b.login =? ';
                 $req = self::$bdd->prepare($sql);
                 $req->execute(array($ageNv, $login));
             }
             if (!empty($_POST['civiliteNv'])) {
-                $sql = 'UPDATE  utilisateur a INNER JOIN identifiants b ON a.idLogin = b.idLogin SET
-                    a.sexe=? WHERE b.login =? ';
+                $sql = 'UPDATE  utilisateur a INNER JOIN identifiants b ON a.idLogin = b.idLogin SET a.sexe=? WHERE b.login =? ';
                 $req = self::$bdd->prepare($sql);
                 $req->execute(array($sexeNv, $login));
             }
             if (!empty($_POST['posteNv'])) {
-            $sql = 'UPDATE  utilisateur a INNER JOIN identifiants b ON a.idLogin = b.idLogin SET
-                    a.posteMatch=? WHERE b.login =? ';
+            $sql = 'UPDATE  utilisateur a INNER JOIN identifiants b ON a.idLogin = b.idLogin SET a.posteMatch=? WHERE b.login =? ';
             $req = self::$bdd->prepare($sql);
             $req->execute(array($posteNv, $login));
             }
             if (!empty($_POST['villeNv'])) {
-            $sql = 'UPDATE  utilisateur a INNER JOIN identifiants b ON a.idLogin = b.idLogin SET
-                    a.ville=? WHERE b.login =? ';
+            $sql = 'UPDATE  utilisateur a INNER JOIN identifiants b ON a.idLogin = b.idLogin SET a.ville=? WHERE b.login =? ';
             $req = self::$bdd->prepare($sql);
             $req->execute(array($villeNv, $login));
             }
             if (!empty($_POST['emailNv'])) {
-            $sql = 'UPDATE  identifiants a SET
-                    a.login=? WHERE a.login =? ';
+            $sql = 'UPDATE  identifiants a SET a.login=? WHERE a.login =? ';
             $req = self::$bdd->prepare($sql);
             $req->execute(array($emailNv, $login));
             Vue::render("Affichage/messageAlerte.php");
             $ChangementLogin=true;
             }
             if (!empty($_POST['passwordNv'])) {
-            $sql = 'UPDATE  identifiants a SET
-                    a.password=? WHERE a.login =? ';
+            $sql = 'UPDATE  identifiants a SET a.password=? WHERE a.login =? ';
             $req = self::$bdd->prepare($sql);
             $req->execute(array($passwordNv, $login));
             Vue::render("Affichage/messageAlerte.php");
@@ -94,12 +86,14 @@ class ModeleProfil extends Connexion
             $req->execute(array($login));
         }
         function getUtilisateur($idUtilisateur){
-        $req = self::$bdd->prepare("SELECT * FROM utilisateur natural join identifiants where idUtilisateur=:idUtilisateur");
-        $req->bindParam('idUtilisateur', $idUtilisateur);
-        $req->execute();
-        $res = $req->fetch();
-        return $res;
-    }
+            $req = self::$bdd->prepare("SELECT * FROM utilisateur natural join identifiants where idUtilisateur=:idUtilisateur");
+            $req->bindParam('idUtilisateur', $idUtilisateur);
+            $req->execute();
+            $res = $req->fetch();
+            return $res;
+        }
+
+
 
 }
 ?>

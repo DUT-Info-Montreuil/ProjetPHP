@@ -26,4 +26,5 @@ class VueProfil
         $data["titre"]="Profil Utilisateur";
         Vue::render("Affichage/profilUtilisateur.php",$data);
     }
+
 }

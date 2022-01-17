@@ -69,7 +69,6 @@
                         <button type="submit" class="btn btn-primary btn-lg"  data-bs-toggle="modal" data-bs-target="#exampleModal" style="padding-left: 2.5rem; padding-right: 2.5rem;" value="Inscription">Inscription</button>
                         <p class="small fw-bold mt-2 pt-1 mb-0"style="color: white;">Vous avez déjà un compte ? <a href="index.php?module=ModConnexion" class="link-danger">Connexion</a></p>
                     </div>
-
                 </form>
             </div>
         </div>

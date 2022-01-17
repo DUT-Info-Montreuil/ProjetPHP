@@ -4,12 +4,10 @@
 ?>
 
 <div class="container-fluid h-100">
-
     <div class="row justify-content-center h-100">
         <div class="col-md-8 col-xl-6 chat">
             <div class="cardDiscussion">
                 <div class="card-header msg_head"></div>
-
                 <div id="msgForm" >
                 <div class="card-body msg_card_body">
                     <?php
@@ -26,7 +24,6 @@
                             <br>
                             <span id="contenuMessage"><?= nl2br($value['contenu']) ?></span>
                             <span class="msg_time_send"><?= $value['DatePublication'] ?></span>
-
                         </div>
                     </div>
                      <?php else: ?>

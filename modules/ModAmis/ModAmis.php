@@ -37,6 +37,21 @@ class ModAmis
             case 'RetirerAmi':
                 $this->controleur->retirerAmiDeLaListe($username);
                 break;
+            case 'RechercherAmis':
+                $this->controleur->rechercherUtilisateur($username);
+                break;
+            case 'ajouterDeslike':
+                $this->controleur->ajouterDeslike($username);
+                break;
+            case 'ajouterLike':
+                $this->controleur->ajouterLike($username);
+                break;
+            case  'NombreLikesUser':
+                $this->controleur->getNombreLikesUser();
+                break;
+            case  'NombreDesLikesUser':
+                $this->controleur->getNombreDeslikesUser();
+                break;
         }
 
     }
