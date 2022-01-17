@@ -1,40 +1,35 @@
-
-<form class ="barreRecherche" action="index.php?module=ModMatchs&action=FiltrerMatchs" method="post">
-    <div class="search">
-        <input type="text" class="searchTerm" name="filtrerMatchs" placeholder="Dans quelle ville vous-cherchez ">
-        <button type="submit" class="searchButton">
-            <i class="fa fa-search"></i>
-        </button>
-    </div>
-</form>
-<?php
-$liste = $data["liste"];
-if (!empty($liste)): ?>
 <div class="container">
-    <div class="row-fluid ">
-        <?php foreach ( $liste as $elements) : ?>
-            <div id="idCard" >
-                <div class="card-columns-fluid" >
-                    <div class="card  bg-light" >
-                        <div id="imageMatch">
-                            <img  src="./Vue/Affichage/Images/<?= $elements['Image'] ?>"  alt="Card image cap">
-                        </div>
-                        <div class="card-body">
-                            <h5><b><?php echo $elements['nomMatch']?></b></h5>
-                            <p><?php echo $elements['lieu'] ?></b></p>
-                            <p><?php echo $elements['dateMatch'] ?></b></p>
-                            <p><?php echo $elements['heure'] ?></b> H</p>
-                            <div id="buttonsMatch">
-                            <button type="submit" class="btn btn-info "><a id="consulterMatch" href='?module=ModMatchs&action=ConsulterMatch&id=<?= $elements['idMatch']?>'>Consulter</a></button>
-                            <button type="submit" class="btn btn-success "><a id="participerMatch" href='?module=ModMatchs&action=Participer&id=<?= $elements['idMatch']?>'>Participer</a></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-         </div>
-    <?php endforeach; ?>
+    <div class="row">
+        <div class="col-sm-0 col-md-2 col-lg-3"></div>
+        <div class="col-sm-12 col-md-8 col-lg-6">
+            <div class="form-group">
+                <input class="form-control" type="text" id="search-match" value="" placeholder="Rechercher un ou plusieurs matchs"/>
+            </div>
+            <div style="margin-top:20px">
+                <div id="result-search-matchs"></div>
+            </div>
+        </div>
     </div>
 </div>
-<?php else: ?>
-    <div class="alert alert-danger mt-5">Aucun Matchs n'est encor crée</div>
-<?php endif; ?>
+<script>
+    $(document).ready(function (){
+        $('#search-match').keyup(function (){
+            var match = $(this).val();
+            $('#result-search-matchs').html('');
+            if(match != ""){
+                $.ajax({
+                    type:"GET",
+                    url:'index.php?module=ModMatchs&action=FiltrerMatchs',
+                    data: 'adresseMatch=' + encodeURIComponent(match),
+                    success: function(data){
+                        if(data != ""){
+                            $('#result-search-matchs').append(data);
+                        }else{
+                            document.getElementById('result-search-matchs').innerHTML = "<div style='font-size: 20px; text-align: center; margin-top: 10px; color :white;'>Aucun matchs</div>"
+                        }
+                    }
+                });
+            }
+        });
+    });
+</script>

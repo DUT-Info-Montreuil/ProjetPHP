@@ -88,12 +88,15 @@ class ContMatchs
         $this->vue->afficherLaListeMatch($matchs);
     }
 
-    public function filtrerMatchs($adresseMatch)
+    public function filtrerMatchs()
     {
-        $matchs = $this->modele->getTousLesMatchsParFiltre($adresseMatch);
-        $this->vue->afficherLaListeMatch($matchs);
-    }
+        $adresseMatch = (String)trim($_GET['adresseMatch']);
+        if (isset($_GET['adresseMatch'])){
+        $matchsTrouve = $this->modele->getTousLesMatchsParFiltre($adresseMatch);
+        $this->vue->afficherLesMatchsRechercher($matchsTrouve);
 
+    }
+    }
     public function participer()
     {
         $idMatch = $_GET["id"];

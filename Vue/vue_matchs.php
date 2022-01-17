@@ -15,6 +15,7 @@ class VueMatchs
 
     }
 
+
     function afficherFormulaireCreationMatch(){
         Vue::render("Affichage/creationMatch.php",["titre"=>"Creation Match"]);
 
@@ -22,8 +23,14 @@ class VueMatchs
     function afficherLaListeMatch($liste){
         $data["titre"] = "Matchs";
         $data["liste"] = $liste;
-        Vue::render("Affichage/pageMatchs.php", $data);
+        vue::render("Affichage/pageMatchs.php", $data);
+
     }
+    function afficherLesMatchsRechercher($liste){
+        $data["liste"] = $liste;
+        include_once("Affichage/recherche_match.php");
+    }
+
     function afficherMesMatchs($liste){
             $data["titre"] = "Mes Matchs";
             $data["liste"] = $liste;
