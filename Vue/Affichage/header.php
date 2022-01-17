@@ -24,25 +24,28 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
+
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
                     <?php if(isset($_SESSION['login'])):?>
-                        <li class="nav-item"><a class="nav-link" href="index.php?module=ModMatchs&action=PageMatchs" id="titreMatch"><i class="fas fa-futbol"></i></a></li>';
+                        <a class="nav-link" href="index.php?module=ModMatchs&action=PageMatchs" id="titreMatch"><i class="fas fa-futbol"></i></a>
+
                         <div class="notificationNav">
-                        <ul>
-                        <li>
-                            <a href="#" id="notifications">
-                                <label for="check">
-                                    <i class="fa fa-bell-o fa-2x" aria-hidden="true"></i>
-                                    <span class="count"><div id="result-comptage"></div></span>
-                                </label>
-                            </a>
-                            <input type="checkbox" class="dropdown-check" id="check" />
-                            <ul class="dropdown">
-                                <div id="result-search2"></div>
+                            <ul>
+                                <li>
+                                    <a href="#" id="notifications">
+                                        <label for="check">
+                                            <i class="fa fa-bell-o fa-2x" aria-hidden="true"></i>
+                                            <span class="count"><div id="result-comptage"></div></span>
+                                        </label>
+                                    </a>
+                                    <input type="checkbox" class="dropdown-check" id="check" />
+                                    <ul class="dropdown">
+                                        <div id="result-search2"></div>
+                                    </ul>
+                                </li>
                             </ul>
-                            </li>
-                        </ul>
                         </div>
                     <?php endif; ?>
                 </ul>
@@ -51,15 +54,14 @@
                         <img src="Vue/Affichage/Images/compte.png" id="image">
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="min-width: 0;">
-                        <?php
-                        if(empty($_SESSION['login'])) {
-                            echo '<li><a class="dropdown-item" href="index.php?module=ModConnexion" style="color: black;">Connexion</a></li>
-                               <li><a class="dropdown-item" href="index.php?module=ModInscription"style="color: black;">Inscription</a></li>';
-                        }
-                        else {
-                            echo '<li><a class="dropdown-item" href="index.php?module=ModProfil" style="color: black;">Mon Compte</a></li>
-                             <li><a class="dropdown-item" href="index.php?module=ModConnexion&action=deconnexion"style="color: black;">Déconnexion</a></li>';
-                        }?>
+                        <?php if(empty($_SESSION['login'])):?>
+                            <li><a class="dropdown-item" href="index.php?module=ModConnexion" style="color: black;">Connexion</a></li>
+                            <li><a class="dropdown-item" href="index.php?module=ModInscription"style="color: black;">Inscription</a></li>
+
+                        <?php else: ?>
+                            <li><a class="dropdown-item" href="index.php?module=ModProfil" style="color: black;">Mon Compte</a></li>
+                            <li><a class="dropdown-item" href="index.php?module=ModConnexion&action=deconnexion"style="color: black;">Déconnexion</a></li>
+                        <?php endif; ?>
                     </ul>
                 </span>
             </div>
