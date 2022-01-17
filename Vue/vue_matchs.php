@@ -66,5 +66,8 @@ class VueMatchs
         $data["liste4"] =$nbNotif;
         include("Affichage/nombreNotifications.php");
     }
+    function alerte_message($message,$alerte,$url) {
+        Vue::alerte_message($message,$alerte,$url);
+    }
 
 }

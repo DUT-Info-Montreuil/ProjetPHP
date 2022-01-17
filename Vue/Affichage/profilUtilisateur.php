@@ -85,11 +85,12 @@
                 </div>
                 <div class="float-end">
                     <a href="index.php?module=ModAmis&action=TousLesUtilisateurs" class="btn btn-primary" role="button">Retour</a>
-                    <table class="table table-striped table-light" style="width:22%; border-radius: 25px !important; border-width: 5px !important;border-style: solid !important; height:20% !important;">
+                </div>
+                    <table class="table table-striped table-light" style="width:22%; border-radius: 25px !important; border-width: 5px !important;border-style: solid !important; height:20% !important;margin-top:30px; ">
                         <thead>
                         <tr>
                             <th>Like</th>
-                            <th>DesLike</th>
+                            <th>Dislike</th>
                         </tr>
                         </thead>
                         <tbody>

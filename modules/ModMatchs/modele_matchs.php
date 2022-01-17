@@ -46,6 +46,8 @@ class ModeleMatchs extends Connexion
         $req = self::$bdd->prepare("INSERT INTO `participer`(`idUtilisateur`, `idMatch`) VALUES ((select idUtilisateur from utilisateur natural join identifiants where login = ?),?)");
         $req->execute(array($login,$idMatch));
     }
+
+
     function creerMatch($login,$notif, $nomMatch,$lieuMatch,$NbJoueurs,$dateMatch,$heureMatch,$imageMatch){
             $contenuMatch = $notif."".$lieuMatch;
             foreach ($this->getIdUsers($lieuMatch) as $idUsers) {
@@ -61,7 +63,9 @@ class ModeleMatchs extends Connexion
 
             $req3 = self::$bdd->prepare("INSERT INTO `participer`(`idUtilisateur`, `idMatch`) VALUES ((select idUtilisateur from utilisateur natural join identifiants where login = ?),?)");
             $req3->execute(array($login,$idMatch));
-        }
+    }
+
+
     function getIdUsers($adressMatch){
         $req = self::$bdd->prepare("SELECT idUtilisateur from utilisateur where ville LIKE '".$adressMatch."'");
         $req->execute(array($adressMatch));
@@ -147,7 +151,7 @@ class ModeleMatchs extends Connexion
         $res = $req->rowCount();
         return $res;
     }
-    function getSommeMesDesLikes($login){
+    function getSommeMesDislikes($login){
         $req = self::$bdd->prepare("SELECT * from avoirnote where `dislike` = 1 and idUtilisateur_1 = (SELECT idUtilisateur from utilisateur natural join identifiants where login= ?)");
         $req->execute(array($login));
         $res = $req->rowCount();

@@ -23,7 +23,7 @@ class ContAmis
         $val =0;
         try {
             $this->modele->demanderEtreAmis($login, $idAmi, $val);
-            $this->vue->alerte_message("Demande d'amis envoyé avec succès","success","index.php?module=ModProfil&action=Profil");
+            $this->vue->alerte_message("Demande d'amis envoyé avec succès","success","index.php?module=ModAmis&action=TousLesUtilisateurs");
         }
         catch (Exception $e) {
             $this->vue->alerte_message("Demande d'amis déjà envoyée, en attente d'une réponse de l'utilisateur","warning","index.php?module=ModProfil&action=Profil");
@@ -43,7 +43,7 @@ class ContAmis
             $this->vue->alerte_message("Demande acceptée avec succès","success","index.php?module=ModAmis&action=TousMesAmis");
         }
         catch (Exception $e) {
-            echo "Impossible d'accepter ";
+            $this->vue->alerte_message("Une erreur est survenue merci de réessayer","danger","module=ModAmis&action=TousLesDemandesAmis");
         }
     }
     public function listeAmis($login){
@@ -54,10 +54,10 @@ class ContAmis
         $idAmi=$_GET["id"];
         try {
             $this->modele->retirerDeListe($idAmi, $login);
-            echo "utilisateur est Retirée";
+            $this->vue->alerte_message("L'utilisateur a bien été retiré de vos amis","success","index.php?module=ModAmis&action=TousMesAmis");
         }
         catch (Exception $e) {
-            echo "Impossible de la retirer ";
+            $this->vue->alerte_message("Une erreur est survenue merci de réessayer","danger","index.php?module=ModAmis&action=TousMesAmis");
         }
 
     }

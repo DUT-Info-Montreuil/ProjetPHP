@@ -36,7 +36,7 @@ class VueAmis
      }
      function afficherNombreDesLikes($nbDesLikes){
          $data["liste6"] =$nbDesLikes;
-         include("Affichage/nombreDesLikes.php");
+         include("Affichage/nombreDislikes.php");
      }
 
 

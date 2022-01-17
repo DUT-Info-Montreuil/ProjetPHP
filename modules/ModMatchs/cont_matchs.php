@@ -19,8 +19,8 @@ class ContMatchs
         $login = $_SESSION['login'];
         $profil = $this->modele->getProfil($login);
         $datesMatchs = $this->modele->getDatesMatchsAmis($login);
-        $sommeLikes = $this->modele->getSommeMesDesLikes($login);
-        $sommesDeslikes = $this->modele->getSommeMesDesLikes($login);
+        $sommeLikes = $this->modele->getSommeMesLikes($login);
+        $sommesDeslikes = $this->modele->getSommeMesDislikes($login);
         $this->vue->afficherPageMatchs($profil,$datesMatchs,$sommeLikes,$sommesDeslikes);
 
     }
@@ -47,8 +47,7 @@ class ContMatchs
         try {
             if ($error === 0) {
                 if ($img_size > 125000) {
-                    $erreur = "Désolé, votre fichier est trop grand.";
-                    echo $erreur;
+                    $this->vue->alerte_message("Désolé, votre fichier est trop grand","danger","index.php?module=ModMatchs&action=FormulaireCreationMatch");
                 } else {
                     $img_ex = pathinfo($img_name, PATHINFO_EXTENSION);
                     $img_ex_lc = strtolower($img_ex);
@@ -58,26 +57,19 @@ class ContMatchs
                         $img_upload_path = './Vue/Affichage/Images/' . $new_img_name;
                         move_uploaded_file($tmp_name, $img_upload_path);
                         if (isset($_POST['CreerMatch'])) {
-
                             $this->modele->creerMatch($login, $notif, $nomMatch, $lieuMatch, $NbJoueurs, $dateMatch, $heureMatch, $new_img_name);
-                            echo "Match créé avec votre participation";
-
-                        } else {
-                            $this->modele->creerMatchSansParticipation($login, $notif, $nomMatch, $lieuMatch, $NbJoueurs, $dateMatch, $heureMatch, $new_img_name);
-                            echo "Match créé sans votre participation";
+                            $this->vue->alerte_message("Le match a été créé avec succès","success","index.php?module=ModMatchs&action=PageMatchs");
                         }
                     } else {
-                        $erreur = "Vous ne pouvez pas mettre ce type de fichier ";
-                        echo $erreur;
+                        $this->vue->alerte_message("Désolé, vous ne pouvez pas mettre ce type de fichier","danger","index.php?module=ModMatchs&action=FormulaireCreationMatch");
                     }
                 }
             } else {
-                echo "erreur lors de la creation du match ";
+                $this->vue->alerte_message("Désolé, une erreur est survenue","danger","index.php?module=ModMatchs&action=FormulaireCreationMatch");
             }
         } catch (Exception $e) {
             var_dump($e);
             exit();
-
         }
 
     }
@@ -108,13 +100,12 @@ class ContMatchs
         if ($nombreParticipants < $int_value_nb_ParticipantsValable) {
             try {
                 $this->modele->participerMatch($username, $idMatch);
-                echo "vous etes parmi les participants";
+                $this->vue->alerte_message("Bien joué, Vous faites maintenant partie des participants","success","index.php?module=ModMatchs&action=PageMatchs");
             } catch (Exception $e) {
-                echo "deja vous avez participé ";
+                $this->vue->alerte_message("Vous faites déjà parties des participants","danger","index.php?module=ModMatchs&action=PageMatchs");
             }
         } else {
-            echo "Le nombre de participants est atteint";
-
+            $this->vue->alerte_message("Désolé, la liste des participants est pleine","danger","index.php?module=ModMatchs&action=PageMatchs");
         }
     }
 
@@ -132,9 +123,9 @@ class ContMatchs
         $username = $_SESSION['login'];
         try {
             $this->modele->retirerParticipation($idMatch, $username);
-            echo "Vous avez annulé votre participation";
+            $this->vue->alerte_message("Vous venez d'annuler votre participation","success","index.php?module=ModMatchs&action=PageMatchs");
         } catch (Exception $e) {
-            echo "Erreur survenue ";
+            $this->vue->alerte_message("Désolé, une erreur est survenue","danger","index.php?module=ModMatchs&action=PageMatchs");
         }
 
     }
@@ -155,8 +146,7 @@ class ContMatchs
         try {
             if ($error === 0) {
                 if ($img_size > 125000) {
-                    $erreur = "Désolé, votre image est trop grand.";
-                    echo $erreur;
+                    $this->vue->alerte_message("Désolé, la taille de votre image est trop grande","danger","index.php?module=ModMatchs&action=PageMatchs");
                 } else {
                     $img_ex = pathinfo($img_name, PATHINFO_EXTENSION);
                     $img_ex_lc = strtolower($img_ex);
@@ -169,20 +159,17 @@ class ContMatchs
                             $this->modele->ajouterPhotos($idMatch, $new_img_name);
                             $this->photosMatch();
                         } else {
-                            echo "photo n'est pas ajoutée";
+                            $this->vue->alerte_message("La photo n'a pas pu être ajoutée","danger","index.php?module=ModMatchs&action=PageMatchs");
                         }
                     } else {
-                        $erreur = "Vous ne pouvez pas mettre ce type de fichier ";
-                        echo $erreur;
+                        $this->vue->alerte_message("Vous ne pouvez pas mettre ce type de fichiers","danger","index.php?module=ModMatchs&action=PageMatchs");
                     }
                 }
             } else {
-                echo "erreur lors d'ajout de la photo";
+                $this->vue->alerte_message("Désolé, une erreur est survenue lors de l'ajout de la photo","danger","index.php?module=ModMatchs&action=PageMatchs");
             }
         } catch (Exception $e) {
-            var_dump($e);
-            exit();
-
+            $this->vue->alerte_message("Désolé, une erreur est survenue","danger","index.php?module=ModMatchs&action=PageMatchs");
         }
     }
 

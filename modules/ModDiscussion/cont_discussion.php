@@ -32,8 +32,7 @@ class ContDiscussion
             }
             if ($error === 0) {
                 if ($img_size > 125000) {
-                    $erreur = "Désolé, votre image est trop grand.";
-                    echo $erreur;
+                    $this->vue->alerte_message("Désolé, la taille de votre image est trop grande","danger","index.php?module=ModMatchs&action=PageMatchs");
                 }else {
                     $img_ex = pathinfo($img_name, PATHINFO_EXTENSION);
                     $img_ex_lc = strtolower($img_ex);
@@ -45,17 +44,16 @@ class ContDiscussion
                         $this->modele->envoyerMessage($contenuMessage,$new_img_name,$login, $idMatch);
 
                     }else {
-                        $erreur = "Vous ne pouvez pas mettre ce type de fichier ";
-                        echo $erreur;
+                        $this->vue->alerte_message("Désolé, vous ne pouvez pas mettre ce type de fichier","danger","index.php?module=ModMatchs&action=PageMatchs");
+
                     }
                 }
             }else {
-                echo "erreur lors d'ajout de la photo";
+                $this->vue->alerte_message("Désolé, une erreur est survenue lors de l'ajout de votre photo","danger","index.php?module=ModMatchs&action=PageMatchs");
+
             }
         } catch (Exception $e) {
-            var_dump($e);
-            exit();
-
+            $this->vue->alerte_message("Désolé, une erreur est survenue","danger","index.php?module=ModMatchs&action=PageMatchs");
         }
         try {
 
@@ -64,7 +62,7 @@ class ContDiscussion
             $this->vue->afficherFormulaireDiscussion($idMatch,$messages,$idUser);
 
         }catch (Exception $e) {
-                echo "Erreur survenue ";
-            }
+            $this->vue->alerte_message("Désolé, une erreur est survenue","danger","index.php?module=ModMatchs&action=PageMatchs");
+        }
     }
 }
