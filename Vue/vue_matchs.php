@@ -44,6 +44,7 @@ class VueMatchs
         $data["titre"] = "Matchs Amis";
         $data["liste"] = $liste;
         $data["AmisParticipants"] = $AmisParticipants;
+
         Vue::render("Affichage/matchsAmis.php",$data);
 
     }
@@ -64,6 +65,10 @@ class VueMatchs
         $data["liste"] = $PhotosDiscussion;
         $data["liste2"] = $photosGalerry;
         Vue::render("Affichage/photosMatchs.php",$data);
+    }
+    function afficherMatch($data){
+        $data["titre"] = "Match";
+        Vue::render("Affichage/match.php" ,$data);
     }
 
     function afficherNotifications($liste){

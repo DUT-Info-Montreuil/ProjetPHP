@@ -181,6 +181,11 @@ class ContMatchs
         $AmisParticipants = $this->modele->getAmisParticipants($username, $dateMatch);
         $this->vue->afficherMatchsAmis($matchsAmis, $AmisParticipants);
     }
+    public function consulterMatch(){
+        $idMatch = $_GET["id"];
+        $match = $this->modele->getmatch($idMatch);
+        $this->vue->afficherMatch($match);
+    }
     public function consulterMatchsInviter()
     {
         $username = $_SESSION['login'];

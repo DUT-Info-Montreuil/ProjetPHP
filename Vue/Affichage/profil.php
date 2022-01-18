@@ -105,7 +105,7 @@
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-primary"<a href="index.php?module=ModProfil&action=FormSuppProfil" >Oui</a></button>
+                                                    <button id="buttonStyle" type="button"><a id="txt" href="index.php?module=ModProfil&action=FormSuppProfil" >Oui</a></button>
                                                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Non</button>
                                                 </div>
                                             </div>
@@ -113,8 +113,6 @@
                                     </div>
                                 </div>
                             </div>
-        </div>
+                     </div>
 </div>
-<script src="https://kit.fontawesome.com/6440c9a3af.js" crossorigin="anonymous"></script>
-<script src="./Vue/Affichage/JavaScript/script.js"></script>
 

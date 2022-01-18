@@ -48,11 +48,12 @@ class ModeleMatchs extends Connexion
     }
 
 
+
     function creerMatch($login,$notif, $nomMatch,$lieuMatch,$NbJoueurs,$dateMatch,$heureMatch,$imageMatch){
             $contenuMatch = $notif."".$lieuMatch;
             foreach ($this->getIdUsers($lieuMatch) as $idUsers) {
-            $req = self::$bdd->prepare("INSERT INTO `notification`(`idUtilisateur`,`ContenuNotification`, `DateNotification`,`status`) VALUES ($idUsers[0],?,now(),0)");
-            $req->execute(array($contenuMatch));
+            $req = self::$bdd->prepare("INSERT INTO `notification`(`idUtilisateur`,`ContenuNotification`, `DateNotification`,`status`) VALUES (?,?,now(),0)");
+            $req->execute(array($idUsers[0],$contenuMatch));
             }
             $idnotif = self::$bdd->lastInsertId();
 
@@ -77,6 +78,12 @@ class ModeleMatchs extends Connexion
     function getMesMatchs($idUtilisateur){
         $req = self::$bdd->prepare("SELECT * FROM matchs where idMatch IN (SELECT idMatch from participer where idUtilisateur=?) ");
         $req->execute(array($idUtilisateur));
+        $res = $req->fetchAll();
+        return $res;
+    }
+    function getmatch($idMatch){
+        $req = self::$bdd->prepare("SELECT * FROM matchs where idMatch =? ");
+        $req->execute(array($idMatch));
         $res = $req->fetchAll();
         return $res;
     }
