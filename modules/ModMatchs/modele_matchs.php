@@ -80,6 +80,18 @@ class ModeleMatchs extends Connexion
         $res = $req->fetchAll();
         return $res;
     }
+    function getAmisInvitant($login){
+        $req = self::$bdd->prepare("SELECT nom FROM utilisateur where idUtilisateur IN (SELECT idUtilisateur from invitationMatch where idUtilisateur_1=(SELECT idUtilisateur from utilisateur natural join identifiants where login=?))");
+        $req->execute(array($login));
+        $res = $req->fetchAll();
+        return $res;
+    }
+    function getMatchsInviter($login){
+        $req = self::$bdd->prepare("SELECT * FROM matchs where idMatch IN (SELECT idMatch from invitationMatch where idUtilisateur_1=(SELECT idUtilisateur from utilisateur natural join identifiants where login= ?)) ");
+        $req->execute(array($login));
+        $res = $req->fetchAll();
+        return $res;
+    }
     function retirerParticipation($idMatch, $login){
         $req = self::$bdd->prepare("DELETE FROM participer  where idMatch = ? and idUtilisateur = (SELECT idUtilisateur from utilisateur natural join identifiants where login= ?) ");
         $req->execute(array($idMatch,$login));

@@ -47,6 +47,14 @@ class VueMatchs
         Vue::render("Affichage/matchsAmis.php",$data);
 
     }
+    function afficherMatchsInviter($listeMatchs,$listeAmis){
+        $data["titre"] = "Matchs Inviter";
+        $data["Matchs"] = $listeMatchs;
+        $data["AmisInvitants"] = $listeAmis;
+        Vue::render("Affichage/match_inviter.php",$data);
+    }
+
+
     function afficherFormAjouterPhotos(){
         Vue::render("Affichage/espaceAjoutPhotos.php",["titre"=>"Ajouter Photos"]);
 

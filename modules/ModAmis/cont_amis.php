@@ -50,6 +50,29 @@ class ContAmis
         $listeAmis = $this->modele->getListeAmis($login);
         $this->vue->afficherMesAmis($listeAmis);
     }
+    public function listeAmisAInviter($login){
+        $listeAmis = $this->modele->getListeAmis($login);
+        $this->vue->afficherAmisAInviter($listeAmis);
+    }
+    public function enregistrerInvitation($login){
+        $idMatch=$_GET["idMatch"];
+        $idAmi = $_GET["id"];
+        $verifierInvitation = $this->modele->verifierInvitation($idMatch,$login,$idAmi);
+        if ($verifierInvitation ==0) {
+            try {
+
+                $this->modele->enregistrerInvitation($idMatch, $login, $idAmi);
+                $this->vue->alerte_message("L'utilisateur a bien été invité ", "success", "index.php?module=ModMatchs&action=MesMatchs");
+            } catch (Exception $e) {
+                $this->vue->alerte_message("Erreur est survenue", "danger", "index.php?module=ModMatchs&action=MesMatchs");
+            }
+        }else{
+            $this->vue->alerte_message("L'utilisateur a déjà été invité", "danger", "index.php?module=ModMatchs&action=MesMatchs");
+
+        }
+
+
+    }
     public function retirerAmiDeLaListe($login){
         $idAmi=$_GET["id"];
         try {

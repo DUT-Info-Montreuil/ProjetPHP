@@ -32,6 +32,18 @@ class ModeleAmis extends Connexion
 
 
     }
+    public function verifierInvitation($idMatch,$login,$idAmi){
+        $req = self::$bdd->prepare("SELECT * from invitationMatch where idMatch = ? and idUtilisateur IN (select idUtilisateur from utilisateur where idUtilisateur = (SELECT idUtilisateur from utilisateur natural join identifiants where login=?)) and idUtilisateur_1=? ");
+        $req->execute(array($idMatch,$login,$idAmi));
+        $res = $req->rowCount();
+        return $res;
+    }
+    public function enregistrerInvitation($idMatch,$login,$idAmi){
+
+        $req = self::$bdd->prepare("INSERT INTO `invitationMatch`(`idMatch`, `idUtilisateur`, `idUtilisateur_1`) VALUES (?,(select idUtilisateur from utilisateur where idUtilisateur = (SELECT idUtilisateur from utilisateur natural join identifiants where login=?)),?)");
+        $req->execute(array($idMatch,$login,$idAmi));
+
+    }
 
     public function getDemandesAmis($login)
     {
@@ -66,6 +78,7 @@ class ModeleAmis extends Connexion
         $res = $req->fetchAll();
         return $res;
     }
+
 
     public function retirerDeListe($idAmi, $login)
     {

@@ -34,6 +34,12 @@ class ModAmis
             case 'TousMesAmis':
                 $this->controleur->listeAmis($username);
                 break;
+            case 'TousMesAmisAInviter':
+                $this->controleur->listeAmisAInviter($username);
+                break;
+            case 'InviterMatch':
+                $this->controleur->enregistrerInvitation($username);
+                break;
             case 'RetirerAmi':
                 $this->controleur->retirerAmiDeLaListe($username);
                 break;
