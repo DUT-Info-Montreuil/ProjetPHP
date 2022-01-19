@@ -24,7 +24,8 @@ class VueProfil
     }
 
     function afficherMessageAlerte(){
-        Vue::render("Affichage/messageAlerte.php");
+        $data["titre"]="Deconnecter";
+        Vue::render("Affichage/messageAlerte.php",$data);
     }
 
     function afficherProfilUtilisateur($data){
