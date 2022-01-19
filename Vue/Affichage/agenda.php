@@ -29,7 +29,7 @@ if (!empty($liste)): ?>
         });
     </script>
 <?php else: ?>
-    <div class="alert alert-danger mt-5">Vos amis na participent a aucun matchs</div>
+    <div class="alert alert-danger mt-5">Vos amis ne participent à aucun matchs pour le moment</div>
 <?php endif; ?>
 
 
