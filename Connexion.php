@@ -12,7 +12,6 @@ class Connexion {
             $user="dutinfopw201646";
             $password="bygyjyjy";
             self::$bdd = new PDO($dns,$user,$password);*/
-
             $dns="mysql:host=localhost;dbname=basicfoot";
             $user="root";
             self::$bdd = new PDO($dns,$user);
