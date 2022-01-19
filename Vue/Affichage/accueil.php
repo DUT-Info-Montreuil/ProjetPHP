@@ -9,8 +9,11 @@
             <p>Invitez vos amis, discuter avec eux, gérer les matchs,</p>
             <p>consulter l’agenda des matchs autour de vous,donnez vos avis sur les joueurs !</p>
         </div>
-
+        <?php if (isset($_SESSION['login'])) : ?>
+            <a href="index.php?module=ModProfil" class="btn btn-primary" >Consulter Profil</a>
+        <?php else: ?>
             <a href="index.php?module=ModInscription" class="btn btn-primary" >Inscrivez vous gratuitement</a>
+            <?php endif; ?>
 
     </section>
         <div class="line">
