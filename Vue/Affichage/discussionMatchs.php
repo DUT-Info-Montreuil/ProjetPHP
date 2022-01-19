@@ -7,7 +7,7 @@
     <div class="row justify-content-center h-100">
         <div class="col-md-8 col-xl-6 chat">
             <div class="cardDiscussion">
-                <div class="card-header msg_head"></div>
+                <div class="card-header" id="titreDiscu"><?= $data['nomMatch'][0] ?></div>
                 <div id="msgForm" >
                 <div class="card-body msg_card_body">
                     <?php

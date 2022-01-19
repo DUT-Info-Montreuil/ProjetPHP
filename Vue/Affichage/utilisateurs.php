@@ -1,5 +1,7 @@
 
 <div class="container">
+    <h1 class="titrePageAmis">Ajouter des amis</h1>
+    <div class="mb-3"> <a class="btn btn-primary" href="index.php?module=ModProfil&action=Profil" role="button">Revenir au profil</a></div>
     <div class="row">
         <div class="col-sm-0 col-md-2 col-lg-3"></div>
         <div class="col-sm-12 col-md-8 col-lg-6">

@@ -1,4 +1,6 @@
 <div class="d-grid gap-2 col-6 mx-auto">
+    <div class="mb-3"> <a class="btn btn-primary" href="index.php?module=ModMatchs&action=ConsulterMatch&id=<?= $_GET['id']?>" role="button">Revenir au match</a></div>
+
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Ajouter une photo </button>
 </div>
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

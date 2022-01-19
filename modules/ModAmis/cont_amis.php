@@ -21,13 +21,19 @@ class ContAmis
     public function EnvoyerDemande($login){
         $idAmi=$_GET["id"];
         $val =0;
-        try {
-            $this->modele->demanderEtreAmis($login, $idAmi, $val);
-            $this->vue->alerte_message("Demande d'amis envoyé avec succès","success","index.php?module=ModAmis&action=TousLesUtilisateurs");
+        if($this->modele->estDejaAmi($login,$idAmi)==1) {
+            $this->vue->alerte_message("L'utilisateur fait déjà partie de vos amis","warning","index.php?module=ModAmis&action=TousMesAmis");
         }
-        catch (Exception $e) {
-            $this->vue->alerte_message("Demande d'amis déjà envoyée, en attente d'une réponse de l'utilisateur","warning","index.php?module=ModProfil&action=Profil");
+        else {
+            try {
+                $this->modele->demanderEtreAmis($login, $idAmi, $val);
+                $this->vue->alerte_message("Demande d'amis envoyé avec succès","success","index.php?module=ModProfil&action=Profil");
+            }
+            catch (Exception $e) {
+                $this->vue->alerte_message("Demande d'amis déjà envoyée, en attente d'une réponse de l'utilisateur","warning","index.php?module=ModProfil&action=Profil");
+            }
         }
+
 
     }
     public function listeDemandesAmis($login){
@@ -54,25 +60,26 @@ class ContAmis
         $listeAmis = $this->modele->getListeAmis($login);
         $this->vue->afficherAmisAInviter($listeAmis);
     }
+
     public function enregistrerInvitation($login){
         $idMatch=$_GET["idMatch"];
         $idAmi = $_GET["id"];
         $verifierInvitation = $this->modele->verifierInvitation($idMatch,$login,$idAmi);
         if ($verifierInvitation ==0) {
             try {
-
                 $this->modele->enregistrerInvitation($idMatch, $login, $idAmi);
                 $this->vue->alerte_message("L'utilisateur a bien été invité ", "success", "index.php?module=ModMatchs&action=MesMatchs");
             } catch (Exception $e) {
-                $this->vue->alerte_message("Erreur est survenue", "danger", "index.php?module=ModMatchs&action=MesMatchs");
+                $this->vue->alerte_message("Une erreur est survenue", "danger", "index.php?module=ModMatchs&action=MesMatchs");
             }
         }else{
             $this->vue->alerte_message("L'utilisateur a déjà été invité", "danger", "index.php?module=ModMatchs&action=MesMatchs");
 
         }
-
-
     }
+
+
+
     public function retirerAmiDeLaListe($login){
         $idAmi=$_GET["id"];
         try {

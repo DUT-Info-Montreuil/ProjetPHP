@@ -18,6 +18,12 @@ class ModeleDiscussion extends Connexion
         $res = $req->fetchAll();
         return $res;
     }
+
+    function getNomMatch($idMatch) {
+        $req = self::$bdd->prepare("SELECT nomMatch from matchs where idMatch=?");
+        $req->execute(array($idMatch));
+        return $req->fetch();
+    }
     function getIduser($login){
         $req = self::$bdd->prepare("select idUtilisateur,nom from utilisateur natural join identifiants where login=?");
         $req->execute(array($login));

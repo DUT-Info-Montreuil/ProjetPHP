@@ -84,7 +84,7 @@
                     </div>
                 </div>
                 <div class="float-end">
-                    <a href="index.php?module=ModAmis&action=TousLesUtilisateurs" class="btn btn-primary" role="button">Retour</a>
+                    <a href="index.php?module=ModAmis&action=TousMesAmis" class="btn btn-primary" role="button">Retour</a>
                 </div>
                     <table class="table table-striped table-light" style="width:22%; border-radius: 25px !important; border-width: 5px !important;border-style: solid !important; height:20% !important;margin-top:30px; ">
                         <thead>
@@ -109,13 +109,10 @@
                                             <div class="icon-box">
                                                 <i class="material-icons">&#xE876;</i>
                                             </div>
-                                            <h4 class="modal-title w-100">Merci !</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p class="text-center">Vous m'avez bien noté <i class="far fa-smile-wink"></i></p>
+                                            <h4 class="modal-title w-100">Merci de votre avis</h4>
                                         </div>
                                         <div class="modal-footer">
-                                            <button id="buttonStyle" type="button"><a id="txt" href="?module=ModProfil&action=ConsulterProfil&id=<?= $data['idUtilisateur']?>" >Ok</a></button>
+                                            <a href="?module=ModProfil&action=ConsulterProfil&id=<?= $data['idUtilisateur']?>" class="btn">Ok</a>
                                         </div>
                                     </div>
                                 </div>
@@ -135,14 +132,10 @@
                                             <div class="icon-box">
                                                 <i class="material-icons">&#xE5CD;</i>
                                             </div>
-                                            <h4 class="modal-title w-100">Désolé !</h4>
+                                            <h4 class="modal-title w-100">Merci de votre avis</h4>
                                         </div>
-                                        <div class="modal-body">
-                                            <p>vous m'avez pas bien noté <i class="far fa-sad-cry"></i></p>
-                                        </div>
-                                        <div class="modal-footer justify-content-center">
-                                            <button id="buttonStyle" type="button"><a id="txt" href="?module=ModProfil&action=ConsulterProfil&id=<?= $data['idUtilisateur']?>" >Ok</a></button>
-                                        </div>
+                                        <div class="modal-footer justify-content-right">
+                                            <a href="?module=ModProfil&action=ConsulterProfil&id=<?= $data['idUtilisateur']?>" class="btn">Ok</a>
                                     </div>
                                 </div>
                             </div>

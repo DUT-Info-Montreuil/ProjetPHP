@@ -102,8 +102,8 @@ class ModeleMatchs extends Connexion
     function retirerParticipation($idMatch, $login){
         $req = self::$bdd->prepare("DELETE FROM participer  where idMatch = ? and idUtilisateur = (SELECT idUtilisateur from utilisateur natural join identifiants where login= ?) ");
         $req->execute(array($idMatch,$login));
-
     }
+
     function getDatesMatchsAmis($login){
         $req = self::$bdd->prepare("SELECT dateMatch FROM matchs where idMatch IN (SELECT idMatch from participer where idUtilisateur IN (SELECT idUtilisateur_1 from etreAmi where idUtilisateur=(SELECT idUtilisateur from utilisateur natural join identifiants where login= ?) ))");
         $req->execute(array($login));
@@ -168,5 +168,10 @@ class ModeleMatchs extends Connexion
         return $res;
     }
 
+
+    function refuserInvitation($idMatch,$idUtilisateur_1) {
+        $req = self::$bdd->prepare("DELETE from invitationMatch where idMatch=? and idUtilisateur_1=(SELECT idUtilisateur from utilisateur natural join identifiants where login=?)");
+        $req->execute(array($idMatch,$idUtilisateur_1));
+    }
 
 }

@@ -17,11 +17,11 @@
                 </div>
             </div>
             <ul class="profile-header-tab nav nav-tabs">
-                <li class="nav-item"><a href="#profile" class="nav-link" name="profil" data-toggle="tab">Information</a></li>
+                <li class="nav-item"><a href="#profile" class="nav-link" name="profil" data-toggle="tab" id="titreInformationProfil">Information</a></li>
                 <li class="nav-item"><a href="index.php?module=ModAmis&action=TousMesAmis" class="nav-link " data-toggle="tab">Mes amis</a></li>
                 <li class="nav-item"><a href="index.php?module=ModAmis&action=TousLesUtilisateurs" class="nav-link " data-toggle="tab">Ajouter amis</a>
-                <li class="nav-item"><a href="index.php?module=ModAmis&action=TousLesDemandesAmis" class="nav-link " data-toggle="tab">Mes invitations d'amis</a></li>
-                <li class="nav-item"><a href="index.php?module=ModMatchs&action=ConsulterMatchsInviter" class="nav-link " data-toggle="tab">Mes invitations matchs</a></li>
+                <li class="nav-item"><a href="index.php?module=ModAmis&action=TousLesDemandesAmis" class="nav-link " data-toggle="tab">Mes demandes d'amis</a></li>
+                <li class="nav-item"><a href="index.php?module=ModMatchs&action=ConsulterMatchsInviter" class="nav-link " data-toggle="tab">Mes demandes de matchs</a></li>
 
             </ul>
         </div>
@@ -105,7 +105,7 @@
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button id="buttonStyle" type="button"><a id="txt" href="index.php?module=ModProfil&action=FormSuppProfil" >Oui</a></button>
+                                                    <a href="index.php?module=ModProfil&action=FormSuppProfil" class="btn btn-primary">Oui</a>
                                                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Non</button>
                                                 </div>
                                             </div>

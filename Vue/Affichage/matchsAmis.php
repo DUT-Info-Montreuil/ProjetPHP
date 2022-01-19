@@ -9,12 +9,12 @@ if (!empty($listeMatchs)): ?>
     <table class="table table-striped borderStyleTable">
         <thead>
         <tr>
-            <th scope="col">Nom ami</th>
+            <th scope="col">Nom</th>
             <th scope="col">Match</th>
-            <th scope="col">dateMatch</th>
-            <th scope="col">lieu</th>
-            <th scope="col">Image Match</th>
-            <th scope="col">participer</th>
+            <th scope="col">Date</th>
+            <th scope="col">Lieu</th>
+            <th scope="col">Image</th>
+            <th scope="col">Participer</th>
         </tr>
         </thead>
         <tbody>

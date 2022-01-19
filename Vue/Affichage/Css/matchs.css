@@ -215,7 +215,10 @@ body .fc-icon {
     cursor: pointer; color: #08026c;
     transition: all .1s;
     border-bottom: 3px solid #00ff3d;
+}
 
+#titreInformationMatch {
+    border-bottom: 3px solid orange;
 }
 .match-header .match-header-tab > li.active > a,
 .match-header .match-header-tab > li > a.active {

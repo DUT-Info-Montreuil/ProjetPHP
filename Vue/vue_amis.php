@@ -27,7 +27,7 @@ class VueAmis
 
     }
     function afficherAmisAInviter($liste){
-        $data["titre"] = "Mes Amis A Inviter";
+        $data["titre"] = "Mes amis a inviter";
         $data["liste"] = $liste;
         Vue::render("Affichage/amisAInviter.php", $data);
     }

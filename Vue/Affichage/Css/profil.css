@@ -50,7 +50,9 @@ body .fc-icon {
     cursor: pointer; color: #08026c;
     transition: all .1s;
     border-bottom: 3px solid #ff0000;
-
+}
+#titreInformationProfil {
+    border-bottom: 3px solid blue;
 }
 .profile-header .profile-header-tab > li.active > a,
 .profile-header .profile-header-tab > li > a.active {

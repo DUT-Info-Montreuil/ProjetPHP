@@ -1,4 +1,6 @@
 <div class="container">
+    <h1 class="titrePageAmis">Rechercher un match</h1>
+    <div class="mb-3"> <a class="btn btn-primary" href="index.php?module=ModMatchs&action=PageMatchs" role="button">Retour</a></div>
     <div class="row">
         <div class="col-sm-0 col-md-2 col-lg-3"></div>
         <div class="col-sm-12 col-md-8 col-lg-6">

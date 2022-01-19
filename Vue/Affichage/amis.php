@@ -6,6 +6,7 @@ if (!empty($liste)): ?>
 
 
 <div class="container mt-5">
+    <h1 class="titrePageAmis">Mes amis</h1>
     <div class="mb-3"> <a class="btn btn-primary" href="index.php?module=ModProfil&action=Profil" role="button">Revenir au profil</a></div>
     <table class="table table-striped borderStyleTable">
         <thead>

@@ -6,13 +6,14 @@ if (!empty($liste)): ?>
 
 
 <div class="container mt-5">
-    <div class="mb-3"> <a class="btn btn-primary" href="index.php?module=ModProfil&action=Profil" role="button">Revenir au profil</a></div>
+    <h1 class="titrePageAmis">Mes amis</h1>
+    <div class="mb-3"> <a class="btn btn-primary" href="index.php?module=ModMatchs&action=ConsulterMatch&id=<?= $_GET['id']?>" role="button">Revenir au match</a></div>
     <table class="table table-striped borderStyleTable">
         <thead>
         <tr>
             <th scope="col">Nom</th>
             <th scope="col">Prénom</th>
-            <th scope="col">Invitation Match</th>
+            <th scope="col">Inviter ami</th>
         </tr>
         </thead>
         <tbody>

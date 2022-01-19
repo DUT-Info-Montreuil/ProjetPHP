@@ -2,6 +2,9 @@
 $liste = $data["liste"];
 if (!empty($liste)): ?>
 <div class="container mt-5">
+    <h1 class="titrePageAmis">Mes demandes d'amis</h1>
+    <a class="btn btn-primary" href="index.php?module=ModProfil&action=Profil" role="button" style="margin-bottom: 20px;">Revenir au profil</a>
+
     <table class="table table-striped borderStyleTable">
         <thead>
         <tr>

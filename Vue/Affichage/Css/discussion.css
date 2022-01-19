@@ -147,14 +147,21 @@
     padding: 10px;
     position: relative;
 }
+
+#titreDiscu {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+}
 .msg_cotainer_send{
     margin-top: auto;
-    margin-bottom: auto;
     margin-right: 10px;
     border-radius: 25px;
     background-color: #78e08f;
     padding: 10px;
     position: relative;
+    margin-bottom: 20px;
 }
 
 .msg_time_send{

@@ -100,13 +100,23 @@ class ContMatchs
         if ($nombreParticipants < $int_value_nb_ParticipantsValable) {
             try {
                 $this->modele->participerMatch($username, $idMatch);
-                $this->vue->alerte_message("Bien joué, Vous faites maintenant partie des participants","success","index.php?module=ModMatchs&action=PageMatchs");
+                $this->deleteInvitationMatch();
+                $this->vue->alerte_message("Bien joué, vous faites maintenant partie des participants","success","index.php?module=ModMatchs&action=PageMatchs");
             } catch (Exception $e) {
+                $this->deleteInvitationMatch();
                 $this->vue->alerte_message("Vous faites déjà parties des participants","danger","index.php?module=ModMatchs&action=PageMatchs");
             }
         } else {
             $this->vue->alerte_message("Désolé, la liste des participants est pleine","danger","index.php?module=ModMatchs&action=PageMatchs");
         }
+    }
+
+    public function deleteInvitationMatch() {
+        $idMatch = $_GET["id"];
+        $idUtilisateur_1 = $_SESSION['login'];
+        $this->modele->refuserInvitation($idMatch,$idUtilisateur_1);
+        $this->vue->alerte_message("Vous venez de supprimer l'invitation au match","danger","index.php?module=ModMatchs&action=ConsulterMatchsInviter");
+
     }
 
     public function mesMatchs()
@@ -173,6 +183,8 @@ class ContMatchs
         }
     }
 
+
+
     public function consulterMatchAmis()
     {
         $username = $_SESSION['login'];
@@ -181,6 +193,7 @@ class ContMatchs
         $AmisParticipants = $this->modele->getAmisParticipants($username, $dateMatch);
         $this->vue->afficherMatchsAmis($matchsAmis, $AmisParticipants);
     }
+
     public function consulterMatch(){
         $idMatch = $_GET["id"];
         $match = $this->modele->getmatch($idMatch);

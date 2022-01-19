@@ -42,8 +42,9 @@ class ModeleAmis extends Connexion
 
         $req = self::$bdd->prepare("INSERT INTO `invitationMatch`(`idMatch`, `idUtilisateur`, `idUtilisateur_1`) VALUES (?,(select idUtilisateur from utilisateur where idUtilisateur = (SELECT idUtilisateur from utilisateur natural join identifiants where login=?)),?)");
         $req->execute(array($idMatch,$login,$idAmi));
-
     }
+
+
 
     public function getDemandesAmis($login)
     {
@@ -52,10 +53,13 @@ class ModeleAmis extends Connexion
         $req->execute();
         $res = $req->fetchAll();
         return $res;
-
-
     }
 
+    public function estDejaAmi($login,$idAmi) {
+        $req = self::$bdd->prepare("SELECT * from etreAmi where idUtilisateur=(SELECT idUtilisateur from utilisateur natural join identifiants where login=?) and idUtilisateur_1=? and testerValidation=1");
+        $req->execute(array($login,$idAmi));
+        return $req->rowCount();
+    }
     public function accepterInvitation($idAmi,$login,$val)
     {
         $req = self::$bdd->prepare("UPDATE etreAmi SET testerValidation = :val where idUtilisateur=:idAmi");
@@ -146,6 +150,8 @@ class ModeleAmis extends Connexion
         $res = $req->rowCount();
         return $res;
     }
+
+
 
 }
 

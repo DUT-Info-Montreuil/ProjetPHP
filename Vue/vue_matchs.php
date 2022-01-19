@@ -41,7 +41,7 @@ class VueMatchs
 
     }
     function afficherMatchsAmis($liste,$AmisParticipants){
-        $data["titre"] = "Matchs Amis";
+        $data["titre"] = "Matchs de vos amis";
         $data["liste"] = $liste;
         $data["AmisParticipants"] = $AmisParticipants;
 
@@ -49,10 +49,10 @@ class VueMatchs
 
     }
     function afficherMatchsInviter($listeMatchs,$listeAmis){
-        $data["titre"] = "Matchs Inviter";
+        $data["titre"] = "Mes demandes de match";
         $data["Matchs"] = $listeMatchs;
         $data["AmisInvitants"] = $listeAmis;
-        Vue::render("Affichage/match_inviter.php",$data);
+        Vue::render("Affichage/match_Inviter.php",$data);
     }
 
 

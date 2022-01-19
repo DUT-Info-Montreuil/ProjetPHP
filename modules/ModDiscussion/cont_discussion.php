@@ -16,7 +16,8 @@ class ContDiscussion
         $login = $_SESSION['login'];
         $idUser = $this->modele->getIduser($login);
         $messages = $this->modele->getMessages($idMatch);
-        $this->vue->afficherFormulaireDiscussion($idMatch, $messages,$idUser);
+        $nomMatch=$this->modele->getNomMatch($idMatch);
+        $this->vue->afficherFormulaireDiscussion($idMatch, $messages,$idUser,$nomMatch);
     }
     public function envoyerMessage(){
 
@@ -51,14 +52,14 @@ class ContDiscussion
                 }
             } catch (Exception $e) {
                 $this->vue->alerte_message("Désolé, une erreur est survenue","danger","index.php?module=ModMatchs&action=PageMatchs");
-
-
             }
             try {
 
                 $idUser = $this->modele->getIduser($login);
                 $messages = $this->modele->getMessages($idMatch);
-                $this->vue->afficherFormulaireDiscussion($idMatch, $messages, $idUser);
+                $nomMatch=$this->modele->getNomMatch($idMatch);
+                $this->vue->afficherFormulaireDiscussion($idMatch, $messages, $idUser,$nomMatch);
+
 
             } catch (Exception $e) {
                 $this->vue->alerte_message("Désolé, une erreur est survenue","danger","index.php?module=ModMatchs&action=PageMatchs");

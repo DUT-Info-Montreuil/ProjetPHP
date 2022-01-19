@@ -34,6 +34,9 @@ class ModMatchs
             case 'Participer' :
                 $this->controleur->participer();
                 break;
+            case 'SupprimerInvitation' :
+                $this->controleur->deleteInvitationMatch();
+                break;
             case 'MesMatchs' :
                 $this->controleur->mesMatchs();
                 break;

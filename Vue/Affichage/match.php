@@ -8,13 +8,13 @@
                 </div>
                 <div class="match-header-info">
                     <h4 class="m-t-sm"><?=  $data[0]['nomMatch'] ?></h4>
-                    <a href="#" class="btn btn-xs btn-primary mb-2">Modifier Match</a>
+                    <a href="index.php?module=ModMatchs&action=PageMatchs" class="btn btn-primary">Retour aux matchs</a>
                 </div>
             </div>
             <ul class="match-header-tab nav nav-tabs">
-                <li class="nav-item"><a href="#match" class="nav-link" name="matchInformations" data-toggle="tab">Information</a></li>
+                <li class="nav-item"><a href="#match" class="nav-link" name="matchInformations" data-toggle="tab"id="titreInformationMatch">Information</a></li>
                 <li class="nav-item"><a href="?module=ModMatchs&action=PhotosMatchs&id=<?= $data[0]['idMatch']?>" class="nav-link " data-toggle="tab">Photos</a></li>
-                <li class="nav-item"><a href="?module=ModAmis&action=TousMesAmisAInviter&id=<?= $data[0]['idMatch']?>" class="nav-link " data-toggle="tab">Inviter Amis</a></li>
+                <li class="nav-item"><a href="?module=ModAmis&action=TousMesAmisAInviter&id=<?= $data[0]['idMatch']?>" class="nav-link " data-toggle="tab">Inviter amis</a></li>
 
             </ul>
         </div>
@@ -68,7 +68,7 @@
                 <hr>
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="float:right;">
-                    retirer participation
+                    Retirer participation
                 </button>
 
                 <!-- Modal -->
@@ -80,7 +80,7 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-footer">
-                                <button id="buttonRetirer" type="submit" class="btn btn-danger "><a id="retirerMatch" href='?module=ModMatchs&action=RetirerParticipation&id=<?= $data[0]['idMatch']?>'>Oui</a></button>
+                                <a href='?module=ModMatchs&action=RetirerParticipation&id=<?= $data[0]['idMatch']?>' class="btn btn-primary">Oui</a></button>
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Non</button>
                             </div>
                         </div>

@@ -6,26 +6,13 @@
 
 }
 
-#accepterDemande{
-    color: #ffffff;
-    text-decoration: none;
+.titrePageAmis {
+    color: white;
+    text-align: center;
+    margin-bottom: 50px;
+    border: 2px solid white;
 }
-#refuserDemande{
-    color: #ffffff;
-    text-decoration: none;
-}
-#supprimerAmi{
-    color: #ffffff;
-    text-decoration: none;
-}
-#envoyerMessage{
-    color: #ffffff;
-    text-decoration: none;
-}
-#inviterMatch{
-    color: #ffffff;
-    text-decoration: none;
-}
+
 #Deslike i{
     margin-top: 3px;
     color: #ff0008;
@@ -34,8 +21,8 @@
     margin-top: 3px;
     margin-left: 25px;
     color: #3600ff;
-
 }
+
 #Deslike .countDeslike {
     position: absolute;
     border-radius: 50%;
