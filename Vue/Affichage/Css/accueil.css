@@ -1,0 +1,33 @@
+main {
+    font-family:'Open Sans',Arial,sans-serif;
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 25px;
+    color: white;
+}
+
+.line hr{
+    margin: 10em 0;
+    border: 4px solid #de2bff;
+}
+
+#textePresentation  #p1{
+    color: #FF6F6F;
+}
+
+#imagesPresentation {
+    width: 400px;
+    height: 410px;
+    float: right;
+}
+
+.texteNosOffres {
+    text-decoration: none;
+}
+
+@media (max-width: 1250px) {
+    #imagesPresentation {
+        display: none;
+    }
+}
+
