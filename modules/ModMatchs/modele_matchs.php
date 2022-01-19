@@ -42,20 +42,44 @@ class ModeleMatchs extends Connexion
         $res = $req->fetch();
         return $res[0];
     }
+    function testerDejaParticipeUnmatch($login,$dateMatch){
+        $req = self::$bdd->prepare("SELECT * from matchs natural join participer where idUtilisateur=(select idUtilisateur from utilisateur natural join identifiants where login = ?) and dateMatch =?");
+        $req->execute(array($login,$dateMatch));
+        $res = $req->rowCount();
+        return $res;
+    }
+    function testerDejaParticipeUnmatch2($login,$dateMatch){
+        $req = self::$bdd->prepare("SELECT * from matchs natural join participer where idUtilisateur=(select idUtilisateur from utilisateur natural join identifiants where login = ?) and dateMatch =(SELECT dateMatch from matchs where idMatch = ?)");
+        $req->execute(array($login,$dateMatch));
+        $res = $req->rowCount();
+        return $res;
+    }
+
     function  participerMatch($login ,$idMatch ){
         $req = self::$bdd->prepare("INSERT INTO `participer`(`idUtilisateur`, `idMatch`) VALUES ((select idUtilisateur from utilisateur natural join identifiants where login = ?),?)");
         $req->execute(array($login,$idMatch));
     }
-
-
+    function getIdUsers($adressMatch){
+        $req = self::$bdd->prepare("SELECT idUtilisateur from utilisateur where ville LIKE '".$adressMatch."'");
+        $req->execute(array($adressMatch));
+        $res = $req->fetchAll();
+        return $res;
+    }
 
     function creerMatch($login,$notif, $nomMatch,$lieuMatch,$NbJoueurs,$dateMatch,$heureMatch,$imageMatch){
             $contenuMatch = $notif."".$lieuMatch;
-            foreach ($this->getIdUsers($lieuMatch) as $idUsers) {
-            $req = self::$bdd->prepare("INSERT INTO `notification`(`idUtilisateur`,`ContenuNotification`, `DateNotification`,`status`) VALUES (?,?,now(),0)");
-            $req->execute(array($idUsers[0],$contenuMatch));
+            if(!empty($this->getIdUsers($lieuMatch))) {
+                foreach ($this->getIdUsers($lieuMatch) as $idUsers) {
+                    $req = self::$bdd->prepare("INSERT INTO `notification`(`idUtilisateur`,`ContenuNotification`, `DateNotification`,`status`) VALUES (?,?,now(),0)");
+                    $req->execute(array($idUsers[0], $contenuMatch));
+                }
+            }
+            else{
+                $req = self::$bdd->prepare("INSERT INTO `notification`(`idUtilisateur`,`ContenuNotification`, `DateNotification`,`status`) VALUES (NULL,?,now(),0)");
+                $req->execute(array($contenuMatch));
             }
             $idnotif = self::$bdd->lastInsertId();
+
 
             $req2 = self::$bdd->prepare("INSERT INTO `matchs`(`nomMatch`, `dateMatch`, `lieu`, `nbrJoueur`, `heure`, `Image`, `idUtilisateur`, `idNotification`) VALUES (?,?,?,?,?,?,(SELECT idUtilisateur from utilisateur natural join identifiants where login = ?),? )");
 
@@ -65,14 +89,15 @@ class ModeleMatchs extends Connexion
             $req3 = self::$bdd->prepare("INSERT INTO `participer`(`idUtilisateur`, `idMatch`) VALUES ((select idUtilisateur from utilisateur natural join identifiants where login = ?),?)");
             $req3->execute(array($login,$idMatch));
     }
-
-
-    function getIdUsers($adressMatch){
-        $req = self::$bdd->prepare("SELECT idUtilisateur from utilisateur where ville LIKE '".$adressMatch."'");
-        $req->execute(array($adressMatch));
+    function getLesParticipants($idMatch){
+        $req = self::$bdd->prepare("SELECT * from utilisateur where idUtilisateur IN (SELECT idUtilisateur from participer where idMatch = ? )");
+        $req->execute(array($idMatch));
         $res = $req->fetchAll();
         return $res;
     }
+
+
+
 
 
     function getMesMatchs($idUtilisateur){

@@ -52,7 +52,7 @@ class VueMatchs
         $data["titre"] = "Matchs Inviter";
         $data["Matchs"] = $listeMatchs;
         $data["AmisInvitants"] = $listeAmis;
-        Vue::render("Affichage/match_inviter.php",$data);
+        Vue::render("Affichage/match_Inviter.php",$data);
     }
 
 
@@ -81,6 +81,10 @@ class VueMatchs
     }
     function alerte_message($message,$alerte,$url) {
         Vue::alerte_message($message,$alerte,$url);
+    }
+    function afficherLesParticipants($participants){
+        $data["participants"] =$participants;
+        Vue::render("Affichage/participants.php",$data);
     }
 
 }

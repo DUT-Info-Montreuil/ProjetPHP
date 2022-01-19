@@ -8,13 +8,14 @@
                 </div>
                 <div class="match-header-info">
                     <h4 class="m-t-sm"><?=  $data[0]['nomMatch'] ?></h4>
-                    <a href="#" class="btn btn-xs btn-primary mb-2">Modifier Match</a>
                 </div>
             </div>
             <ul class="match-header-tab nav nav-tabs">
                 <li class="nav-item"><a href="#match" class="nav-link" name="matchInformations" data-toggle="tab">Information</a></li>
                 <li class="nav-item"><a href="?module=ModMatchs&action=PhotosMatchs&id=<?= $data[0]['idMatch']?>" class="nav-link " data-toggle="tab">Photos</a></li>
                 <li class="nav-item"><a href="?module=ModAmis&action=TousMesAmisAInviter&id=<?= $data[0]['idMatch']?>" class="nav-link " data-toggle="tab">Inviter Amis</a></li>
+                <li class="nav-item"><a href="?module=ModMatchs&action=TousLesParticipants&id=<?= $data[0]['idMatch']?>" class="nav-link " data-toggle="tab">Participants</a></li>
+
 
             </ul>
         </div>
@@ -68,7 +69,7 @@
                 <hr>
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="float:right;">
-                    retirer participation
+                    Retirer participation
                 </button>
 
                 <!-- Modal -->

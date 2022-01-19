@@ -44,32 +44,38 @@ class ContMatchs
         $img_size = $_FILES['imageMatch']['size'];
         $tmp_name = $_FILES['imageMatch']['tmp_name'];
         $error = $_FILES['imageMatch']['error'];
-        try {
-            if ($error === 0) {
-                if ($img_size > 125000) {
-                    $this->vue->alerte_message("Désolé, votre fichier est trop grand","danger","index.php?module=ModMatchs&action=FormulaireCreationMatch");
-                } else {
-                    $img_ex = pathinfo($img_name, PATHINFO_EXTENSION);
-                    $img_ex_lc = strtolower($img_ex);
-                    $allowed_exs = array("jpg", "jpeg", "png");
-                    if (in_array($img_ex_lc, $allowed_exs)) {
-                        $new_img_name = uniqid("IMG-", true) . '.' . $img_ex_lc;
-                        $img_upload_path = './Vue/Affichage/Images/' . $new_img_name;
-                        move_uploaded_file($tmp_name, $img_upload_path);
-                        if (isset($_POST['CreerMatch'])) {
-                            $this->modele->creerMatch($login, $notif, $nomMatch, $lieuMatch, $NbJoueurs, $dateMatch, $heureMatch, $new_img_name);
-                            $this->vue->alerte_message("Le match a été créé avec succès","success","index.php?module=ModMatchs&action=PageMatchs");
-                        }
+
+        if($this->modele->testerDejaParticipeUnmatch($login,$dateMatch)==0) {
+            try {
+                if ($error === 0) {
+                    if ($img_size > 125000) {
+                        $this->vue->alerte_message("Désolé, votre fichier est trop grand", "danger", "index.php?module=ModMatchs&action=FormulaireCreationMatch");
                     } else {
-                        $this->vue->alerte_message("Désolé, vous ne pouvez pas mettre ce type de fichier","danger","index.php?module=ModMatchs&action=FormulaireCreationMatch");
+                        $img_ex = pathinfo($img_name, PATHINFO_EXTENSION);
+                        $img_ex_lc = strtolower($img_ex);
+                        $allowed_exs = array("jpg", "jpeg", "png");
+                        if (in_array($img_ex_lc, $allowed_exs)) {
+                            $new_img_name = uniqid("IMG-", true) . '.' . $img_ex_lc;
+                            $img_upload_path = './Vue/Affichage/Images/' . $new_img_name;
+                            move_uploaded_file($tmp_name, $img_upload_path);
+                            if (isset($_POST['CreerMatch'])) {
+                                $this->modele->creerMatch($login, $notif, $nomMatch, $lieuMatch, $NbJoueurs, $dateMatch, $heureMatch, $new_img_name);
+                                $this->vue->alerte_message("Le match a été créé avec succès", "success", "index.php?module=ModMatchs&action=PageMatchs");
+                            }
+                        } else {
+                            $this->vue->alerte_message("Désolé, vous ne pouvez pas mettre ce type de fichier", "danger", "index.php?module=ModMatchs&action=FormulaireCreationMatch");
+                        }
                     }
+                } else {
+                    $this->vue->alerte_message("Désolé, une erreur est survenue", "danger", "index.php?module=ModMatchs&action=FormulaireCreationMatch");
                 }
-            } else {
-                $this->vue->alerte_message("Désolé, une erreur est survenue","danger","index.php?module=ModMatchs&action=FormulaireCreationMatch");
+            } catch (Exception $e) {
+                var_dump($e);
+                exit();
             }
-        } catch (Exception $e) {
-            var_dump($e);
-            exit();
+        }else{
+            $this->vue->alerte_message("Désolé, vous participé déja ce jour a un match", "danger", "index.php?module=ModMatchs&action=FormulaireCreationMatch");
+
         }
 
     }
@@ -97,16 +103,26 @@ class ContMatchs
         $nombreParticipantsValable = $this->modele->getNombreParticipantsValable($idMatch);
         $int_value_nb_ParticipantsValable = intval($nombreParticipantsValable);
 
-        if ($nombreParticipants < $int_value_nb_ParticipantsValable) {
-            try {
-                $this->modele->participerMatch($username, $idMatch);
-                $this->vue->alerte_message("Bien joué, Vous faites maintenant partie des participants","success","index.php?module=ModMatchs&action=PageMatchs");
-            } catch (Exception $e) {
-                $this->vue->alerte_message("Vous faites déjà parties des participants","danger","index.php?module=ModMatchs&action=PageMatchs");
+        if ($nombreParticipants < $int_value_nb_ParticipantsValable ) {
+            if ($this->modele->testerDejaParticipeUnmatch2($username,$idMatch)==0) {
+                try {
+                    $this->modele->participerMatch($username, $idMatch);
+                    $this->vue->alerte_message("Bien joué, Vous faites maintenant partie des participants", "success", "index.php?module=ModMatchs&action=PageMatchs");
+                } catch (Exception $e) {
+                    $this->vue->alerte_message("Vous faites déjà parties des participants", "danger", "index.php?module=ModMatchs&action=PageMatchs");
+                }
+            }else{
+                $this->vue->alerte_message("Désolé, vous participez déja ce jour a un match","danger","index.php?module=ModMatchs&action=PageMatchs");
             }
         } else {
-            $this->vue->alerte_message("Désolé, la liste des participants est pleine","danger","index.php?module=ModMatchs&action=PageMatchs");
+            $this->vue->alerte_message("Désolé, la liste des participants est pleine ","danger","index.php?module=ModMatchs&action=PageMatchs");
         }
+    }
+    public function getListeParticipants(){
+        $idMatch= $_GET["id"];
+        $lesParticipants = $this->modele->getLesParticipants($idMatch);
+        $this->vue->afficherLesParticipants($lesParticipants);
+
     }
 
     public function mesMatchs()
