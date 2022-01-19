@@ -19,7 +19,7 @@
         <div class="line">
         <hr>
         </div>
-        <section class="container">
+        <section class="container-fluid mt-5">
             <img src="./Vue/Affichage/Images/croix.png" alt="" />
             <p id="p1">Organisateur de foot ? Vous connaissez ces problèmes !</p>
             <img src="./Vue/Affichage/Images/croix.png" alt="" />
@@ -33,34 +33,34 @@
             <hr>
         </div>
 
-    <div class="container">
+    <div class="container-fluid mt-5">
         <div class="row">
             <div class="col-md-4">
-                <div class="thumbnail">
+                <div>
                     <a href="./Vue/Affichage/Images/agenda.png" target="_blank">
                         <img src="./Vue/Affichage/Images/agenda.png" alt="Lights" style="width:100%">
                         <div >
-                            <p class="texteNosOffres">Consulter les matches disponibles</p>
+                            <p id="consulterMatchsDispo">Consulter les matches disponibles</p>
                         </div>
                     </a>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="thumbnail">
+                <div>
                     <a href="./Vue/Affichage/Images/amis.png" target="_blank">
                         <img src="./Vue/Affichage/Images/amis.png" alt="Nature" style="width:100%">
                         <div>
-                            <p class="texteNosOffres">Ajoutez vos amis, discutez avec eux !</p>
+                            <p id="ajouterAmis" >Ajoutez vos amis, discutez avec eux !</p>
                         </div>
                     </a>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="thumbnail">
+                <div>
                     <a href="./Vue/Affichage/Images/invitez.png"target="_blank">
                         <img src="./Vue/Affichage/Images/invitez.png" alt="Fjords" style="width:100%">
                         <div>
-                            <p class="texteNosOffres">Invitez vos amis à vous rejoindre votre équipe !</p>
+                            <p id="rejoindreEquipe">Invitez vos amis à vous rejoindre votre équipe !</p>
                         </div>
                     </a>
                 </div>
