@@ -156,13 +156,13 @@ class ModeleMatchs extends Connexion
         return $res;
     }
     function getSommeMesLikes($login){
-        $req = self::$bdd->prepare("SELECT * from avoirnote where `like` = 1 and idUtilisateur_1 = (SELECT idUtilisateur from utilisateur natural join identifiants where login= ?)");
+        $req = self::$bdd->prepare("SELECT * from avoirNote where `like` = 1 and idUtilisateur_1 = (SELECT idUtilisateur from utilisateur natural join identifiants where login= ?)");
         $req->execute(array($login));
         $res = $req->rowCount();
         return $res;
     }
     function getSommeMesDislikes($login){
-        $req = self::$bdd->prepare("SELECT * from avoirnote where `dislike` = 1 and idUtilisateur_1 = (SELECT idUtilisateur from utilisateur natural join identifiants where login= ?)");
+        $req = self::$bdd->prepare("SELECT * from avoirNote where `dislike` = 1 and idUtilisateur_1 = (SELECT idUtilisateur from utilisateur natural join identifiants where login= ?)");
         $req->execute(array($login));
         $res = $req->rowCount();
         return $res;
