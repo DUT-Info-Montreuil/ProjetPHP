@@ -28,9 +28,8 @@
 
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
-                    <?php if(isset($_SESSION['login'])):?>
+                    <?php if(isset($_SESSION['login']) && $_SESSION['login'] !='basicFoot@iut.univ-paris8.fr' ):?>
                         <a class="nav-link" href="index.php?module=ModMatchs&action=PageMatchs" id="titreMatch"><i class="fas fa-futbol"></i></a>
-
                         <div class="notificationNav">
                             <ul>
                                 <li>

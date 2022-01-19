@@ -7,8 +7,7 @@ class Connexion {
     }
 
     public static function initConnexion() {
-        try {
-            /*
+        try {/*
             $dns="mysql:host=database-etudiants.iut.univ-paris8.fr;dbname=dutinfopw201646";
             $user="dutinfopw201646";
             $password="bygyjyjy";

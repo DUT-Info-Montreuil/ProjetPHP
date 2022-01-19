@@ -19,8 +19,11 @@ class ModProfil
 
         switch ($action) {
             case 'Profil':
-                if(isset($_SESSION['login'])){
-                    $username = $_SESSION['login'];
+                $username = $_SESSION['login'];
+                if(isset($username) && ($username =='basicFoot@iut.univ-paris8.fr')){
+                    $this->controleur->profilAdmin($username);
+
+                }else{
                     $this->controleur->monProfil($username);
                 }
                 break;
