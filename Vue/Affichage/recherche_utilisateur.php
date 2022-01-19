@@ -18,7 +18,7 @@ if (!empty($liste)):
                 <td><?= $value['nom'] ?> </td>
                 <td><?= $value['prenom']?></td>
                 <td><button type="submit" class="btn btn-info "><a id="consulterProfil" href='?module=ModProfil&action=ConsulterProfil&id=<?= $value['idUtilisateur']?>'>Consulter</a></button></td>
-                <td><button type="submit" class="btn btn-success "><a id="ajouterAmis" href='?module=ModAmis&action=EnvoyerDemande&id=<?= $value['idUtilisateur']?>'>Ajouter Ami</a></button></td>
+                <td><a href='?module=ModAmis&action=EnvoyerDemande&id=<?= $value['idUtilisateur']?>' class="btn btn-success">Ajouter Ami</a></></td>
             </tr>
         <?php endforeach; ?>
         </tbody>
