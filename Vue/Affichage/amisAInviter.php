@@ -1,6 +1,6 @@
 <?php
 $liste = $data["liste"];
-
+$idMatch = $_GET['id'];
 
 if (!empty($liste)): ?>
 
@@ -12,8 +12,7 @@ if (!empty($liste)): ?>
         <tr>
             <th scope="col">Nom</th>
             <th scope="col">Prénom</th>
-            <th scope="col">Consulter le profil</th>
-            <th scope="col">Supprimer</th>
+            <th scope="col">Invitation Match</th>
         </tr>
         </thead>
         <tbody>
@@ -21,14 +20,13 @@ if (!empty($liste)): ?>
             <tr>
                 <td><?= $value['nom'] ?> </td>
                 <td><?= $value['prenom']?></td>
-                <td><a href='?module=ModProfil&action=ConsulterProfil&id=<?= $value['idUtilisateur']?>' role="button" class="btn btn-warning">Consulter</a></td>
-                <td><a href='?module=ModAmis&action=RetirerAmi&id=<?= $value['idUtilisateur']?>' role="button" class="btn btn-danger">Retirer</a></td>
+                <td><a href='?module=ModAmis&action=InviterMatch&idMatch=<?=$idMatch ?>&id=<?= $value['idUtilisateur']?>' role="button" class="btn btn-success">Inviter</a></td>
             </tr>
         <?php endforeach; ?>
         </tbody>
-        </table>
+    </table>
     <?php else: ?>
-        <div class="alert alert-danger mt-5">Vous n'avez aucun amis</div>
+        <div class="alert alert-danger mt-5">Vous n'avez aucun amis a inviter </div>
         <div class="float-end">
             <a class="btn btn-danger" href="index.php?module=ModProfil&action=Profil" role="button">Revenir au profil</a>
         </div>

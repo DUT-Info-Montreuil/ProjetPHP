@@ -52,8 +52,14 @@ class ModMatchs
             case 'DiscuterMatch' :
                 $this->controleur->formulaireDiscussion();
                 break;
+            case 'ConsulterMatch' :
+                $this->controleur->consulterMatch();
+                break;
             case 'ConsulterMatchAmis' :
                 $this->controleur->consulterMatchAmis();
+                break;
+            case 'ConsulterMatchsInviter' :
+                $this->controleur->consulterMatchsInviter();
                 break;
             case 'Notifications';
                 $this->controleur->notifications();

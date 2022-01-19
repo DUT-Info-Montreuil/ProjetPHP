@@ -55,7 +55,8 @@
     text-decoration: none;
 }
 #buttonRetirer{
-    margin-top: 4%;
+    background-color: #4365ff;
+
 }
 #creerMatch{
     color: #ffffff;
@@ -162,53 +163,131 @@ input[type='file'] {
 .btnAjouterPhoto{
     margin-left: -10%;
 }
-.show2{
+.match-header-img img {
+    max-width: 100%;
+}
+.table.table-match.value {
+    font-weight: 500;
+}
+.match-header  {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.match-header .match-header-cover {
+    background: url(https://www.sportingsols.com/media/terrain_hybride_airfibr_-_sportingsols_construction_de_terrains_de_football_synthetiques.jpg) center no-repeat;
+    background-size: 100% auto;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width: 350px;
-    padding: 20px;
-    border-radius: 15px;
-    background: #ffffff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    display: none;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.match-header .match-header-cover:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.25) 0, rgba(0, 0, 0, 0.85) 100%);
+}
+.match-header .match-header-content,
+.match-header .match-header-tab,
+.match-header-img,
+body .fc-icon {
+    position: relative;
+}
+.match-header .match-header-tab {
+    background: #fff;
+    list-style-type: none;
+    margin: -1.25rem 0 0;
+    padding: 0 0 0 8.75rem;
+    border-bottom: 1px solid #c8c7cc;
+    white-space: nowrap;
+}
+.match-header .match-header-tab > li {
+    display: inline-block;
+    margin: 0;
+}
+.match-header .match-header-tab  > li > a {
+    cursor: pointer; color: #08026c;
+    transition: all .1s;
+    border-bottom: 3px solid #00ff3d;
+
+}
+.match-header .match-header-tab > li.active > a,
+.match-header .match-header-tab > li > a.active {
+    color: #007aff;
+}
+.match-header .match-header-content:after,
+.match-header .match-header-content:before {
+    content: "";
+    display: table;
+    clear: both;
+}
+.match-header .match-header-content {
+    color: #fff;
+    padding: 1.25rem;
 }
 
-.show2 > h2{
-    font-size: 22px;
-    letter-spacing: 1px;
+.match-header-img {
+    float: left;
+    width: 7.5rem;
+    height: 7.5rem;
+    overflow: hidden;
+    z-index: 10;
+    margin: 0 1.25rem -1.25rem 0;
+    padding: 0.1875rem;
+    -webkit-border-radius: 0.25rem;
+    -moz-border-radius: 0.25rem;
+    border-radius: 0.25rem;
+    background: #fff;
 }
 
-.show2 > button{
-    display: inline-block;
-    border: none;
-    background: #44dd08;
-    color: #fff;
-    font-size: 16px;
-    text-align:center;
-    padding: 10px 25px;
-    cursor: pointer;
-    border-radius: 50px;
-    margin-top: 10px;
+.match-container {
+    padding: 1.5625rem;
 }
-.show2 #buttonNonMerci{
-    display: inline-block;
-    border: none;
-    background: #ff0000;
-    color: #fff;
-    font-size: 16px;
-    text-align:center;
-    padding: 10px 25px;
-    cursor: pointer;
-    border-radius: 50px;
-    margin-top: 10px;
+@media (max-width: 967px) {
+    .match-header-img {
+        width: 5.625rem;
+        height: 5.625rem;
+        margin: 0;
+    }
+    .match-header-info {
+        margin-left: 6.5625rem;
+        padding-bottom: 0.9375rem;
+    }
+    .match-header .match-header-tab {
+        padding-left: 0;
+    }
 }
+@media (max-width: 767px) {
+    .match-header .match-header-cover {
+        background-position: top;
+    }
+    .match-header-img {
+        width: 3.75rem;
+        height: 3.75rem;
+        margin: 0;
+    }
+    .match-header-info {
+        margin-left: 4.6875rem;
+        padding-bottom: 0.9375rem;
+    }
+    .match-header-info h4 {
+        margin: 0 0 0.3125rem;
+    }
+    .match-header .match-header-tab {
+        white-space: nowrap;
+        overflow: scroll;
+        padding: 0;
+    }
+
+}
+
+
 
 
 

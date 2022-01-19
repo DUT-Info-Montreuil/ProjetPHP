@@ -44,9 +44,18 @@ class VueMatchs
         $data["titre"] = "Matchs Amis";
         $data["liste"] = $liste;
         $data["AmisParticipants"] = $AmisParticipants;
+
         Vue::render("Affichage/matchsAmis.php",$data);
 
     }
+    function afficherMatchsInviter($listeMatchs,$listeAmis){
+        $data["titre"] = "Matchs Inviter";
+        $data["Matchs"] = $listeMatchs;
+        $data["AmisInvitants"] = $listeAmis;
+        Vue::render("Affichage/match_inviter.php",$data);
+    }
+
+
     function afficherFormAjouterPhotos(){
         Vue::render("Affichage/espaceAjoutPhotos.php",["titre"=>"Ajouter Photos"]);
 
@@ -56,6 +65,10 @@ class VueMatchs
         $data["liste"] = $PhotosDiscussion;
         $data["liste2"] = $photosGalerry;
         Vue::render("Affichage/photosMatchs.php",$data);
+    }
+    function afficherMatch($data){
+        $data["titre"] = "Match";
+        Vue::render("Affichage/match.php" ,$data);
     }
 
     function afficherNotifications($liste){
