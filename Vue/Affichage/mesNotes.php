@@ -7,7 +7,7 @@ $sommeDeslikes = $data['sommeDeslikes'];
     <thead>
     <tr>
         <th>Like</th>
-        <th>DesLike</th>
+        <th>DisLike</th>
     </tr>
     </thead>
     <tbody>

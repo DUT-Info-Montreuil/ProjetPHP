@@ -29,6 +29,6 @@ if (!empty($liste)): ?>
     </div>
 <?php else: ?>
     <div class="alert alert-danger alert-dismissible fade show" role="alert">Vous ne participez à aucun match pour le moment
-        <a href="index.php?module=ModMatchs&action=PageMatchs" type="button" class="btn-close" role="button"</a>
+        <a href="index.php?module=ModMatchs&action=PageMatchs" class="btn-close" role="button"></a>
     </div>
 <?php endif; ?>

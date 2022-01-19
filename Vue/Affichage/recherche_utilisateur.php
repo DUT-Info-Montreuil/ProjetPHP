@@ -24,8 +24,8 @@ if (!empty($liste)):
         </tbody>
     </table>
     <?php else: ?>
-        <div class="alert alert-danger alert-dismissible fade show" role="alert"> Il y actuellement aucun autre utilisateurs
-            <a href="index.php?module=ModProfil" type="button" class="btn-close" role="button"</a>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">Il y actuellement aucun autre utilisateurs de ce nom
+            <a href="index.php?module=ModProfil" class="btn-close" role="button"></a>
         </div>
     <?php endif; ?>
 </div>
