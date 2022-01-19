@@ -82,5 +82,9 @@ class VueMatchs
     function alerte_message($message,$alerte,$url) {
         Vue::alerte_message($message,$alerte,$url);
     }
+    function afficherLesParticipants($participants){
+        $data["participants"] =$participants;
+        Vue::render("Affichage/participants.php",$data);
+    }
 
 }

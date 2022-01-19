@@ -14,7 +14,9 @@
             <ul class="match-header-tab nav nav-tabs">
                 <li class="nav-item"><a href="#match" class="nav-link" name="matchInformations" data-toggle="tab"id="titreInformationMatch">Information</a></li>
                 <li class="nav-item"><a href="?module=ModMatchs&action=PhotosMatchs&id=<?= $data[0]['idMatch']?>" class="nav-link " data-toggle="tab">Photos</a></li>
-                <li class="nav-item"><a href="?module=ModAmis&action=TousMesAmisAInviter&id=<?= $data[0]['idMatch']?>" class="nav-link " data-toggle="tab">Inviter amis</a></li>
+                <li class="nav-item"><a href="?module=ModAmis&action=TousMesAmisAInviter&id=<?= $data[0]['idMatch']?>" class="nav-link " data-toggle="tab">Inviter Amis</a></li>
+                <li class="nav-item"><a href="?module=ModMatchs&action=TousLesParticipants&id=<?= $data[0]['idMatch']?>" class="nav-link " data-toggle="tab">Participants</a></li>
+
 
             </ul>
         </div>
