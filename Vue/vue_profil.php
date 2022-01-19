@@ -10,6 +10,11 @@ class VueProfil
         $data["titre"]="Mon Profil";
         Vue::render("Affichage/profil.php",$data);
     }
+    function afficherProfilAdmin($data){
+        $data["titre"]="Mon Profil";
+        Vue::render("Affichage/profilAdmin.php",$data);
+
+    }
 
 
     function afficherFormulaireModifier($data){

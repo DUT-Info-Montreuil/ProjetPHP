@@ -17,6 +17,11 @@ class ContProfil{
         $profil = $this->modele->getProfil($login);
         $this->vue->afficherProfil($profil);
     }
+    public function profilAdmin($login){
+        $profil = $this->modele->getProfil($login);
+        $this->vue->afficherProfilAdmin($profil);
+
+    }
 
     public function formulaireModif($login) {
         $profil = $this->modele->getProfil($login);

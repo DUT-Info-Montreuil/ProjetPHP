@@ -20,6 +20,7 @@ switch ($module) {
     case "ModAmis":
     case "ModMatchs":
     case "ModDiscussion":
+    case "ModAdmin":
     require_once "./modules/$module/$module.php";
         new $module();
     break;

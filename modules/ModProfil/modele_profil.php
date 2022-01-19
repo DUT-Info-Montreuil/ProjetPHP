@@ -73,17 +73,40 @@ class ModeleProfil extends Connexion
 
         }
         function supprimerLeProfil($login){
-            $sql2 = 'DELETE FROM etreAmi WHERE idUtilisateur IN (select idUtilisateur from utilisateur INNER JOIN identifiants ON identifiants.idLogin = utilisateur.idLogin WHERE identifiants.login = ?)';
-            $req2 = self::$bdd->prepare($sql2);
-            $req2->execute(array($login));
 
-            $sql3 = 'DELETE FROM etreAmi WHERE idUtilisateur_1 IN (select idUtilisateur from utilisateur INNER JOIN identifiants ON identifiants.idLogin = utilisateur.idLogin WHERE identifiants.login = ?)';
-            $req3 = self::$bdd->prepare($sql3);
-            $req3->execute(array($login));
 
-            $sql = 'DELETE utilisateur, identifiants FROM utilisateur INNER JOIN identifiants ON identifiants.idLogin = utilisateur.idLogin WHERE identifiants.login = ?';
+            $sql = 'DELETE FROM participer where idUtilisateur IN (SELECT idUtilisateur from utilisateur natural join identifiants where login= ?) ';
             $req = self::$bdd->prepare($sql);
             $req->execute(array($login));
+
+            $sql1 = 'DELETE FROM notification where idUtilisateur IN (SELECT idUtilisateur from utilisateur natural join identifiants where login= ?) ';
+            $req1= self::$bdd->prepare($sql1);
+            $req1->execute(array($login));
+
+            $sql2 = 'DELETE FROM invitationMatch where idUtilisateur IN (SELECT idUtilisateur from utilisateur natural join identifiants where login= ?) or idUtilisateur_1 IN(SELECT idUtilisateur from utilisateur natural join identifiants where login= ?) ';
+            $req2= self::$bdd->prepare($sql2);
+            $req2->execute(array($login,$login));
+
+            $sql3 = 'DELETE FROM espaceDiscussion where idUtilisateur IN (SELECT idUtilisateur from utilisateur natural join identifiants where login= ?)';
+            $req3= self::$bdd->prepare($sql3);
+            $req3->execute(array($login));
+
+            $sql4 = 'DELETE FROM avoirNote where idUtilisateur IN (SELECT idUtilisateur from utilisateur natural join identifiants where login= ?) or idUtilisateur_1 IN (SELECT idUtilisateur from utilisateur natural join identifiants where login= ?)';
+            $req4= self::$bdd->prepare($sql4);
+            $req4->execute(array($login,$login));
+
+            $sql5 = 'DELETE FROM etreAmi WHERE idUtilisateur IN (select idUtilisateur from utilisateur INNER JOIN identifiants ON identifiants.idLogin = utilisateur.idLogin WHERE identifiants.login = ?)';
+            $req5 = self::$bdd->prepare($sql5);
+            $req5->execute(array($login));
+
+            $sql7 = 'DELETE FROM etreAmi WHERE idUtilisateur_1 IN (select idUtilisateur from utilisateur INNER JOIN identifiants ON identifiants.idLogin = utilisateur.idLogin WHERE identifiants.login = ?)';
+            $req7 = self::$bdd->prepare($sql7);
+            $req7->execute(array($login));
+
+            $sql8 = 'DELETE utilisateur, identifiants FROM utilisateur INNER JOIN identifiants ON identifiants.idLogin = utilisateur.idLogin WHERE identifiants.login = ?';
+            $req8 = self::$bdd->prepare($sql8);
+            $req8->execute(array($login));
+
         }
         function getUtilisateur($idUtilisateur){
             $req = self::$bdd->prepare("SELECT * FROM utilisateur natural join identifiants where idUtilisateur=:idUtilisateur");

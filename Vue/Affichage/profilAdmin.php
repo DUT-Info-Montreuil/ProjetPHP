@@ -18,8 +18,8 @@
             </div>
             <ul class="profile-header-tab nav nav-tabs">
                 <li class="nav-item"><a href="#profile" class="nav-link" name="profil" data-toggle="tab">Information</a></li>
-                <li class="nav-item"><a href="index.php?module=ModAmis&action=TousMesAmis" class="nav-link " data-toggle="tab">Supprimer Matchs</a></li>
-                <li class="nav-item"><a href="index.php?module=ModAmis&action=TousLesUtilisateurs" class="nav-link " data-toggle="tab">Supprimer Utilisateurs</a>
+                <li class="nav-item"><a href="index.php?module=ModAdmin&action=matchsExpired" class="nav-link " data-toggle="tab">Matchs Expirée</a></li>
+                <li class="nav-item"><a href="index.php?module=ModAdmin&action=UtilisateursInscrits" class="nav-link " data-toggle="tab">Utilisateurs </a>
             </ul>
         </div>
         <div class="tab-pane fade active show" id="profile"></div>
