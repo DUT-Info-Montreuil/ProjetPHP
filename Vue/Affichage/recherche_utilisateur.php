@@ -7,9 +7,9 @@ if (!empty($liste)):
         <thead>
         <tr>
             <th scope="col">Nom</th>
-            <th scope="col">Prenom</th>
-            <th scope="col">Consuler Profil</th>
-            <th scope="col">Demande Ami</th>
+            <th scope="col">Prénom</th>
+            <th scope="col">Consulter son profil</th>
+            <th scope="col">Demande en ami</th>
         </tr>
         </thead>
         <tbody>
@@ -17,13 +17,15 @@ if (!empty($liste)):
             <tr>
                 <td><?= $value['nom'] ?> </td>
                 <td><?= $value['prenom']?></td>
-                <td><button type="submit" class="btn btn-info "><a id="consulterProfil" href='?module=ModProfil&action=ConsulterProfil&id=<?= $value['idUtilisateur']?>'>Consulter</a></button></td>
-                <td><button type="submit" class="btn btn-success "><a id="ajouterAmis" href='?module=ModAmis&action=EnvoyerDemande&id=<?= $value['idUtilisateur']?>'>Ajouter Ami</a></button></td>
+                <td><a href='?module=ModProfil&action=ConsulterProfil&id=<?= $value['idUtilisateur']?>' class="btn btn-info">Consulter</a></td>
+                <td><a href='?module=ModAmis&action=EnvoyerDemande&id=<?= $value['idUtilisateur']?>' class="btn btn-success">Ajouter Ami</a></td>
             </tr>
         <?php endforeach; ?>
         </tbody>
     </table>
     <?php else: ?>
-        <div class="alert alert-danger mt-5">Aucun utilisateurs</div>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert"> Il y actuellement aucun autre utilisateurs
+            <a href="index.php?module=ModProfil" type="button" class="btn-close" role="button"</a>
+        </div>
     <?php endif; ?>
 </div>

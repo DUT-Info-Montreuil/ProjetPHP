@@ -1,14 +1,11 @@
-
-<div class="container bg-primary">
-    <div class="col-md-12 text-center">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Ajouter une photo </button>
-    </div>
+<div class="d-grid gap-2 col-6 mx-auto">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Ajouter une photo </button>
 </div>
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Ajouter Une photo dans la gellery</h5>
+                <h5 class="modal-title" id="staticBackdropLabel">Ajouter une photo dans la galerie</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -65,5 +62,5 @@ if ((!empty($liste) || !empty($liste2)) ): ?>
         </div>
     </div>
 <?php else: ?>
-    <div class="alert alert-danger mt-5">il ya aucun photos !</div>
+    <div class="alert alert-warning mt-5">Il y a actuellement aucune photos, soyez le premier à en ajouter</div>
 <?php endif; ?>
