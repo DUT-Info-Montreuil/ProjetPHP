@@ -68,12 +68,12 @@ class ContAmis
         if ($verifierInvitation ==0) {
             try {
                 $this->modele->enregistrerInvitation($idMatch, $login, $idAmi);
-                $this->vue->alerte_message("L'utilisateur a bien été invité ", "success", "index.php?module=ModMatchs&action=MesMatchs");
+                $this->vue->alerte_message("L'utilisateur a bien été invité ", "success", "index.php?module=ModMatchs&action=PageMatchs");
             } catch (Exception $e) {
-                $this->vue->alerte_message("Une erreur est survenue", "danger", "index.php?module=ModMatchs&action=MesMatchs");
+                $this->vue->alerte_message("Une erreur est survenue", "danger", "index.php?module=ModMatchs&action=PageMatchs");
             }
         }else{
-            $this->vue->alerte_message("L'utilisateur a déjà été invité", "danger", "index.php?module=ModMatchs&action=MesMatchs");
+            $this->vue->alerte_message("L'utilisateur a déjà été invité", "danger", "index.php?module=ModMatchs&action=PageMatchs");
 
         }
     }

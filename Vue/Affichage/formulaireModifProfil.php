@@ -5,7 +5,7 @@
         <div class="col-md-4 border-right">
             <div class="d-flex flex-column align-items-center text-center p-3 py-5">
                 <?php
-                if ($data['sexe']=='madame'): ?>
+                if ($data['sexe']=='Madame'): ?>
                     <img class="rounded-circle mt-5" src="https://bootdey.com/img/Content/avatar/avatar3.png" class="mb-4" alt=""  width="90" />
                 <?php else: ?>
                     <img class="rounded-circle mt-5" src="https://bootdey.com/img/Content/avatar/avatar7.png" class="mb-4" alt="" width="90" />
@@ -34,7 +34,7 @@
                 <select name="posteNv" required>
                     <option value="Attaquant">Attaquant</option>
                     <option value="Milieux">Milieux</option>
-                    <option value="Défenseur">Défenseur</option>
+                    <option value="Defenseur">Défenseur</option>
                     <option value="Gardien">Gardien</option>
                 </select>
                 <div class="row mt-3">

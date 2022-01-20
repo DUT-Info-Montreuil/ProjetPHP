@@ -22,7 +22,7 @@
                         <select name="poste">
                             <option value="Attaquant">Attaquant</option>
                             <option value="Milieux">Milieux</option>
-                            <option value="Défenseur">Défenseur</option>
+                            <option value="Defenseur">Défenseur</option>
                             <option value="Gardien">Gardien</option>
                         </select>
                     </div>

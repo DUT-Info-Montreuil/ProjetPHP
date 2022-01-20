@@ -6,7 +6,7 @@ class VueAdmin
 
     function afficherMatchsExpired($matchs)
     {
-        $data["titre"] = "matchs Expired";
+        $data["titre"] = "Matchs Expirés";
         $data["matchsExpired"] = $matchs;
         Vue::render("Affichage/matchsExpired.php", $data);
     }
